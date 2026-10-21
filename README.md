@@ -9,3 +9,10 @@ Hover or focus the book, cup, compass, bracelet, painting, or envelope. The labe
 The laptop is painted into room-background.png, so it remains static. Page background is white; colours within the supplied room illustration are retained unchanged.
 
 DESIGN.md contains the current visual rules and exact typography chart. The project section remains a provisional layout. Local HTML, image references, original file hashes, and shared-scaling checks passed; browser interaction testing remains pending sign-in.
+
+
+## CustomCafé case study
+
+Open `custom-cafe.html`, or follow the CustomCafé case-study link under Selected work. The page shares `style.css` tokens and Google Fonts with the homepage. Its layout and interactive example live in `custom-cafe.css` and `custom-cafe.js`; the homepage scene script is intentionally not loaded on this page.
+
+The interaction is illustrative, with sample ingredients and no actual ordering. Final Figma exports, real project duration, research evidence, and measured results remain to be supplied. No interview findings or business results are invented.

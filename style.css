@@ -72,7 +72,7 @@ h2 {
   line-height: var(--type-h2-line);
 }
 h3 {
-  font-size: 34px;
+  font-size: var(--type-h3);
   margin: 16px 0;
 }
 p {
@@ -768,3 +768,7 @@ article:target {
   left: -1055.670103%;
   top: -451.578947%;
 }
+
+
+/* Case-study entry uses the shared control type scale. */
+.case-study-link { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--type-ui); line-height: var(--type-ui-line); text-underline-offset: 5px; }

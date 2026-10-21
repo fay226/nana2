@@ -1,0 +1,10 @@
+const profile=document.querySelector('#profile'),options=[...document.querySelectorAll('[name="base"]')],feedback=document.querySelector('#feedback'),context=document.querySelector('#profileContext'),panel=document.querySelector('#reviewPanel');
+function update(){const p=profile.value,soy=options.find(x=>x.value==='soy');soy.disabled=p==='soy';if(soy.disabled&&soy.checked)options.find(x=>x.value==='oat').checked=true;document.querySelector('#soyState').textContent=soy.disabled?'Contains saved allergen: Soy':'Substitute';const base=options.find(x=>x.checked).value;context.textContent=p==='unset'?'Allergens: Not set. Personalized ingredient screening is unavailable.':'Saved allergen: '+(p==='milk'?'Milk':'Soy');const match=p===base;feedback.classList.toggle('alert',match);feedback.textContent=p==='unset'?'Set your allergens to check for matching ingredients.':match?'Contains your saved allergen: '+(p==='milk'?'Milk':'Soy')+'. Review this selection.':'No saved-allergen match in this sample ingredient list. Preparation and cross-contact are not verified.';panel.hidden=true;}
+profile.addEventListener('change',update);options.forEach(x=>x.addEventListener('change',update));document.querySelector('#review').addEventListener('click',()=>{panel.hidden=false;panel.textContent='Selected: '+({milk:'Dairy milk',oat:'Oat drink',soy:'Soy drink'}[options.find(x=>x.checked).value])+'. '+feedback.textContent;});update();
+if('IntersectionObserver'in window){const nav=[...document.querySelectorAll('.chapters a')];const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){nav.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id));}})},{rootMargin:'-15% 0px -60% 0px'});nav.forEach(a=>observer.observe(document.querySelector(a.hash)));}
+
+// Keep keyboard focus aligned with in-page navigation.
+document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', () => {
+  const target = document.getElementById(link.hash.slice(1));
+  if (target) { target.setAttribute('tabindex', '-1'); target.focus({preventScroll:true}); }
+}));
