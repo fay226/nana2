@@ -70,18 +70,9 @@ const soundFiles = {
   ".scene-envelope": "assets/sounds/envelope.mp3",
 };
 
-let soundEnabled = false;
 let activeSound = null;
 let lastPlayedAt = -Infinity;
 
-// Browsers generally require a user interaction before playing audio.
-document.addEventListener(
-  "click",
-  () => {
-    soundEnabled = true;
-  },
-  { once: true }
-);
 
 function stopSceneSound() {
   if (!activeSound) return;
@@ -98,11 +89,12 @@ Object.entries(soundFiles).forEach(([selector, source]) => {
   if (!object || !hitArea) return;
 
   const audio = new Audio(source);
-  audio.preload = "none";
+  audio.preload = "auto";
+  audio.load();
   audio.volume = 0.2;
 
   function playSound() {
-    if (!soundEnabled || document.hidden) return;
+    if (document.hidden) return;
 
     // Prevent rapid repeated sounds.
     const now = performance.now();
@@ -114,8 +106,8 @@ Object.entries(soundFiles).forEach(([selector, source]) => {
     audio.currentTime = 0;
     activeSound = audio;
 
-    audio.play().catch(() => {
-      // Missing files or blocked audio won't interrupt navigation.
+    audio.play().catch((error) => {
+      console.warn("Sound failed:", source, error.name, error.message);
     });
   }
 
@@ -123,10 +115,6 @@ Object.entries(soundFiles).forEach(([selector, source]) => {
   hitArea.addEventListener("pointerenter", (event) => {
     if (event.pointerType === "mouse") playSound();
   });
-
-  // Support keyboard navigation too.
-  object.addEventListener("focus", playSound);
-});
 
 // Stop audio when the visitor switches tabs.
 document.addEventListener("visibilitychange", () => {
