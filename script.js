@@ -115,6 +115,7 @@ Object.entries(soundFiles).forEach(([selector, source]) => {
   hitArea.addEventListener("pointerenter", (event) => {
     if (event.pointerType === "mouse") playSound();
   });
+});
 
 // Stop audio when the visitor switches tabs.
 document.addEventListener("visibilitychange", () => {
