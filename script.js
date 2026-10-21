@@ -59,3 +59,76 @@ function updateNavigationFromHash() {
 }
 window.addEventListener("hashchange", updateNavigationFromHash);
 updateNavigationFromHash();
+
+const soundFiles = {
+  ".scene-book": "assets/sounds/book.mp3",
+  ".scene-laptop": "assets/sounds/laptop.mp3",
+  ".scene-compass": "assets/sounds/compass.mp3",
+  ".scene-bracelet": "assets/sounds/bracelet.mp3",
+  ".scene-cup": "assets/sounds/cup.mp3",
+  ".scene-painting": "assets/sounds/painting.mp3",
+  ".scene-envelope": "assets/sounds/envelope.mp3",
+};
+
+let soundEnabled = false;
+let activeSound = null;
+let lastPlayedAt = -Infinity;
+
+// Browsers generally require a user interaction before playing audio.
+document.addEventListener(
+  "click",
+  () => {
+    soundEnabled = true;
+  },
+  { once: true }
+);
+
+function stopSceneSound() {
+  if (!activeSound) return;
+
+  activeSound.pause();
+  activeSound.currentTime = 0;
+  activeSound = null;
+}
+
+Object.entries(soundFiles).forEach(([selector, source]) => {
+  const object = document.querySelector(selector);
+  const hitArea = object?.querySelector(".object-hit");
+
+  if (!object || !hitArea) return;
+
+  const audio = new Audio(source);
+  audio.preload = "none";
+  audio.volume = 0.2;
+
+  function playSound() {
+    if (!soundEnabled || document.hidden) return;
+
+    // Prevent rapid repeated sounds.
+    const now = performance.now();
+    if (now - lastPlayedAt < 250) return;
+    lastPlayedAt = now;
+
+    stopSceneSound();
+
+    audio.currentTime = 0;
+    activeSound = audio;
+
+    audio.play().catch(() => {
+      // Missing files or blocked audio won't interrupt navigation.
+    });
+  }
+
+  // Only the object's clickable area triggers the hover sound.
+  hitArea.addEventListener("pointerenter", (event) => {
+    if (event.pointerType === "mouse") playSound();
+  });
+
+  // Support keyboard navigation too.
+  object.addEventListener("focus", playSound);
+});
+
+// Stop audio when the visitor switches tabs.
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) stopSceneSound();
+});
