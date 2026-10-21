@@ -680,10 +680,10 @@ article:target {
   transition: transform 0.5s ease;
 }
 .scene-painting {
-  --hit-left: 81.25%;
-  --hit-top: 3.333333%;
-  --hit-width: 9.722222%;
-  --hit-height: 18.333333%;
+  --hit-left: 82.291667%;
+  --hit-top: 5%;
+  --hit-width: 7.152778%;
+  --hit-height: 14.555556%;
 }
 .scene-compass {
   --hit-left: 59.305556%;
