@@ -276,6 +276,12 @@ p {
 .scene-bottom a {
   text-decoration: none;
 }
+.scene-bottom p {
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  line-height: var(--type-body-line);
+  margin: 0;
+}
 .hint {
   font-family: var(--font-heading);
   font-style: italic;
