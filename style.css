@@ -715,6 +715,12 @@ article:target {
   --hit-width: 10.486111%;
   --hit-height: 14.777778%;
 }
+.scene-laptop {
+  --hit-left: 35.486111%;
+  --hit-top: 28.666667%;
+  --hit-width: 20.277778%;
+  --hit-height: 26%;
+}
 .cutout-cafe-cup {
   aspect-ratio: 156/117;
 }
