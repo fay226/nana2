@@ -280,6 +280,29 @@ p {
   transform: translateY(0) scale(1);
 }
 
+/* Replace the held hover pose with two gentle movements */
+.scene-book:is(:hover, :focus-visible, :focus-within) .object-effect {
+  transform: none;
+  animation: pen-wiggle 0.7s ease-in-out 2;
+}
+
+@keyframes pen-wiggle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-4px) rotate(-3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-book:is(:hover, :focus-visible, :focus-within) .object-effect {
+    animation: none;
+    transform: none;
+  }
+}
+
 /* Touchscreens — show both effects without requiring hover. */
 @media (hover: none) {
   .scene-envelope .object-effect {
