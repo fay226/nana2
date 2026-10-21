@@ -281,6 +281,7 @@ p {
 }
 .scene-bottom .scene-description {
   text-align: right;
+  color: var(--muted);
 }
 
 @media (max-width: 760px) {
@@ -292,6 +293,7 @@ p {
 
   .scene-bottom .scene-description {
     text-align: left;
+    color: var(--muted);
   }
 }
 .hint {
