@@ -239,6 +239,13 @@ p {
 .scene-painting:is(:hover, :focus-visible) .object-base {
   transform: rotate(-5deg);
 }
+.scene-laptop .object-base {
+  transform-origin: 45.625% 41.666667%;
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.scene-laptop:is(:hover, :focus-visible) .object-base {
+  transform: scale(1.18);
+}
 .scene-tooltip {
   position: absolute;
   left: var(--hit-left);
