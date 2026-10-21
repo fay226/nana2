@@ -264,13 +264,14 @@ p {
 }
 /* 6. Editorial content and project previews */
 .scene-bottom {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
   padding: 32px 4%;
   font-family: var(--font-body);
 }
-
 .scene-bottom .scene-welcome {
   margin: 0;
   font-size: var(--type-lead);
@@ -278,13 +279,20 @@ p {
   font-weight: 400;
   color: var(--ink);
 }
-
 .scene-bottom .scene-description {
-  margin: 0;
-  max-width: 65ch;
-  font-size: var(--type-body);
-  line-height: var(--type-body-line);
-  color: var(--muted);
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .scene-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .scene-bottom .scene-description {
+    text-align: left;
+  }
 }
 .hint {
   font-family: var(--font-heading);
