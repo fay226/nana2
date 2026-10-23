@@ -854,3 +854,58 @@ article:target {
 
 /* Case-study entry uses the shared control type scale. */
 .case-study-link { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--type-ui); line-height: var(--type-ui-line); text-underline-offset: 5px; }
+
+/* Selected work: map and certificate on the left, menu centred on the right. */
+.artifact-collection {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  grid-template-rows: auto auto;
+  gap: clamp(48px, 7vw, 96px) clamp(32px, 5vw, 72px);
+  align-items: center;
+  margin-top: 48px;
+}
+.project-artifact { position: relative; min-width: 0; scroll-margin-top: 32px; }
+.project-artifact > img { display: block; width: 100%; height: auto; }
+.artifact-map { grid-column: 1; grid-row: 1; }
+.artifact-certificate { grid-column: 1; grid-row: 2; }
+.artifact-menu { grid-column: 2; grid-row: 1 / 3; }
+.artifact-copy { position: absolute; inset: 9% 10%; display: flex; flex-direction: column; justify-content: center; }
+.artifact-copy .eyebrow { margin: 0 0 6px; font-size: 10px; line-height: 1.5; }
+.artifact-copy h3 { margin: 0; }
+.artifact-subtitle { font-family: var(--font-heading); font-style: italic; font-size: 20px; line-height: 1.4; margin: 2px 0 14px; }
+.artifact-copy dl { margin: 0; font-size: 12px; line-height: 1.5; }
+.artifact-copy dl > div { display: grid; grid-template-columns: 92px 1fr; gap: 8px; margin: 5px 0; }
+.artifact-copy dt { font-weight: 500; }
+.artifact-copy dd { margin: 0; }
+.artifact-status { font-size: 11px; line-height: 1.5; color: var(--muted); margin: 14px 0 0; }
+.artifact-menu .artifact-copy { inset: 37% 19% 15%; }
+.artifact-menu .artifact-copy > .eyebrow, .artifact-menu h3, .artifact-menu .artifact-subtitle { text-align: center; }
+.artifact-menu dl > div { display: block; margin: 12px 0; }
+.artifact-menu dt { margin-bottom: 2px; }
+.artifact-menu .case-study-link { align-self: center; font-size: 12px; margin-top: 12px; }
+.artifact-certificate .artifact-copy { text-align: center; }
+.artifact-certificate dl { text-align: left; }
+@media (min-width: 761px) and (max-width: 1050px) {
+  .artifact-collection { column-gap: 28px; }
+  .artifact-copy { inset: 6% 9%; }
+  .artifact-copy h3 { font-size: 24px; line-height: 1.2; }
+  .artifact-subtitle { font-size: 17px; margin-bottom: 8px; }
+  .artifact-copy dl { font-size: 10px; }
+  .artifact-copy dl > div { grid-template-columns: 76px 1fr; margin: 3px 0; }
+  .artifact-status { margin-top: 8px; font-size: 10px; }
+  .artifact-menu dl > div { margin: 8px 0; }
+}
+@media (max-width: 760px) {
+  .artifact-collection { display: flex; flex-direction: column; gap: 44px; }
+  .project-artifact { width: 100%; max-width: 560px; }
+  .artifact-menu { max-width: 400px; }
+  .artifact-copy { position: relative; inset: auto; padding: 24px 8px 0; }
+  .artifact-menu .artifact-copy { inset: auto; }
+  .artifact-copy .eyebrow { font-size: 12px; }
+  .artifact-copy dl { font-size: 14px; line-height: 1.65; }
+  .artifact-copy dl > div { grid-template-columns: 100px 1fr; margin: 8px 0; }
+  .artifact-menu dl > div { display: grid; }
+  .artifact-menu .artifact-copy > .eyebrow, .artifact-menu h3, .artifact-menu .artifact-subtitle, .artifact-certificate .artifact-copy { text-align: left; }
+  .artifact-menu .case-study-link { align-self: flex-start; font-size: 14px; }
+  .artifact-status { font-size: 12px; }
+}
