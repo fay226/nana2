@@ -16,13 +16,14 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
         destination.scrollIntoView({ behavior: reducedMotion ? "instant" : "smooth", block: "center" });
         if (location.hash !== `#${id}`) history.pushState(null, "", `#${id}`);
         updateNavigationFromHash();
+        destination.classList.add("is-revealed");
         const image = destination.querySelector("img");
         projectAnimations.get(image)?.cancel();
         if (!reducedMotion && image?.animate) {
           projectAnimations.set(image, image.animate(
             [
               { transform: "scale(1)" },
-              { transform: "scale(1.04)", offset: 0.45 },
+              { transform: window.innerWidth <= 760 ? "scale(1.10)" : "scale(1.16)", offset: 0.45 },
               { transform: "scale(1)" }
             ],
             { duration: 1200, delay: 200, easing: "ease-in-out" }
@@ -141,3 +142,61 @@ Object.entries(soundFiles).forEach(([selector, source]) => {
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) stopSceneSound();
 });
+
+// Reveal artwork once per page visit. Only opt into hiding when the API exists.
+const projectMotionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+if ("IntersectionObserver" in window && typeof Element.prototype.animate === "function" &&
+    !projectMotionPreference.matches) {
+  const projects = [...document.querySelectorAll(".project-artifact")];
+  const revealFrames = (project) => {
+    if (project.classList.contains("artifact-map")) {
+      return [
+        { clipPath: "inset(0 49.8% 0 49.8%)", transform: "scaleX(.94)", opacity: 0.5 },
+        { clipPath: "inset(0 0% 0 0%)", transform: "scaleX(1)", opacity: 1 }
+      ];
+    }
+    if (project.classList.contains("artifact-menu")) {
+      return [
+        { clipPath: "inset(49% 0 49% 0)", transform: "perspective(1000px) rotateX(75deg)", opacity: 0.4 },
+        { clipPath: "inset(0% 0 0% 0)", transform: "perspective(1000px) rotateX(-5deg)", opacity: 1, offset: 0.8 },
+        { clipPath: "inset(0% 0 0% 0)", transform: "perspective(1000px) rotateX(0deg)", opacity: 1 }
+      ];
+    }
+    // A paper certificate lands softly, with a short press-and-release pulse.
+    return [
+      { transform: "translateY(-20px) rotate(-2deg) scale(1.05)", opacity: 0 },
+      { transform: "translateY(0) rotate(0deg) scale(1)", opacity: 1, offset: 0.65 },
+      { transform: "translateY(0) rotate(0deg) scale(.985)", opacity: 1, offset: 0.82 },
+      { transform: "translateY(0) rotate(0deg) scale(1)", opacity: 1 }
+    ];
+  };
+  const projectRevealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const project = entry.target;
+      projectRevealObserver.unobserve(project);
+      if (project.classList.contains("is-revealed")) return;
+      project.classList.add("is-revealed");
+      const image = project.querySelector("img");
+      if (image && !projectMotionPreference.matches) {
+        projectAnimations.get(image)?.cancel();
+        projectAnimations.set(image, image.animate(revealFrames(project), {
+          duration: project.classList.contains("artifact-certificate") ? 1000 : 1500,
+          easing: "cubic-bezier(.22, 1, .36, 1)"
+        }));
+      }
+    });
+  }, { threshold: 0.15 });
+  projects.forEach((project) => {
+    project.classList.add("has-entrance");
+    projectRevealObserver.observe(project);
+  });
+  projectMotionPreference.addEventListener("change", (event) => {
+    if (!event.matches) return;
+    projects.forEach((project) => {
+      project.classList.add("is-revealed");
+      projectAnimations.get(project.querySelector("img"))?.cancel();
+    });
+    projectRevealObserver.disconnect();
+  });
+}
