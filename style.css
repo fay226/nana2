@@ -933,9 +933,4 @@ footer {
 }
 .project-artifact > img { transform-origin: center; }
 
-/* Preserve image layout while waiting for its first viewport entrance. */
-.project-artifact.has-entrance:not(.is-revealed) > img { opacity: 0; }
 .project-artifact:focus-within { z-index: 2; }
-@media (prefers-reduced-motion: reduce) {
-  .project-artifact.has-entrance:not(.is-revealed) > img { opacity: 1; }
-}
