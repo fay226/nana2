@@ -3,6 +3,48 @@
 // Artwork uses stacked transparent PNG images in the shared 1440 × 900 scene.
 // Preserve classes such as .needle, .heart, .sparkle, and .address on moving layers.
 const projectAnimations = new WeakMap();
+
+const projectSelectionRequests = new WeakMap();
+async function animateSelectedProject(image) {
+  if (!image) return;
+  const request = {};
+  projectSelectionRequests.set(image, request);
+  projectAnimations.get(image)?.cancel();
+  // Wait for smooth scrolling to finish, with a bound for continuous scrolling.
+  await new Promise((resolve) => {
+    let idleTimer;
+    let limitTimer;
+    function finish() {
+      clearTimeout(idleTimer);
+      clearTimeout(limitTimer);
+      window.removeEventListener("scroll", onScroll);
+      resolve();
+    }
+    function onScroll() {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(finish, 180);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    limitTimer = setTimeout(finish, 2500);
+    onScroll();
+  });
+  if (typeof image.decode === "function") {
+    try { await image.decode(); } catch { return; }
+  }
+  const rect = image.getBoundingClientRect();
+  if (projectSelectionRequests.get(image) !== request || document.hidden ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !image.animate || rect.bottom <= 0 || rect.top >= window.innerHeight) return;
+  projectAnimations.set(image, image.animate(
+    [
+      { transform: "scale(1)" },
+      { transform: window.innerWidth <= 760 ? "scale(1.10)" : "scale(1.16)", offset: 0.45 },
+      { transform: "scale(1)" }
+    ],
+    { duration: 1200, easing: "ease-in-out" }
+  ));
+}
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
     const id = link.getAttribute("href").slice(1);
@@ -18,17 +60,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
         updateNavigationFromHash();
         destination.classList.add("is-revealed");
         const image = destination.querySelector("img");
-        projectAnimations.get(image)?.cancel();
-        if (!reducedMotion && image?.animate) {
-          projectAnimations.set(image, image.animate(
-            [
-              { transform: "scale(1)" },
-              { transform: window.innerWidth <= 760 ? "scale(1.10)" : "scale(1.16)", offset: 0.45 },
-              { transform: "scale(1)" }
-            ],
-            { duration: 1200, delay: 200, easing: "ease-in-out" }
-          ));
-        }
+        animateSelectedProject(image);
       }
     }
   });
@@ -177,6 +209,12 @@ if ("IntersectionObserver" in window && typeof Element.prototype.animate === "fu
     projectRevealObserver.disconnect();
     window.removeEventListener("scroll", scheduleProjectReveals);
     window.removeEventListener("resize", scheduleProjectReveals);
+    document.removeEventListener("visibilitychange", scheduleProjectReveals);
+    projects.forEach((project) => {
+      const image = project.querySelector("img");
+      image?.removeEventListener("load", scheduleProjectReveals);
+      image?.removeEventListener("error", scheduleProjectReveals);
+    });
   }
   function revealReadyProjects() {
     if (document.hidden) return;
@@ -187,7 +225,19 @@ if ("IntersectionObserver" in window && typeof Element.prototype.animate === "fu
         return;
       }
       const image = project.querySelector("img");
-      if (!image) return;
+      if (!image) {
+        pendingProjects.delete(project);
+        project.classList.add("is-revealed");
+        return;
+      }
+      // A lazy image may have layout dimensions before any pixels have loaded.
+      if (!image.complete) return;
+      if (!image.naturalWidth) {
+        pendingProjects.delete(project);
+        projectRevealObserver.unobserve(project);
+        project.classList.add("is-revealed");
+        return;
+      }
       const rect = image.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
       const visibleHeight = Math.max(0, Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0));
@@ -219,9 +269,13 @@ if ("IntersectionObserver" in window && typeof Element.prototype.animate === "fu
   projects.forEach((project) => {
     project.classList.add("has-entrance");
     projectRevealObserver.observe(project);
+    const image = project.querySelector("img");
+    image?.addEventListener("load", scheduleProjectReveals);
+    image?.addEventListener("error", scheduleProjectReveals);
   });
   window.addEventListener("scroll", scheduleProjectReveals, { passive: true });
   window.addEventListener("resize", scheduleProjectReveals);
+  document.addEventListener("visibilitychange", scheduleProjectReveals);
   scheduleProjectReveals();
   projectMotionPreference.addEventListener("change", (event) => {
     if (!event.matches) return;
@@ -233,3 +287,12 @@ if ("IntersectionObserver" in window && typeof Element.prototype.animate === "fu
     stopWatchingProjects();
   });
 }
+
+// Apply preference changes to selection zoom even if entrance motion was disabled at load.
+projectMotionPreference.addEventListener("change", (event) => {
+  if (!event.matches) return;
+  document.querySelectorAll(".project-artifact > img").forEach((image) => {
+    projectSelectionRequests.delete(image);
+    projectAnimations.get(image)?.cancel();
+  });
+});
