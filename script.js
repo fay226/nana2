@@ -170,33 +170,66 @@ if ("IntersectionObserver" in window && typeof Element.prototype.animate === "fu
       { transform: "translateY(0) rotate(0deg) scale(1)", opacity: 1 }
     ];
   };
-  const projectRevealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const project = entry.target;
-      projectRevealObserver.unobserve(project);
-      if (project.classList.contains("is-revealed")) return;
-      project.classList.add("is-revealed");
+  let revealTimer;
+  const pendingProjects = new Set(projects);
+  function stopWatchingProjects() {
+    clearTimeout(revealTimer);
+    projectRevealObserver.disconnect();
+    window.removeEventListener("scroll", scheduleProjectReveals);
+    window.removeEventListener("resize", scheduleProjectReveals);
+  }
+  function revealReadyProjects() {
+    if (document.hidden) return;
+    pendingProjects.forEach((project) => {
+      if (project.classList.contains("is-revealed")) {
+        pendingProjects.delete(project);
+        projectRevealObserver.unobserve(project);
+        return;
+      }
       const image = project.querySelector("img");
-      if (image && !projectMotionPreference.matches) {
+      if (!image) return;
+      const rect = image.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const visibleHeight = Math.max(0, Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0));
+      // Use the space available on shorter screens, so tall menus can still reveal.
+      const requiredHeight = Math.min(rect.height, viewportHeight) * 0.75;
+      if (rect.height <= 0 || visibleHeight < requiredHeight ||
+          rect.right <= 0 || rect.left >= window.innerWidth) return;
+      pendingProjects.delete(project);
+      projectRevealObserver.unobserve(project);
+      project.classList.add("is-revealed");
+      if (!projectMotionPreference.matches) {
         projectAnimations.get(image)?.cancel();
         projectAnimations.set(image, image.animate(revealFrames(project), {
-          duration: project.classList.contains("artifact-certificate") ? 1000 : 1500,
-          easing: "cubic-bezier(.22, 1, .36, 1)"
+          duration: project.classList.contains("artifact-certificate") ? 1300 : 1800,
+          easing: "ease-in-out"
         }));
       }
     });
-  }, { threshold: 0.15 });
+    if (!pendingProjects.size) stopWatchingProjects();
+  }
+  function scheduleProjectReveals() {
+    clearTimeout(revealTimer);
+    // Restart this delay while scrolling; play after the visitor pauses.
+    revealTimer = setTimeout(revealReadyProjects, 180);
+  }
+  const projectRevealObserver = new IntersectionObserver(scheduleProjectReveals, {
+    threshold: [0, 0.25, 0.5, 0.75, 1]
+  });
   projects.forEach((project) => {
     project.classList.add("has-entrance");
     projectRevealObserver.observe(project);
   });
+  window.addEventListener("scroll", scheduleProjectReveals, { passive: true });
+  window.addEventListener("resize", scheduleProjectReveals);
+  scheduleProjectReveals();
   projectMotionPreference.addEventListener("change", (event) => {
     if (!event.matches) return;
     projects.forEach((project) => {
       project.classList.add("is-revealed");
       projectAnimations.get(project.querySelector("img"))?.cancel();
     });
-    projectRevealObserver.disconnect();
+    pendingProjects.clear();
+    stopWatchingProjects();
   });
 }
