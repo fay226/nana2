@@ -58,7 +58,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
         destination.scrollIntoView({ behavior: reducedMotion ? "instant" : "smooth", block: "center" });
         if (location.hash !== `#${id}`) history.pushState(null, "", `#${id}`);
         updateNavigationFromHash();
-        destination.classList.add("is-revealed");
         const image = destination.querySelector("img");
         animateSelectedProject(image);
       }
@@ -175,121 +174,8 @@ document.addEventListener("visibilitychange", () => {
   if (document.hidden) stopSceneSound();
 });
 
-// Reveal artwork once per page visit. Only opt into hiding when the API exists.
-const projectMotionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
-if ("IntersectionObserver" in window && typeof Element.prototype.animate === "function" &&
-    !projectMotionPreference.matches) {
-  const projects = [...document.querySelectorAll(".project-artifact")];
-  const revealFrames = (project) => {
-    if (project.classList.contains("artifact-map")) {
-      return [
-        { clipPath: "inset(0 49.8% 0 49.8%)", transform: "scaleX(.94)", opacity: 0.5 },
-        { clipPath: "inset(0 0% 0 0%)", transform: "scaleX(1)", opacity: 1 }
-      ];
-    }
-    if (project.classList.contains("artifact-menu")) {
-      return [
-        { clipPath: "inset(49% 0 49% 0)", transform: "perspective(1000px) rotateX(75deg)", opacity: 0.4 },
-        { clipPath: "inset(0% 0 0% 0)", transform: "perspective(1000px) rotateX(-5deg)", opacity: 1, offset: 0.8 },
-        { clipPath: "inset(0% 0 0% 0)", transform: "perspective(1000px) rotateX(0deg)", opacity: 1 }
-      ];
-    }
-    // A paper certificate lands softly, with a short press-and-release pulse.
-    return [
-      { transform: "translateY(-20px) rotate(-2deg) scale(1.05)", opacity: 0 },
-      { transform: "translateY(0) rotate(0deg) scale(1)", opacity: 1, offset: 0.65 },
-      { transform: "translateY(0) rotate(0deg) scale(.985)", opacity: 1, offset: 0.82 },
-      { transform: "translateY(0) rotate(0deg) scale(1)", opacity: 1 }
-    ];
-  };
-  let revealTimer;
-  const pendingProjects = new Set(projects);
-  function stopWatchingProjects() {
-    clearTimeout(revealTimer);
-    projectRevealObserver.disconnect();
-    window.removeEventListener("scroll", scheduleProjectReveals);
-    window.removeEventListener("resize", scheduleProjectReveals);
-    document.removeEventListener("visibilitychange", scheduleProjectReveals);
-    projects.forEach((project) => {
-      const image = project.querySelector("img");
-      image?.removeEventListener("load", scheduleProjectReveals);
-      image?.removeEventListener("error", scheduleProjectReveals);
-    });
-  }
-  function revealReadyProjects() {
-    if (document.hidden) return;
-    pendingProjects.forEach((project) => {
-      if (project.classList.contains("is-revealed")) {
-        pendingProjects.delete(project);
-        projectRevealObserver.unobserve(project);
-        return;
-      }
-      const image = project.querySelector("img");
-      if (!image) {
-        pendingProjects.delete(project);
-        project.classList.add("is-revealed");
-        return;
-      }
-      // A lazy image may have layout dimensions before any pixels have loaded.
-      if (!image.complete) return;
-      if (!image.naturalWidth) {
-        pendingProjects.delete(project);
-        projectRevealObserver.unobserve(project);
-        project.classList.add("is-revealed");
-        return;
-      }
-      const rect = image.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const visibleHeight = Math.max(0, Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0));
-      // Use the space available on shorter screens, so tall menus can still reveal.
-      const requiredHeight = Math.min(rect.height, viewportHeight) * 0.75;
-      if (rect.height <= 0 || visibleHeight < requiredHeight ||
-          rect.right <= 0 || rect.left >= window.innerWidth) return;
-      pendingProjects.delete(project);
-      projectRevealObserver.unobserve(project);
-      project.classList.add("is-revealed");
-      if (!projectMotionPreference.matches) {
-        projectAnimations.get(image)?.cancel();
-        projectAnimations.set(image, image.animate(revealFrames(project), {
-          duration: project.classList.contains("artifact-certificate") ? 1300 : 1800,
-          easing: "ease-in-out"
-        }));
-      }
-    });
-    if (!pendingProjects.size) stopWatchingProjects();
-  }
-  function scheduleProjectReveals() {
-    clearTimeout(revealTimer);
-    // Restart this delay while scrolling; play after the visitor pauses.
-    revealTimer = setTimeout(revealReadyProjects, 180);
-  }
-  const projectRevealObserver = new IntersectionObserver(scheduleProjectReveals, {
-    threshold: [0, 0.25, 0.5, 0.75, 1]
-  });
-  projects.forEach((project) => {
-    project.classList.add("has-entrance");
-    projectRevealObserver.observe(project);
-    const image = project.querySelector("img");
-    image?.addEventListener("load", scheduleProjectReveals);
-    image?.addEventListener("error", scheduleProjectReveals);
-  });
-  window.addEventListener("scroll", scheduleProjectReveals, { passive: true });
-  window.addEventListener("resize", scheduleProjectReveals);
-  document.addEventListener("visibilitychange", scheduleProjectReveals);
-  scheduleProjectReveals();
-  projectMotionPreference.addEventListener("change", (event) => {
-    if (!event.matches) return;
-    projects.forEach((project) => {
-      project.classList.add("is-revealed");
-      projectAnimations.get(project.querySelector("img"))?.cancel();
-    });
-    pendingProjects.clear();
-    stopWatchingProjects();
-  });
-}
-
-// Apply preference changes to selection zoom even if entrance motion was disabled at load.
-projectMotionPreference.addEventListener("change", (event) => {
+// Cancel selection zoom when reduced motion is enabled.
+window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", (event) => {
   if (!event.matches) return;
   document.querySelectorAll(".project-artifact > img").forEach((image) => {
     projectSelectionRequests.delete(image);
