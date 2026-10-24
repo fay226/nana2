@@ -2,13 +2,33 @@
 // On touchscreens, labels and reveals remain visible; one tap follows the link.
 // Artwork uses stacked transparent PNG images in the shared 1440 × 900 scene.
 // Preserve classes such as .needle, .heart, .sparkle, and .address on moving layers.
+const projectAnimations = new WeakMap();
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (event) => {
     const id = link.getAttribute("href").slice(1);
     const destination = document.getElementById(id);
     if (destination) {
       destination.setAttribute("tabindex", "-1");
       destination.focus({ preventScroll: true });
+      if (link.closest(".project-index") && destination.matches(".project-artifact")) {
+        event.preventDefault();
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        destination.scrollIntoView({ behavior: reducedMotion ? "instant" : "smooth", block: "center" });
+        if (location.hash !== `#${id}`) history.pushState(null, "", `#${id}`);
+        updateNavigationFromHash();
+        const image = destination.querySelector("img");
+        projectAnimations.get(image)?.cancel();
+        if (!reducedMotion && image?.animate) {
+          projectAnimations.set(image, image.animate(
+            [
+              { transform: "scale(1)" },
+              { transform: "scale(1.04)", offset: 0.45 },
+              { transform: "scale(1)" }
+            ],
+            { duration: 1200, delay: 200, easing: "ease-in-out" }
+          ));
+        }
+      }
     }
   });
 });
