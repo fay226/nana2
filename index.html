@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="about-book.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -226,16 +227,117 @@
           </article>
         </div>
       </section>
-      <section class="about-section" id="about">
-        <p class="eyebrow">ENGINEERING MEETS HUMAN-CENTRED DESIGN</p>
-        <h2>
-          I spent 6 years building the code.<br />Now I design the experience.
-        </h2>
-        <p>
-          I'm Fiona, a Product & UX Designer with a software engineering
-          background. I bring technical understanding and a love of making
-          things to my design work.
-        </p>
+      <section class="about-section about-book-section" id="about" aria-labelledby="about-title">
+        <header class="about-book-heading">
+          <p class="eyebrow">ENGINEERING MEETS HUMAN-CENTRED DESIGN</p>
+          <h2 id="about-title">A few pages about me.</h2>
+          <p>Turn the pages to get to know me.</p>
+        </header>
+        <div class="about-desk">
+          <div class="about-book-stage" tabindex="0" aria-label="About Fiona book. Use the previous and next buttons or left and right arrow keys.">
+            <div id="about-book" class="about-book" aria-hidden="true">
+              <div class="about-book-page" data-density="soft">
+                <!-- Replace this inner content with one page image; see assets/about/README.md. -->
+                <div class="about-book-page-inner">
+                  <p class="eyebrow">A little introduction</p>
+                  <h3>I’m Fiona.</h3>
+                  <p>A Product & UX Designer with a software engineering background.</p>
+                  <span class="book-page-number">1</span>
+                </div>
+              </div>
+              <div class="about-book-page" data-density="soft">
+                <!-- Replace this inner content with one page image; see assets/about/README.md. -->
+                <div class="about-book-page-inner">
+                  <p class="eyebrow">From code to experience</p>
+                  <h3>A different perspective.</h3>
+                  <p>I spent 6 years building the code. Now I design the experience.</p>
+                  <span class="book-page-number">2</span>
+                </div>
+              </div>
+              <div class="about-book-page" data-density="soft">
+                <!-- Replace this inner content with one page image; see assets/about/README.md. -->
+                <div class="about-book-page-inner">
+                  <p class="eyebrow">My background</p>
+                  <h3>How things work.</h3>
+                  <p>My software engineering background brings technical understanding to my design work.</p>
+                  <span class="book-page-number">3</span>
+                </div>
+              </div>
+              <div class="about-book-page" data-density="soft">
+                <!-- Replace this inner content with one page image; see assets/about/README.md. -->
+                <div class="about-book-page-inner">
+                  <p class="eyebrow">My approach</p>
+                  <h3>Made for people.</h3>
+                  <p>I bring a thoughtful approach, a curious mind, and a love of making things to my design work.</p>
+                  <span class="book-page-number">4</span>
+                </div>
+              </div>
+              <div class="about-book-page" data-density="soft">
+                <!-- Replace this inner content with one page image; see assets/about/README.md. -->
+                <div class="about-book-page-inner">
+                  <p class="eyebrow">Selected work</p>
+                  <h3>Career Compass</h3>
+                  <p>A goal-based mentorship experience.</p>
+                  <span class="book-page-number">5</span>
+                </div>
+              </div>
+              <div class="about-book-page" data-density="soft">
+                <!-- Replace this inner content with one page image; see assets/about/README.md. -->
+                <div class="about-book-page-inner">
+                  <p class="eyebrow">Selected work</p>
+                  <h3>Custom Café</h3>
+                  <p>A dietary-aware café ordering experience.</p>
+                  <span class="book-page-number">6</span>
+                </div>
+              </div>
+              <div class="about-book-page" data-density="soft">
+                <!-- Replace this inner content with one page image; see assets/about/README.md. -->
+                <div class="about-book-page-inner">
+                  <p class="eyebrow">Selected work</p>
+                  <h3>Chloris Lux</h3>
+                  <p>Brand identity and e-commerce for artful crystal bracelets.</p>
+                  <span class="book-page-number">7</span>
+                </div>
+              </div>
+              <div class="about-book-page" data-density="soft">
+                <!-- Replace this inner content with one page image; see assets/about/README.md. -->
+                <div class="about-book-page-inner">
+                  <p class="eyebrow">Across disciplines</p>
+                  <h3>Experiences & objects.</h3>
+                  <p>A collection of experiences, objects, and things made by hand.</p>
+                  <span class="book-page-number">8</span>
+                </div>
+              </div>
+              <div class="about-book-page" data-density="soft">
+                <!-- Replace this inner content with one page image; see assets/about/README.md. -->
+                <div class="about-book-page-inner">
+                  <p class="eyebrow">A personal collection</p>
+                  <h3>Beyond the screen.</h3>
+                  <p>A place for paintings, illustrations, and curiosity.</p>
+                  <span class="book-page-number">9</span>
+                </div>
+              </div>
+              <div class="about-book-page" data-density="soft">
+                <!-- Replace this inner content with one page image; see assets/about/README.md. -->
+                <div class="about-book-page-inner">
+                  <p class="eyebrow">Let’s connect</p>
+                  <h3>Good things start with a hello.</h3>
+                  <p>Explore the Contact section to get in touch.</p>
+                  <span class="book-page-number">10</span>
+                </div>
+              </div>
+            </div>
+            <nav class="about-book-controls" aria-label="Book pages" hidden>
+              <button type="button" data-book-action="previous" aria-controls="about-book"><span>← Previous</span></button>
+              <p class="book-position" aria-live="polite" aria-atomic="true"></p>
+              <button type="button" data-book-action="next" aria-controls="about-book"><span>Next →</span></button>
+            </nav>
+          </div>
+        </div>
+        <details class="about-book-transcript">
+          <summary>Read about me as text</summary>
+          <div class="about-book-reading"></div>
+        </details>
       </section>
       <section class="art-section" id="paintings">
         <p class="eyebrow">A PERSONAL COLLECTION</p>
@@ -259,6 +361,8 @@
       >
     </footer>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js" defer></script>
+    <script src="about-book.js" defer></script>
   </body>
 </html>
 
