@@ -2,20 +2,45 @@
  const root=document.getElementById("about-flipbook");
  if(!root)return;
  const pages=[...root.querySelectorAll(".about-page")];
- const prev=document.querySelector(".about-prev"),next=document.querySelector(".about-next"),counter=document.querySelector(".about-spread-count");
- const reduce=matchMedia("(prefers-reduced-motion: reduce)");
- let book=null,index=0;
- function render(n){index=Math.max(0,Math.min(2,n));prev.disabled=index===0;next.disabled=index===2;counter.textContent=`Spread ${index+1} of 3`;}
- function fallback(n){root.classList.add("is-fallback");pages.forEach((p,i)=>p.classList.toggle("is-visible",i===n*2||i===n*2+1));render(n)}
- if(window.St?.PageFlip && !reduce.matches){
-   try{
-    book=new window.St.PageFlip(root,{width:375,height:500,size:"stretch",minWidth:100,maxWidth:375,minHeight:134,maxHeight:500,showCover:false,usePortrait:false,autoSize:true,drawShadow:true,maxShadowOpacity:.25,flippingTime:700,clickEventForward:false,mobileScrollSupport:false});
-    book.loadFromHTML(pages);
-    book.on("flip",e=>render(Math.floor(e.data/2)));
-   }catch(err){console.warn("PageFlip could not initialize; using static spreads.",err);book=null}
+ const prev=document.querySelector(".about-prev");
+ const next=document.querySelector(".about-next");
+ const status=document.querySelector(".about-spread-count");
+ const reduce=window.matchMedia("(prefers-reduced-motion: reduce)");
+ const total=Math.ceil(pages.length/2);
+ let book=null,spread=0;
+ function update(page) {
+   spread=Math.max(0,Math.min(total-1,Math.floor(page/2)));
+   prev.disabled=spread===0;
+   next.disabled=spread===total-1;
+   status.textContent=`Spread ${spread+1} of ${total}`;
  }
- if(!book)fallback(0);
- prev.addEventListener("click",()=>{if(book)book.flipPrev();else fallback(index-1)});
- next.addEventListener("click",()=>{if(book)book.flipNext();else fallback(index+1)});
- render(0);
+ function staticSpread(n) {
+   root.classList.add("is-fallback");
+   n=Math.max(0,Math.min(total-1,n));
+   pages.forEach((page,i)=>page.classList.toggle("is-visible",i===n*2||i===n*2+1));
+   update(n*2);
+ }
+ if(window.St?.PageFlip && !reduce.matches) {
+  try {
+   book=new window.St.PageFlip(root,{
+     width:390,height:520,size:"stretch",minWidth:120,maxWidth:390,
+     minHeight:160,maxHeight:520,showCover:false,usePortrait:false,
+     autoSize:true,drawShadow:true,maxShadowOpacity:.25,
+     flippingTime:750,clickEventForward:false,mobileScrollSupport:false
+   });
+   book.loadFromHTML(pages);
+   book.on("flip",e=>update(e.data));
+  } catch(error) {
+   console.warn("PageFlip unavailable; using static spreads.",error);
+   book=null;
+  }
+ }
+ if(!book)staticSpread(0);
+ prev.addEventListener("click",()=>{if(book)book.flipPrev();else staticSpread(spread-1)});
+ next.addEventListener("click",()=>{if(book)book.flipNext();else staticSpread(spread+1)});
+ root.addEventListener("keydown",event=>{
+  if(event.key==="ArrowRight"){event.preventDefault();next.click()}
+  if(event.key==="ArrowLeft"){event.preventDefault();prev.click()}
+ });
+ update(0);
 })();
