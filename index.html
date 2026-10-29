@@ -227,22 +227,26 @@
           </article>
         </div>
       </section>
-      <section class="about-section about-illustrated" id="about" aria-label="About me — illustrated book">
+      <section class="about-section about-illustrated" id="about" aria-label="About me — illustrated flipbook">
         <div class="about-table-scene">
-          <img class="about-table-art" src="assets/about/table.png" width="1440" height="900" alt="" />
-          <div class="about-book-area">
-            <img class="about-book-base" src="assets/about/book-base.png" width="1000" height="700" alt="" />
-            <div id="about-flipbook" class="about-flipbook">
-              <div class="about-page"><img src="assets/about/page-01.png" alt="" width="750" height="1000" /></div>
-              <div class="about-page"><img src="assets/about/page-02.png" alt="" width="750" height="1000" /></div>
-              <div class="about-page"><img src="assets/about/page-03.png" alt="" width="750" height="1000" /></div>
-              <div class="about-page"><img src="assets/about/page-04.png" alt="" width="750" height="1000" /></div>
-              <div class="about-page"><img src="assets/about/page-05.png" alt="" width="750" height="1000" /></div>
-              <div class="about-page"><img src="assets/about/page-06.png" alt="" width="750" height="1000" /></div>
-            </div>
-            <button class="about-drawn-hit about-prev" type="button" aria-label="Previous spread" disabled><span aria-hidden="true">←</span></button>
-            <button class="about-drawn-hit about-next" type="button" aria-label="Next spread"><span aria-hidden="true">→</span></button>
+          <img class="about-layer" src="assets/about/table.png" alt="" width="1440" height="900" />
+          <img class="about-layer about-book-base" src="assets/about/book-base.png" alt="" width="1440" height="900" />
+          <div class="about-flipbook" id="about-flipbook" aria-label="Illustrated book with three spreads">
+              <div class="about-page about-page-left"><img src="assets/about/page-01.png" width="1440" height="900" alt="" /></div>
+              <div class="about-page about-page-right"><img src="assets/about/page-02.png" width="1440" height="900" alt="" /></div>
+              <div class="about-page about-page-left"><img src="assets/about/page-03.png" width="1440" height="900" alt="" /></div>
+              <div class="about-page about-page-right"><img src="assets/about/page-04.png" width="1440" height="900" alt="" /></div>
+              <div class="about-page about-page-left"><img src="assets/about/page-05.png" width="1440" height="900" alt="" /></div>
+              <div class="about-page about-page-right"><img src="assets/about/page-06.png" width="1440" height="900" alt="" /></div>
           </div>
+          <button class="about-arrow about-prev" type="button" aria-label="Previous spread" disabled>
+            <img src="assets/about/previous.png" alt="" width="1440" height="900" />
+            <span class="about-arrow-hit" aria-hidden="true"></span>
+          </button>
+          <button class="about-arrow about-next" type="button" aria-label="Next spread">
+            <img src="assets/about/next.png" alt="" width="1440" height="900" />
+            <span class="about-arrow-hit" aria-hidden="true"></span>
+          </button>
         </div>
         <p class="about-spread-count" aria-live="polite">Spread 1 of 3</p>
         <details class="about-transcript">
