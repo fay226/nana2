@@ -1,6 +1,15 @@
 /* All artwork uses a shared 1440 x 900 source coordinate system.
    Adjust only the book/page rectangular measurements to match the finished art. */
-.about-illustrated {max-width:1150px}
+.about-illustrated {
+  max-width: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+/* Preserve the drawing's 16:10 proportions while filling the viewport width. */
+.about-table-scene {
+  width: 100%;
+}
 .about-table-scene {position:relative;width:100%;aspect-ratio:1440/900;overflow:hidden}
 .about-layer {position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
 .about-book-base {z-index:1}
