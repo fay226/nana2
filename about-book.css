@@ -1,0 +1,34 @@
+/* About Me flipbook — isolated from the illustrated desk and work grid. */
+.about-book-section { max-width: 1150px; }
+.about-book-section h2 em { font-weight: 400; }
+.about-book-intro { color: var(--muted); max-width: 55ch; margin: 0 auto 30px; }
+.about-book-stage { position: relative; margin: 0 auto; width: min(100%, 960px); display: flex; justify-content: center; align-items: center; min-height: 480px; }
+.about-flipbook { width: 100%; max-width: 900px; margin: 0 auto; }
+.about-page { position: relative; background: #f7efe3; overflow: hidden; box-shadow: inset 0 0 18px #9b85601c; }
+.about-page > img { display: block; width: 100%; height: 100%; object-fit: cover; background: #f7efe3; }
+.about-page:nth-child(2n) { background: #f4e9db; }
+.about-page-copy { position: absolute; inset: 9% 10% 7%; display: flex; flex-direction: column; align-items: flex-start; text-align: left; color: #42392e; pointer-events: none; }
+.about-page-kicker { font-size: clamp(9px, 1vw, 12px); letter-spacing: .12em; color: #8e7a64; }
+.about-page-copy h3 { margin: 14% 0 8%; font-size: clamp(20px, 3.1vw, 42px); line-height: 1.08; }
+.about-page-copy p { margin: 0; font-size: clamp(10px, 1.2vw, 16px); line-height: 1.55; }
+.about-folio { margin-top: auto; align-self: flex-end; color: #8e7a64; }
+.about-page-turn { position: absolute; top: 50%; z-index: 15; transform: translateY(-50%); width: clamp(40px,5vw,54px); height: clamp(44px,6vw,64px); border: 0; background: #f7efe3dd; color: var(--accent); font: 26px/1 var(--font-heading); cursor: pointer; border-radius: 50%; box-shadow: 0 2px 12px #24241f18; }
+.about-prev { left: 0; } .about-next { right: 0; }
+.about-page-turn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.about-page-turn:disabled { opacity: .25; cursor: default; }
+.about-page-status { color: var(--muted); font-size: var(--type-small); margin: 15px auto; }
+.about-text-alternative { max-width: 700px; margin: 20px auto 0; text-align: left; font-size: var(--type-ui); }
+.about-text-alternative summary { cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+.about-text-content { padding: 14px 0; }
+.about-text-content h3 { margin: 18px 0 4px; font-size: 24px; }
+.about-text-content p { margin: 0; color: var(--muted); }
+@media (max-width:760px) {
+ .about-book-stage { min-height: 360px; }
+ .about-flipbook { width: min(100%, 440px); }
+ .about-prev { left: -4px; } .about-next { right: -4px; }
+ .about-page-copy h3 { font-size: clamp(18px,5vw,30px); }
+ .about-page-copy p { font-size: clamp(11px,2.5vw,14px); }
+}
+@media (prefers-reduced-motion: reduce) {
+ .about-book-stage .stf__wrapper { transition: none !important; }
+}
