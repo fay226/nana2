@@ -1,0 +1,21 @@
+/* About Me: all visuals are PNG assets, not HTML typography on the pages. */
+.about-illustrated { max-width: 1150px; }
+.about-table-scene { position:relative; width:100%; aspect-ratio: 1440 / 900; overflow:hidden; }
+.about-table-art {display:block;width:100%;height:100%;object-fit:cover}
+.about-book-area { position:absolute; left:10%;top:13%;width:80%;height:74%; display:grid;place-items:center; }
+.about-book-base {position:absolute;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.about-flipbook {position:relative;z-index:1; width:90%; height:90%; margin:auto;}
+.about-page {background:#faf3e8; overflow:hidden}
+.about-page img {display:block;width:100%;height:100%;object-fit:fill;pointer-events:none}
+.about-drawn-hit { position:absolute;z-index:10;bottom:8%;width:9%;height:14%;border:0;background:transparent;color:#4d4031;font:clamp(16px,2vw,24px) Georgia,serif;cursor:pointer;display:grid;place-items:center; }
+.about-drawn-hit:focus-visible {outline:2px solid var(--accent);outline-offset:3px}
+.about-drawn-hit:disabled {opacity:.25;cursor:default}
+.about-prev {left:4%}.about-next {right:4%}
+.about-spread-count {font-size:var(--type-small);color:var(--muted);margin:12px 0}
+.about-transcript {text-align:left;max-width:700px;margin:10px auto;color:var(--muted)}
+.about-transcript summary {cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.about-transcript p {line-height:1.65}
+.about-flipbook.is-fallback {display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.about-flipbook.is-fallback .about-page {display:none}
+.about-flipbook.is-fallback .about-page.is-visible {display:block}
+@media(max-width:760px){.about-illustrated{padding-inline:0}.about-book-area{left:6%;width:88%;top:12%;height:76%}.about-drawn-hit{width:14%;height:22%;bottom:3%}.about-prev{left:0}.about-next{right:0}}
