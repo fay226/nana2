@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="about-book.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -226,16 +227,82 @@
           </article>
         </div>
       </section>
-      <section class="about-section" id="about">
-        <p class="eyebrow">ENGINEERING MEETS HUMAN-CENTRED DESIGN</p>
-        <h2>
-          I spent 6 years building the code.<br />Now I design the experience.
-        </h2>
-        <p>
-          I'm Fiona, a Product & UX Designer with a software engineering
-          background. I bring technical understanding and a love of making
-          things to my design work.
-        </p>
+      <section class="about-section about-book-section" id="about" aria-labelledby="about-heading">
+        <p class="eyebrow">A FEW PAGES ABOUT ME</p>
+        <h2 id="about-heading">An open book.<br /><em>A work in progress.</em></h2>
+        <p class="about-book-intro">Turn the pages to explore my story. The illustrations are temporary until my hand-drawn pages are ready.</p>
+        <div class="about-book-stage">
+          <div id="about-flipbook" class="about-flipbook" aria-label="Illustrated About Me book">
+            <div class="about-page" data-page="1">
+              <img src="assets/about-pages/page-01.png" alt="" width="750" height="1000" loading="lazy" decoding="async" />
+              <div class="about-page-copy">
+                <span class="about-page-kicker">01 / INTRODUCTION</span>
+                <h3>Hello, I'm Fiona</h3>
+                <p>From building what's behind the screen to designing what happens on it.</p>
+                <span class="about-folio">01</span>
+              </div>
+            </div>
+            <div class="about-page" data-page="2">
+              <img src="assets/about-pages/page-02.png" alt="" width="750" height="1000" loading="lazy" decoding="async" />
+              <div class="about-page-copy">
+                <span class="about-page-kicker">02 / INTRODUCTION</span>
+                <h3>A little about me</h3>
+                <p>Product &amp; UX designer with a software engineering background, a curious mind, and a love of making things.</p>
+                <span class="about-folio">02</span>
+              </div>
+            </div>
+            <div class="about-page" data-page="3">
+              <img src="assets/about-pages/page-03.png" alt="" width="750" height="1000" loading="lazy" decoding="async" />
+              <div class="about-page-copy">
+                <span class="about-page-kicker">03 / MY STORY</span>
+                <h3>My journey</h3>
+                <p>Six years developing software taught me how products work. Today, I focus on how people experience them.</p>
+                <span class="about-folio">03</span>
+              </div>
+            </div>
+            <div class="about-page" data-page="4">
+              <img src="assets/about-pages/page-04.png" alt="" width="750" height="1000" loading="lazy" decoding="async" />
+              <div class="about-page-copy">
+                <span class="about-page-kicker">04 / MY APPROACH</span>
+                <h3>What I bring</h3>
+                <p>Technical fluency, thoughtful problem-solving, and a human-centred design approach.</p>
+                <span class="about-folio">04</span>
+              </div>
+            </div>
+            <div class="about-page" data-page="5">
+              <img src="assets/about-pages/page-05.png" alt="" width="750" height="1000" loading="lazy" decoding="async" />
+              <div class="about-page-copy">
+                <span class="about-page-kicker">05 / CURIOSITIES</span>
+                <h3>Beyond the screen</h3>
+                <p>Illustrations, painting, independent projects, and the small details that make an experience feel personal.</p>
+                <span class="about-folio">05</span>
+              </div>
+            </div>
+            <div class="about-page" data-page="6">
+              <img src="assets/about-pages/page-06.png" alt="" width="750" height="1000" loading="lazy" decoding="async" />
+              <div class="about-page-copy">
+                <span class="about-page-kicker">06 / SAY HELLO</span>
+                <h3>Let's connect</h3>
+                <p>I'd love to hear about your project or swap ideas. Find me via the contact section below.</p>
+                <span class="about-folio">06</span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="about-page-turn about-prev" aria-label="Turn to previous pages" disabled><span aria-hidden="true">←</span></button>
+          <button type="button" class="about-page-turn about-next" aria-label="Turn to next pages"><span aria-hidden="true">→</span></button>
+        </div>
+        <p class="about-page-status" id="about-page-status" role="status" aria-live="polite">Spread 1 of 3</p>
+        <details class="about-text-alternative">
+          <summary>Read my story without animations</summary>
+          <div class="about-text-content">
+            <h3>Hello, I'm Fiona</h3><p>From building what's behind the screen to designing what happens on it.</p>
+            <h3>A little about me</h3><p>Product &amp; UX designer with a software engineering background, a curious mind, and a love of making things.</p>
+            <h3>My journey</h3><p>Six years developing software taught me how products work. Today, I focus on how people experience them.</p>
+            <h3>What I bring</h3><p>Technical fluency, thoughtful problem-solving, and a human-centred design approach.</p>
+            <h3>Beyond the screen</h3><p>Illustrations, painting, independent projects, and the small details that make an experience feel personal.</p>
+            <h3>Let's connect</h3><p>I'd love to hear about your project or swap ideas. Find me via the contact section below.</p>
+          </div>
+        </details>
       </section>
       <section class="art-section" id="paintings">
         <p class="eyebrow">A PERSONAL COLLECTION</p>
@@ -258,7 +325,9 @@
       <span>Fiona · Made with curiosity.</span
       >
     </footer>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js" defer></script>
+    <script src="about-book.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
 
