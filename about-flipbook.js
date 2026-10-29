@@ -8,6 +8,26 @@
  const reduce=window.matchMedia("(prefers-reduced-motion: reduce)");
  const total=Math.ceil(pages.length/2);
  let book=null,spread=0;
+ // The custom page.mp3 takes priority. Existing book.mp3 is a temporary fallback.
+ const pageSound=new Audio("assets/sounds/page.mp3");
+ const fallbackSound=new Audio("assets/sounds/book.mp3");
+ pageSound.preload="auto";
+ fallbackSound.preload="auto";
+ pageSound.volume=fallbackSound.volume=0.22;
+ let useFallback=false;
+ pageSound.addEventListener("error",()=>{useFallback=true;});
+ function playPageSound(){
+   const sound=useFallback?fallbackSound:pageSound;
+   sound.pause();
+   sound.currentTime=0;
+   sound.play().catch(()=>{
+     if(!useFallback){
+       useFallback=true;
+       fallbackSound.currentTime=0;
+       fallbackSound.play().catch(()=>{});
+     }
+   });
+ }
  function update(page) {
    spread=Math.max(0,Math.min(total-1,Math.floor(page/2)));
    prev.disabled=spread===0;
@@ -36,8 +56,8 @@
   }
  }
  if(!book)staticSpread(0);
- prev.addEventListener("click",()=>{if(book)book.flipPrev();else staticSpread(spread-1)});
- next.addEventListener("click",()=>{if(book)book.flipNext();else staticSpread(spread+1)});
+ prev.addEventListener("click",()=>{if(prev.disabled)return;playPageSound();if(book)book.flipPrev();else staticSpread(spread-1)});
+ next.addEventListener("click",()=>{if(next.disabled)return;playPageSound();if(book)book.flipNext();else staticSpread(spread+1)});
  root.addEventListener("keydown",event=>{
   if(event.key==="ArrowRight"){event.preventDefault();next.click()}
   if(event.key==="ArrowLeft"){event.preventDefault();prev.click()}
