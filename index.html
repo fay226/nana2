@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="about-flipbook.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -226,16 +227,32 @@
           </article>
         </div>
       </section>
-      <section class="about-section" id="about">
-        <p class="eyebrow">ENGINEERING MEETS HUMAN-CENTRED DESIGN</p>
-        <h2>
-          I spent 6 years building the code.<br />Now I design the experience.
-        </h2>
-        <p>
-          I'm Fiona, a Product & UX Designer with a software engineering
-          background. I bring technical understanding and a love of making
-          things to my design work.
-        </p>
+      <section class="about-section about-illustrated" id="about" aria-label="About me — illustrated flipbook">
+        <div class="about-table-scene">
+          <img class="about-layer" src="assets/about/table.png" alt="" width="1440" height="900" />
+          <img class="about-layer about-book-base" src="assets/about/book-base.png" alt="" width="1440" height="900" />
+          <div class="about-flipbook" id="about-flipbook" aria-label="Illustrated book with three spreads">
+              <div class="about-page about-page-left"><img src="assets/about/page-01.png" width="1440" height="900" alt="" /></div>
+              <div class="about-page about-page-right"><img src="assets/about/page-02.png" width="1440" height="900" alt="" /></div>
+              <div class="about-page about-page-left"><img src="assets/about/page-03.png" width="1440" height="900" alt="" /></div>
+              <div class="about-page about-page-right"><img src="assets/about/page-04.png" width="1440" height="900" alt="" /></div>
+              <div class="about-page about-page-left"><img src="assets/about/page-05.png" width="1440" height="900" alt="" /></div>
+              <div class="about-page about-page-right"><img src="assets/about/page-06.png" width="1440" height="900" alt="" /></div>
+          </div>
+          <button class="about-arrow about-prev" type="button" aria-label="Previous spread" disabled>
+            <img src="assets/about/previous.png" alt="" width="1440" height="900" />
+            <span class="about-arrow-hit" aria-hidden="true"></span>
+          </button>
+          <button class="about-arrow about-next" type="button" aria-label="Next spread">
+            <img src="assets/about/next.png" alt="" width="1440" height="900" />
+            <span class="about-arrow-hit" aria-hidden="true"></span>
+          </button>
+        </div>
+        <p class="about-spread-count" aria-live="polite">Spread 1 of 3</p>
+        <details class="about-transcript">
+          <summary>Read about me as text</summary>
+          <p>I'm Fiona, a Product &amp; UX Designer with six years of software engineering experience. I combine technical thinking with human-centred design. My journey includes building software, exploring UX, creating independent projects, illustration and painting. I'd love to connect.</p>
+        </details>
       </section>
       <section class="art-section" id="paintings">
         <p class="eyebrow">A PERSONAL COLLECTION</p>
@@ -258,7 +275,9 @@
       <span>Fiona · Made with curiosity.</span
       >
     </footer>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js" defer></script>
+    <script src="about-flipbook.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
 
