@@ -1,6 +1,6 @@
 /* Full-width table; add your drawing through --about-table-image below. */
 .about-book-section {
-  --about-table-image: none;
+  --about-table-image: url("assets/about/table.png");
   max-width: none;
   width: 100%;
   padding: 70px 0;
@@ -30,8 +30,6 @@
   overflow: hidden;
   border: 1px solid #e4ddcd;
 }
-.about-book-page:nth-child(odd) { background: linear-gradient(to right, #faf6ed 94%, #e7dfce); }
-.about-book-page:nth-child(even) { background: linear-gradient(to left, #faf6ed 94%, #e7dfce); }
 .about-book-page-inner { height: 100%; padding: 12% 10%; position: relative; }
 .about-book-page h3 { font-size: clamp(16px, 3vw, 34px); line-height: 1.15; margin: 12px 0 20px; }
 .about-book-page p:not(.eyebrow) { font-size: clamp(10px, 1.5vw, 16px); line-height: 1.65; }
