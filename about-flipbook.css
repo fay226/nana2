@@ -2,10 +2,10 @@
    Keep the flipbook over the drawn pages; transparent PNG alpha defines the visible outline.
    Allow slightly more room for the outer page edges and text than the earlier tight crop. */
 :root {
- --about-page-x: 24.3055556%; /* 350 / 1440 */
- --about-page-y: 33.3333333%; /* 300 / 900 */
- --about-page-w: 51.3888889%; /* 740 / 1440 */
- --about-page-h: 50%; /* 450 / 900 */
+ --about-page-x: 25%; /* 360 / 1440 */
+ --about-page-y: 35.5555556%; /* 320 / 900 */
+ --about-page-w: 50%; /* 720 / 1440 */
+ --about-page-h: 47.7777778%; /* 430 / 900 */
 }
 .about-illustrated {
   max-width: none;
@@ -34,13 +34,13 @@
 .about-page img {
  position:absolute;display:block;pointer-events:none;
  /* Each image remains a transparent full-scene PNG. The clipped viewport
-    is one 370×450 page; shifts are measured against the same original canvas. */
- width:389.1891892%; /* 1440 / 370 */
- height:200%; /* 900 / 450 */
- top:-66.6666667%; /* -300 / 450 */
+    is one 360×430 page; shifts are measured against the same original canvas. */
+ width:400%; /* 1440 / 360 */
+ height:209.3023256%; /* 900 / 430 */
+ top:-74.4186047%; /* -320 / 430 */
 }
-.about-page-left img {left:-94.5945946%;} /* -350 / 370 */
-.about-page-right img {left:-194.5945946%;} /* -720 / 370 */
+.about-page-left img {left:-100%;} /* -360 / 360 */
+.about-page-right img {left:-200%;} /* -720 / 360 */
 .about-arrow {
  position:absolute;inset:0;width:100%;height:100%;z-index:5;
  background:transparent;border:0;padding:0;pointer-events:none;
