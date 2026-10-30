@@ -1,11 +1,11 @@
-/* Visible pages measured approximately on the shared 1440×900 coordinate system.
-   Illustration exports may be 2880×1800 (2×); percentages are unchanged.
-   Adjust the four pixel bounds together after checking the artwork. */
+/* Page bounds in the 1440×900 design coordinate system (2× PNG exports scale identically).
+   Keep the flipbook over the drawn pages; transparent PNG alpha defines the visible outline.
+   Allow slightly more room for the outer page edges and text than the earlier tight crop. */
 :root {
  --about-page-x: 24.3055556%; /* 350 / 1440 */
- --about-page-y: 34.4444444%; /* 310 / 900 */
- --about-page-w: 48.6111111%; /* 700 / 1440 */
- --about-page-h: 46.6666667%; /* 420 / 900 */
+ --about-page-y: 33.3333333%; /* 300 / 900 */
+ --about-page-w: 51.3888889%; /* 740 / 1440 */
+ --about-page-h: 50%; /* 450 / 900 */
 }
 .about-illustrated {
   max-width: none;
@@ -25,18 +25,22 @@
  left:var(--about-page-x);top:var(--about-page-y);
  width:var(--about-page-w);height:var(--about-page-h);
 }
-.about-page {position:relative;overflow:hidden;background:#f8f1e5}
+.about-page {position:relative;overflow:hidden;background:transparent!important}
+/* StPageFlip creates its own page wrappers: don't paint an opaque rectangle
+   behind the irregular transparent paper illustrations. */
+.about-flipbook .stf__item,
+.about-flipbook .stf__page,
+.about-flipbook .stf__wrapper {background:transparent!important}
 .about-page img {
  position:absolute;display:block;pointer-events:none;
- /* Each PNG is a full 1440×900 scene, not a cropped page.
-    The viewport for a single page is 350×420, beginning at (350,310)
-    for the left page or (700,310) for the right page. */
- width:411.4285714%; /* 1440 / 350 */
- height:214.2857143%; /* 900 / 420 */
- top:-73.8095238%; /* -310 / 420 */
+ /* Each image remains a transparent full-scene PNG. The clipped viewport
+    is one 370×450 page; shifts are measured against the same original canvas. */
+ width:389.1891892%; /* 1440 / 370 */
+ height:200%; /* 900 / 450 */
+ top:-66.6666667%; /* -300 / 450 */
 }
-.about-page-left img {left:-100%;} /* -350 / 350 */
-.about-page-right img {left:-200%;} /* -700 / 350 */
+.about-page-left img {left:-94.5945946%;} /* -350 / 370 */
+.about-page-right img {left:-194.5945946%;} /* -720 / 370 */
 .about-arrow {
  position:absolute;inset:0;width:100%;height:100%;z-index:5;
  background:transparent;border:0;padding:0;pointer-events:none;
