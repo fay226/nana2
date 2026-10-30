@@ -45,8 +45,8 @@
  if(window.St?.PageFlip && !reduce.matches) {
   try {
    book=new window.St.PageFlip(root,{
-     width:360,height:430,size:"stretch",minWidth:100,maxWidth:360,
-     minHeight:120,maxHeight:430,showCover:false,usePortrait:false,
+     width:365,height:435,size:"stretch",minWidth:100,maxWidth:365,
+     minHeight:120,maxHeight:435,showCover:false,usePortrait:false,
      autoSize:false,drawShadow:true,maxShadowOpacity:.25,
      flippingTime:750,clickEventForward:true,mobileScrollSupport:false
    });
