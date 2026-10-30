@@ -46,9 +46,12 @@
  background:transparent;border:0;padding:0;pointer-events:none;
 }
 .about-arrow img {position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.about-arrow-hit {position:absolute;top:43%;width:9%;height:16%;pointer-events:auto;cursor:pointer}
-.about-prev .about-arrow-hit {left:9%}
-.about-next .about-arrow-hit {right:9%}
+/* Arrow artwork lives on the shared full-scene PNGs, not beside the book.
+   Match the real pink arrows (approximately x=18–21% and x=76–80%,
+   y=54–64%) with comfortably padded clickable areas. */
+.about-arrow-hit {position:absolute;top:50%;width:10%;height:18%;pointer-events:auto;cursor:pointer}
+.about-prev .about-arrow-hit {left:14%}
+.about-next .about-arrow-hit {right:16%}
 .about-arrow:focus-visible {outline:0}
 .about-arrow:focus-visible .about-arrow-hit {outline:2px solid var(--accent);outline-offset:3px}
 .about-arrow:disabled .about-arrow-hit {pointer-events:none;cursor:default}
@@ -62,7 +65,9 @@
 .about-flipbook.is-fallback .about-page.is-visible {display:block}
 @media(max-width:760px){
  .about-illustrated{padding-inline:0}
- .about-arrow-hit{width:13%;height:24%;top:39%}
- .about-prev .about-arrow-hit{left:4%}
- .about-next .about-arrow-hit{right:4%}
+ /* Preserve artwork-relative positions on narrow screens; increase touch size
+    around each arrow without moving the center of the hit target. */
+ .about-arrow-hit{width:12%;height:22%;top:48%}
+ .about-prev .about-arrow-hit{left:13%}
+ .about-next .about-arrow-hit{right:15%}
 }
