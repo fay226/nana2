@@ -8,6 +8,8 @@
  const reduce=window.matchMedia("(prefers-reduced-motion: reduce)");
  const total=Math.ceil(pages.length/2);
  let book=null,spread=0;
+ // Make the illustrated book keyboard accessible as well as clickable.
+ root.tabIndex=0;
  // The custom page.mp3 takes priority. Existing book.mp3 is a temporary fallback.
  const pageSound=new Audio("assets/sounds/page.mp3");
  const fallbackSound=new Audio("assets/sounds/book.mp3");
@@ -46,18 +48,24 @@
      width:390,height:520,size:"stretch",minWidth:120,maxWidth:390,
      minHeight:160,maxHeight:520,showCover:false,usePortrait:false,
      autoSize:true,drawShadow:true,maxShadowOpacity:.25,
-     flippingTime:750,clickEventForward:false,mobileScrollSupport:false
+     flippingTime:750,clickEventForward:true,mobileScrollSupport:false
    });
    book.loadFromHTML(pages);
-   book.on("flip",e=>update(e.data));
+   book.on("flip",e=>{update(e.data);playPageSound();});
   } catch(error) {
    console.warn("PageFlip unavailable; using static spreads.",error);
    book=null;
   }
  }
  if(!book)staticSpread(0);
- prev.addEventListener("click",()=>{if(prev.disabled)return;playPageSound();if(book)book.flipPrev();else staticSpread(spread-1)});
- next.addEventListener("click",()=>{if(next.disabled)return;playPageSound();if(book)book.flipNext();else staticSpread(spread+1)});
+ prev.addEventListener("click",()=>{if(prev.disabled)return;if(book)book.flipPrev();else {staticSpread(spread-1);playPageSound();}});
+ next.addEventListener("click",()=>{if(next.disabled)return;if(book)book.flipNext();else {staticSpread(spread+1);playPageSound();}});
+ // In reduced-motion/static mode, the left and right halves still work as page controls.
+ root.addEventListener("click",event=>{
+  if(book)return;
+  const x=event.clientX-root.getBoundingClientRect().left;
+  if(x<root.clientWidth/2)prev.click();else next.click();
+ });
  root.addEventListener("keydown",event=>{
   if(event.key==="ArrowRight"){event.preventDefault();next.click()}
   if(event.key==="ArrowLeft"){event.preventDefault();prev.click()}

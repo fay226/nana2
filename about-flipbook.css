@@ -1,5 +1,13 @@
-/* All artwork uses a shared 1440 x 900 source coordinate system.
-   Adjust only the book/page rectangular measurements to match the finished art. */
+/* All illustrations share the 1440 x 900 canvas. The values below describe
+   the visible page rectangle in that canvas: x=330, y=190, w=780, h=520.
+   If updated artwork moves the open pages, measure that rectangle and update
+   these four values; page PNGs and the book base must stay registered. */
+:root {
+ --about-page-x: 22.9166667%;
+ --about-page-y: 21.1111111%;
+ --about-page-w: 54.1666667%;
+ --about-page-h: 57.7777778%;
+}
 .about-illustrated {
   max-width: none;
   width: 100%;
@@ -15,8 +23,8 @@
 .about-book-base {z-index:1}
 .about-flipbook {
  position:absolute;z-index:2;
- left:22.9166667%;top:21.1111111%;
- width:54.1666667%;height:57.7777778%;
+ left:var(--about-page-x);top:var(--about-page-y);
+ width:var(--about-page-w);height:var(--about-page-h);
 }
 .about-page {position:relative;overflow:hidden;background:#f8f1e5}
 .about-page img {
@@ -43,7 +51,7 @@
 .about-transcript {text-align:left;max-width:700px;margin:10px auto;color:var(--muted)}
 .about-transcript summary {cursor:pointer;text-decoration:underline;text-underline-offset:4px}
 .about-transcript p {line-height:1.65}
-.about-flipbook.is-fallback {display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.about-flipbook.is-fallback {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));cursor:pointer}
 .about-flipbook.is-fallback .about-page {display:none}
 .about-flipbook.is-fallback .about-page.is-visible {display:block}
 @media(max-width:760px){
