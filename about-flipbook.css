@@ -56,7 +56,19 @@
 .about-arrow:focus-visible .about-arrow-hit {outline:2px solid var(--accent);outline-offset:3px}
 .about-arrow:disabled .about-arrow-hit {pointer-events:none;cursor:default}
 .about-arrow:disabled img {opacity:.35}
-.about-spread-count {font-size:var(--type-small);color:var(--muted);margin:12px 0}
+.about-spread-count {
+ position:absolute;
+ left:50%;
+ bottom:4%;
+ transform:translateX(-50%);
+ z-index:6;
+ margin:0;
+ font-size:clamp(10px,1vw,14px);
+ color:var(--muted);
+ text-align:center;
+ white-space:nowrap;
+ pointer-events:none;
+}
 .about-transcript {text-align:left;max-width:700px;margin:10px auto;color:var(--muted)}
 .about-transcript summary {cursor:pointer;text-decoration:underline;text-underline-offset:4px}
 .about-transcript p {line-height:1.65}
