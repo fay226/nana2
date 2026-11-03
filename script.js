@@ -184,7 +184,7 @@ window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change",
 });
 
 // Contact illustration: hover on pointer devices; tap/Enter/Space on touch/keyboard.
-// Supply real URLs here after the illustrated PNG assets have been added.
+// The artwork uses aligned full-canvas PNGs in assets/contact/.
 (() => {
   const envelope = document.querySelector("[data-contact-envelope]");
   if (!envelope) return;
@@ -196,7 +196,7 @@ window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change",
   const LINKEDIN_PROFILE_URL = "https://www.linkedin.com/in/fiona-sun-703961276";
   const CONTACT_EMAIL = "sunfiona52@gmail.com";
 
-  // Missing hand-drawn assets gracefully reveal the CSS prototype instead.
+  // If an image is missing, hide the broken image and retain accessible link fallback.
   envelope.querySelectorAll("img").forEach((img) => {
     const missing = () => {
       if (img.closest(".contact-icon-link")) img.closest(".contact-icon-link").classList.add("image-missing");
