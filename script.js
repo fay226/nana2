@@ -193,8 +193,8 @@ window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change",
   const feedback = document.querySelector(".contact-feedback");
   const linkedin = envelope.querySelector("[data-contact-linkedin]");
   const email = envelope.querySelector("[data-contact-email]");
-  const LINKEDIN_PROFILE_URL = ""; // e.g. https://www.linkedin.com/in/your-profile/
-  const CONTACT_EMAIL = ""; // e.g. hello@example.com
+  const LINKEDIN_PROFILE_URL = "https://www.linkedin.com/in/fiona-sun-703961276";
+  const CONTACT_EMAIL = "sunfiona52@gmail.com";
 
   // Missing hand-drawn assets gracefully reveal the CSS prototype instead.
   envelope.querySelectorAll("img").forEach((img) => {
