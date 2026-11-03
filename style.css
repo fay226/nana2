@@ -934,3 +934,72 @@ footer {
 .project-artifact > img { transform-origin: center; }
 
 .project-artifact:focus-within { z-index: 2; }
+
+/* Contact envelope: CSS fallback is immediately usable, custom transparent
+   PNG drawings replace the painted layers when added to assets/contact/. */
+.contact-hint { margin-top: 14px !important; font-size: var(--type-small); }
+.contact-envelope {
+  position: relative; width: min(420px, 90vw); aspect-ratio: 1.6;
+  margin: 58px auto 5px; isolation: isolate;
+}
+.contact-envelope-trigger {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  border: 0; padding: 0; background: none; cursor: pointer; color: inherit;
+}
+.contact-envelope-back, .contact-envelope-front, .contact-envelope-flap,
+.contact-envelope-letter { position: absolute; display: block; }
+.contact-envelope-back {
+  inset: 17% 5% 4%; background: #e7beb4; border: 1px solid #be9a90;
+  border-radius: 4px; z-index: 0;
+}
+.contact-envelope-flap {
+  inset: 17% 5% auto; height: 54%; z-index: 5;
+  background: #dca9a0; clip-path: polygon(0 0, 100% 0, 50% 98%);
+  transform-origin: center top; backface-visibility: hidden;
+  transition: transform .65s ease, z-index 0s .3s;
+}
+.contact-envelope-letter {
+  inset: 20% 16% 5%; background: #fffdf9; border: 1px solid #e2ccc0;
+  border-radius: 3px; z-index: 2; box-shadow: 0 3px 12px #785c4820;
+  transition: transform .7s cubic-bezier(.2,.8,.2,1);
+}
+.contact-envelope-front {
+  inset: 17% 5% 4%; z-index: 4; background: #f3d5ca;
+  clip-path: polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);
+}
+.contact-envelope-flap img, .contact-envelope-letter img, .contact-envelope-front img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill;
+}
+.contact-envelope-seal {
+  position: absolute; left: 50%; top: 58%; transform: translate(-50%,-50%);
+  width: 30px; height: 30px; display: grid; place-items: center;
+  background: #bc827e; border-radius: 50%; color: #fff5ef; z-index: 6;
+  transition: opacity .2s;
+}
+.contact-letter-caption { display: block; padding-top: 10%; font-family: var(--font-heading); font-style: italic; font-size: clamp(14px,2vw,21px); }
+.contact-envelope-links {
+  position: absolute; top: 8%; left: 25%; width: 50%; z-index: 7;
+  display: flex; justify-content: center; gap: clamp(12px, 4vw, 28px);
+  opacity: 0; transform: translateY(20px);
+  pointer-events: none; transition: opacity .25s ease, transform .3s ease;
+}
+.contact-icon-link { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; text-decoration: none; color: var(--ink); min-width: 64px; min-height: 68px; }
+.contact-icon-link img { width: 44px; height: 44px; object-fit: contain; }
+.contact-icon-fallback { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: #d3a79c; color: #fff; font: 600 22px/1 Arial, sans-serif; }
+.contact-icon-link.image-missing img { display: none; }
+.contact-icon-link.image-missing .contact-icon-fallback { display: flex; }
+.contact-icon-label { font-size: 11px; line-height: 1.2; background: #fffdf9e8; padding: 2px 5px; border-radius: 4px; }
+.contact-envelope.is-open .contact-envelope-flap { transform: rotateX(165deg); z-index: 1; }
+.contact-envelope.is-open .contact-envelope-letter { transform: translateY(-53%); }
+.contact-envelope.is-open .contact-envelope-seal { opacity: 0; }
+.contact-envelope.is-open .contact-envelope-links { opacity: 1; transform: translateY(0); pointer-events: auto; transition-delay: .32s; }
+.contact-envelope-trigger:focus-visible, .contact-icon-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.contact-envelope .contact-envelope-links[inert] { pointer-events: none; }
+.contact-feedback { min-height: 1.3em; font-size: 12px; }
+@media (max-width: 760px) {
+  .contact-envelope { width: min(360px, 88vw); margin-top: 44px; }
+  .contact-envelope-links { top: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-envelope * { transition-duration: 0.01ms !important; transition-delay: 0ms !important; }
+}
