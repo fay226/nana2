@@ -267,29 +267,24 @@
         <h2>Good things start<br />with a hello.</h2>
         <p class="contact-hint">A little note for you. Hover or tap the envelope.</p>
         <div class="contact-envelope" data-contact-envelope>
-          <!-- CSS shapes remain visible until the hand-drawn PNGs are added. -->
           <button class="contact-envelope-trigger" type="button" aria-label="Open contact envelope" aria-expanded="false" aria-controls="contact-envelope-links">
             <span class="contact-envelope-back" aria-hidden="true"></span>
-            <span class="contact-envelope-flap" aria-hidden="true">
+            <span class="contact-envelope-letter contact-scene-layer" aria-hidden="true">
+              <img src="assets/contact/envelope-letter.png" alt="" loading="lazy" />
+            </span>
+            <span class="contact-envelope-flap contact-scene-layer" aria-hidden="true">
               <img src="assets/contact/envelope-flap.png" alt="" loading="lazy" />
             </span>
-            <span class="contact-envelope-letter" aria-hidden="true">
-              <img src="assets/contact/envelope-letter.png" alt="" loading="lazy" />
-              <span class="contact-letter-caption">Let's connect ♡</span>
-            </span>
-            <span class="contact-envelope-front" aria-hidden="true">
+            <span class="contact-envelope-front contact-scene-layer" aria-hidden="true">
               <img src="assets/contact/envelope-front.png" alt="" loading="lazy" />
             </span>
-            <span class="contact-envelope-seal" aria-hidden="true">♡</span>
           </button>
           <div id="contact-envelope-links" class="contact-envelope-links" aria-label="Contact methods" inert>
-            <a class="contact-icon-link" data-contact-linkedin href="#" aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
+            <a class="contact-icon-link contact-icon-linkedin" data-contact-linkedin href="#" aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
               <img src="assets/contact/linkedin.png" alt="" loading="lazy" /><span class="contact-icon-fallback" aria-hidden="true">in</span>
-              <span class="contact-icon-label">LinkedIn</span>
             </a>
-            <a class="contact-icon-link" data-contact-email href="#" aria-label="Email me">
+            <a class="contact-icon-link contact-icon-email" data-contact-email href="#" aria-label="Email me">
               <img src="assets/contact/gmail.png" alt="" loading="lazy" /><span class="contact-icon-fallback" aria-hidden="true">✉</span>
-              <span class="contact-icon-label">Email me</span>
             </a>
           </div>
         </div>
