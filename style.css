@@ -935,71 +935,74 @@ footer {
 
 .project-artifact:focus-within { z-index: 2; }
 
-/* Contact envelope: CSS fallback is immediately usable, custom transparent
-   PNG drawings replace the painted layers when added to assets/contact/. */
-.contact-hint { margin-top: 14px !important; font-size: var(--type-small); }
+/* All five transparent Procreate PNGs use the same 1680 × 1050 canvas.
+   The visible front is approximately x=450–1090, y=440–865. Each full
+   canvas image is scaled identically, then cropped by its natural alpha. */
+.contact-hint { margin-top:14px !important; font-size:var(--type-small); }
 .contact-envelope {
-  position: relative; width: min(320px, 85vw); aspect-ratio: 1.6;
-  margin: 48px auto 5px; isolation: isolate;
+  position:relative;
+  width:min(320px,85vw);
+  aspect-ratio:640 / 425;
+  margin:65px auto 25px;
+  isolation:isolate;
 }
 .contact-envelope-trigger {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  border: 0; padding: 0; background: none; cursor: pointer; color: inherit;
+  position:absolute; inset:0; width:100%; height:100%;
+  display:block; padding:0; border:0; background:none; cursor:pointer;
 }
-.contact-envelope-back, .contact-envelope-front, .contact-envelope-flap,
-.contact-envelope-letter { position: absolute; display: block; }
 .contact-envelope-back {
-  inset: 17% 5% 4%; background: #e7beb4; border: 1px solid #be9a90;
-  border-radius: 4px; z-index: 0;
+  position:absolute; inset:0; background:none;
+}
+/* Full-canvas positioning is shared across all three animated layers.
+   Images are NOT stretched to the width of the envelope pocket. */
+.contact-scene-layer { position:absolute; inset:0; display:block; pointer-events:none; }
+.contact-scene-layer > img {
+  position:absolute; display:block; max-width:none;
+  width:262.5%; height:247.058824%;
+  left:-70.3125%; top:-103.529412%;
+  object-fit:fill; pointer-events:none;
 }
 .contact-envelope-flap {
-  inset: 17% 5% auto; height: 54%; z-index: 5;
-  background: #dca9a0; clip-path: polygon(0 0, 100% 0, 50% 98%);
-  transform-origin: center top; backface-visibility: hidden;
-  transition: transform .65s ease, z-index 0s .3s;
+  z-index:5; transform-origin:50% 0;
+  backface-visibility:hidden;
+  transition:transform .65s ease, z-index 0s .33s;
 }
 .contact-envelope-letter {
-  inset: 20% 16% 5%; background: #fffdf9; border: 1px solid #e2ccc0;
-  border-radius: 3px; z-index: 2; box-shadow: 0 3px 12px #785c4820;
-  transition: transform .7s cubic-bezier(.2,.8,.2,1);
+  z-index:2; transform:translateY(27%);
+  transition:transform .7s cubic-bezier(.2,.8,.2,1);
 }
-.contact-envelope-front {
-  inset: 17% 5% 4%; z-index: 4; background: #f3d5ca;
-  clip-path: polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);
-}
-.contact-envelope-flap img, .contact-envelope-letter img, .contact-envelope-front img {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill;
-}
-.contact-envelope-seal {
-  position: absolute; left: 50%; top: 58%; transform: translate(-50%,-50%);
-  width: 30px; height: 30px; display: grid; place-items: center;
-  background: #bc827e; border-radius: 50%; color: #fff5ef; z-index: 6;
-  transition: opacity .2s;
-}
-.contact-letter-caption { display: block; padding-top: 10%; font-family: var(--font-heading); font-style: italic; font-size: clamp(14px,2vw,21px); }
+.contact-envelope-front { z-index:4; }
 .contact-envelope-links {
-  position: absolute; top: 8%; left: 25%; width: 50%; z-index: 7;
-  display: flex; justify-content: center; gap: clamp(12px, 4vw, 28px);
-  opacity: 0; transform: translateY(20px);
-  pointer-events: none; transition: opacity .25s ease, transform .3s ease;
+  position:absolute; inset:0; z-index:7;
+  opacity:0; pointer-events:none; transform:translateY(27%);
+  transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .3s ease;
 }
-.contact-icon-link { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; text-decoration: none; color: var(--ink); min-width: 64px; min-height: 68px; }
-.contact-icon-link img { width: 44px; height: 44px; object-fit: contain; }
-.contact-icon-fallback { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; background: #d3a79c; color: #fff; font: 600 22px/1 Arial, sans-serif; }
-.contact-icon-link.image-missing img { display: none; }
-.contact-icon-link.image-missing .contact-icon-fallback { display: flex; }
-.contact-icon-label { font-size: 11px; line-height: 1.2; background: #fffdf9e8; padding: 2px 5px; border-radius: 4px; }
-.contact-envelope.is-open .contact-envelope-flap { transform: rotateX(165deg); z-index: 1; }
-.contact-envelope.is-open .contact-envelope-letter { transform: translateY(-53%); }
-.contact-envelope.is-open .contact-envelope-seal { opacity: 0; }
-.contact-envelope.is-open .contact-envelope-links { opacity: 1; transform: translateY(0); pointer-events: auto; transition-delay: .32s; }
-.contact-envelope-trigger:focus-visible, .contact-icon-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
-.contact-envelope .contact-envelope-links[inert] { pointer-events: none; }
-.contact-feedback { min-height: 1.3em; font-size: 12px; }
-@media (max-width: 760px) {
-  .contact-envelope { width: min(280px, 80vw); margin-top: 36px; }
-  .contact-envelope-links { top: 0; }
+.contact-icon-link {
+  position:absolute; display:block; width:17.2%; aspect-ratio:1;
+  overflow:hidden; min-width:44px; min-height:44px;
+  text-decoration:none; border-radius:8px;
 }
-@media (prefers-reduced-motion: reduce) {
-  .contact-envelope * { transition-duration: 0.01ms !important; transition-delay: 0ms !important; }
+.contact-icon-linkedin { left:25.7%; top:-31.8%; }
+.contact-icon-email { left:58.2%; top:-31.8%; }
+.contact-icon-link img {
+  position:absolute; display:block; max-width:none;
+  width:1527.2727%; height:954.5455%;
+  object-fit:fill; pointer-events:none;
+}
+.contact-icon-linkedin img { left:-568.18%; top:-277.27%; }
+.contact-icon-email img { left:-758.18%; top:-287.27%; }
+.contact-icon-fallback { display:none; width:100%; height:100%; place-items:center; background:#d3a79c; color:white; font:600 22px Arial,sans-serif; }
+.contact-icon-link.image-missing img { display:none; }
+.contact-icon-link.image-missing .contact-icon-fallback { display:grid; }
+.contact-envelope.is-open .contact-envelope-flap { transform:rotateX(165deg); z-index:1; }
+.contact-envelope.is-open .contact-envelope-letter { transform:translateY(-3%); }
+.contact-envelope.is-open .contact-envelope-links { transform:translateY(-3%); opacity:1; pointer-events:auto; transition-delay:0s,.32s; }
+.contact-envelope .contact-envelope-links[inert] { pointer-events:none; }
+.contact-envelope-trigger:focus-visible,.contact-icon-link:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
+.contact-feedback { min-height:1.3em; font-size:12px; }
+@media(max-width:760px){
+  .contact-envelope { width:min(280px,80vw); margin-top:55px; }
+}
+@media(prefers-reduced-motion:reduce){
+  .contact-envelope * { transition-duration:.01ms !important; transition-delay:0ms !important; }
 }
