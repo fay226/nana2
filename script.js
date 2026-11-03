@@ -182,3 +182,66 @@ window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change",
     projectAnimations.get(image)?.cancel();
   });
 });
+
+// Contact illustration: hover on pointer devices; tap/Enter/Space on touch/keyboard.
+// Supply real URLs here after the illustrated PNG assets have been added.
+(() => {
+  const envelope = document.querySelector("[data-contact-envelope]");
+  if (!envelope) return;
+  const trigger = envelope.querySelector(".contact-envelope-trigger");
+  const links = envelope.querySelector(".contact-envelope-links");
+  const feedback = document.querySelector(".contact-feedback");
+  const linkedin = envelope.querySelector("[data-contact-linkedin]");
+  const email = envelope.querySelector("[data-contact-email]");
+  const LINKEDIN_PROFILE_URL = ""; // e.g. https://www.linkedin.com/in/your-profile/
+  const CONTACT_EMAIL = ""; // e.g. hello@example.com
+
+  // Missing hand-drawn assets gracefully reveal the CSS prototype instead.
+  envelope.querySelectorAll("img").forEach((img) => {
+    const missing = () => {
+      if (img.closest(".contact-icon-link")) img.closest(".contact-icon-link").classList.add("image-missing");
+      else img.style.display = "none";
+    };
+    img.addEventListener("error", missing);
+    if (img.complete && img.naturalWidth === 0) missing();
+  });
+
+  const validProfile = /^https:\/\/([a-z0-9-]+\.)?linkedin\.com\//i.test(LINKEDIN_PROFILE_URL);
+  const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(CONTACT_EMAIL);
+  if (validProfile) linkedin.href = LINKEDIN_PROFILE_URL;
+  if (validEmail) email.href = "mailto:" + CONTACT_EMAIL;
+  [linkedin, email].forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if ((link === linkedin && !validProfile) || (link === email && !validEmail)) {
+        event.preventDefault();
+        feedback.textContent = "This contact link will be available soon.";
+      }
+    });
+  });
+
+  const fineHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+  let pinned = false;
+  let hovering = false;
+  function setOpen(open) {
+    envelope.classList.toggle("is-open", open);
+    trigger.setAttribute("aria-expanded", String(open));
+    trigger.setAttribute("aria-label", open ? "Close contact envelope" : "Open contact envelope");
+    links.inert = !open;
+  }
+  function sync() { setOpen(pinned || hovering); }
+  envelope.addEventListener("pointerenter", (e) => {
+    if (fineHover.matches && e.pointerType === "mouse") { hovering = true; sync(); }
+  });
+  envelope.addEventListener("pointerleave", () => { hovering = false; sync(); });
+  trigger.addEventListener("click", () => { pinned = !pinned; feedback.textContent = ""; sync(); });
+  document.addEventListener("pointerdown", (e) => {
+    if (!envelope.contains(e.target)) { pinned = false; hovering = false; sync(); }
+  });
+  envelope.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { pinned = false; hovering = false; sync(); trigger.focus(); }
+  });
+  envelope.addEventListener("focusout", (e) => {
+    if (!envelope.contains(e.relatedTarget) && !hovering) { pinned = false; sync(); }
+  });
+  setOpen(false);
+})();
