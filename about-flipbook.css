@@ -83,3 +83,46 @@
  .about-prev .about-arrow-hit{left:13%}
  .about-next .about-arrow-hit{right:15%}
 }
+
+/* All artwork uses the same full canvas as table.png. Hit bounds are measured
+   from each PNG's alpha by about-table-objects.js, with fallback coordinates. */
+.about-table-object {
+  position:absolute; inset:0; display:block;
+  pointer-events:none; z-index:7;
+  transform-origin:var(--art-x) var(--art-y);
+  transition:transform .3s ease;
+}
+.about-art-hit {
+  position:absolute; display:grid; place-items:center;
+  left:var(--art-x); top:var(--art-y);
+  width:var(--art-w); height:var(--art-h);
+  min-width:44px; min-height:44px;
+  transform:translate(-50%,-50%);
+  pointer-events:auto; border-radius:6px;
+}
+a.about-table-object .about-art-hit { cursor:pointer; }
+.about-card-base { z-index:0; }
+.about-contact-icon { z-index:1; }
+.about-table-object:focus-visible { outline:none; }
+.about-table-object:focus-visible > .about-art-hit {
+  outline:2px solid var(--accent); outline-offset:4px;
+}
+.about-art-fallback {
+  background:var(--paper); color:var(--ink);
+  padding:6px 10px; border:1px solid var(--line);
+  font-size:clamp(10px,1vw,14px); white-space:nowrap;
+}
+[data-table-art].has-art > .about-art-hit > .about-art-fallback { display:none; }
+[data-table-art]:not(.has-art) > img { visibility:hidden; }
+.about-contact-icon:not(.has-art) { --art-w:8% !important; }
+@media (hover:hover) and (pointer:fine) {
+  .about-gallery-ticket:hover { transform:translateY(-4px) rotate(-2deg); }
+  .about-contact-card:hover { transform:translateY(-3px); }
+  .about-contact-icon:hover { transform:scale(1.12); }
+}
+.about-gallery-ticket:focus-visible { transform:translateY(-4px) rotate(-2deg); }
+.about-contact-card:focus-within { transform:translateY(-3px); }
+.about-contact-icon:focus-visible { transform:scale(1.12); }
+@media (prefers-reduced-motion:reduce) {
+  .about-table-object { transition:none; transform:none !important; }
+}
