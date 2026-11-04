@@ -967,16 +967,16 @@ footer {
   backface-visibility:hidden;
   transition:transform .65s ease, z-index 0s .33s;
 }
-/* The letter's painted top is high within its full-canvas PNG. Keep it tucked
-   into the pocket when closed and raise it above the pocket when opened. */
+/* The source PNGs show the final OPEN composition. Open state must be at
+   zero offset; move letter and link layers down only in the closed state. */
 .contact-envelope-letter {
-  z-index:2; transform:translateY(75%);
+  z-index:2; transform:translateY(40%);
   transition:transform .7s cubic-bezier(.2,.8,.2,1);
 }
 .contact-envelope-front { z-index:4; }
 .contact-envelope-links {
   position:absolute; inset:0; z-index:7;
-  opacity:0; pointer-events:none; transform:translateY(27%);
+  opacity:0; pointer-events:none; transform:translateY(40%);
   transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .3s ease;
 }
 /* The link is the transparent hit target. Its image uses the same full-scene
@@ -1006,8 +1006,8 @@ footer {
 .contact-icon-link.image-missing img { display:none; }
 .contact-icon-link.image-missing .contact-icon-fallback { display:grid; }
 .contact-envelope.is-open .contact-envelope-flap { transform:rotateX(165deg); z-index:1; }
-.contact-envelope.is-open .contact-envelope-letter { transform:translateY(35%); }
-.contact-envelope.is-open .contact-envelope-links { transform:translateY(-3%); opacity:1; pointer-events:auto; transition-delay:0s,.32s; }
+.contact-envelope.is-open .contact-envelope-letter { transform:translateY(0); }
+.contact-envelope.is-open .contact-envelope-links { transform:translateY(0); opacity:1; pointer-events:auto; transition-delay:0s,.32s; }
 .contact-envelope .contact-envelope-links[inert] { pointer-events:none; }
 .contact-envelope-trigger:focus-visible,.contact-icon-link:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
 .contact-feedback { min-height:1.3em; font-size:12px; }
