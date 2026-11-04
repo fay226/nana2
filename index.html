@@ -247,6 +247,34 @@
             <img src="assets/about/next.png" alt="" width="1440" height="900" />
             <span class="about-arrow-hit" aria-hidden="true"></span>
           </button>
+
+          <!-- Full-canvas transparent PNGs; each icon has its own link and hover. -->
+          <a class="about-table-object about-gallery-ticket" data-table-art
+             href="paintings.html" aria-label="Visit my painting gallery"
+             style="--art-x:18%;--art-y:24%;--art-w:20%;--art-h:12%">
+            <img class="about-layer" src="assets/about/gallery-ticket.png" alt="" loading="lazy" />
+            <span class="about-art-hit"><span class="about-art-fallback">Painting gallery →</span></span>
+          </a>
+          <div class="about-table-object about-contact-card"
+               style="--art-x:86%;--art-y:28%;--art-w:18%;--art-h:18%">
+            <div class="about-table-object about-card-base" data-table-art>
+              <img class="about-layer" src="assets/about/contact-card.png" alt="" loading="lazy" />
+              <span class="about-art-hit" aria-hidden="true"></span>
+            </div>
+            <a class="about-table-object about-contact-icon" data-table-art
+               href="https://www.linkedin.com/in/fiona-sun-703961276"
+               target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile"
+               style="--art-x:80%;--art-y:30%;--art-w:4%;--art-h:6%">
+              <img class="about-layer" src="assets/about/linkedin.png" alt="" loading="lazy" />
+              <span class="about-art-hit"><span class="about-art-fallback">LinkedIn</span></span>
+            </a>
+            <a class="about-table-object about-contact-icon" data-table-art
+               href="mailto:sunfiona52@gmail.com" aria-label="Email Fiona"
+               style="--art-x:94%;--art-y:30%;--art-w:4%;--art-h:6%">
+              <img class="about-layer" src="assets/about/gmail.png" alt="" loading="lazy" />
+              <span class="about-art-hit"><span class="about-art-fallback">Email</span></span>
+            </a>
+          </div>
           <p class="about-spread-count" aria-live="polite">Spread 1 of 3</p>
         </div>
         <details class="about-transcript">
@@ -269,6 +297,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js" defer></script>
     <script src="about-flipbook.js" defer></script>
+    <script src="about-table-objects.js" defer></script>
     <script src="script.js" defer></script>
   </body>
 </html>
