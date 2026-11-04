@@ -222,7 +222,18 @@ window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change",
   const fineHover = window.matchMedia("(hover: hover) and (pointer: fine)");
   let pinned = false;
   let hovering = false;
+  const openingSound = new Audio("assets/sounds/envelope.mp3");
+  openingSound.preload = "none";
+  openingSound.volume = 0.2;
   function setOpen(open) {
+    const wasOpen = envelope.classList.contains("is-open");
+    if (open && !wasOpen && !document.hidden) {
+      stopSceneSound();
+      openingSound.currentTime = 0;
+      activeSound = openingSound;
+      // Hover playback may be blocked until the browser has user activation.
+      openingSound.play().catch(() => {});
+    }
     envelope.classList.toggle("is-open", open);
     trigger.setAttribute("aria-expanded", String(open));
     trigger.setAttribute("aria-label", open ? "Close contact envelope" : "Open contact envelope");
