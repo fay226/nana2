@@ -1,6 +1,15 @@
 (() => {
  const root=document.getElementById("about-flipbook");
  if(!root)return;
+ const scene=root.closest(".about-table-scene");
+ if(!scene)return;
+ // StPageFlip stays in the drawing's logical coordinates. Scale its entire
+ // output with the table instead of letting its minimum sizes shift the pages.
+ function fitBook(){
+   root.style.setProperty("--about-book-scale",String(scene.getBoundingClientRect().width/1440));
+ }
+ fitBook();
+ new ResizeObserver(fitBook).observe(scene);
  const pages=[...root.querySelectorAll(".about-page")];
  const prev=document.querySelector(".about-prev");
  const next=document.querySelector(".about-next");
@@ -45,8 +54,7 @@
  if(window.St?.PageFlip && !reduce.matches) {
   try {
    book=new window.St.PageFlip(root,{
-     width:365,height:435,size:"stretch",minWidth:100,maxWidth:365,
-     minHeight:120,maxHeight:435,showCover:false,usePortrait:false,
+     width:365,height:435,size:"fixed",showCover:false,usePortrait:false,
      autoSize:false,drawShadow:true,maxShadowOpacity:.25,
      flippingTime:750,clickEventForward:true,mobileScrollSupport:false
    });
@@ -63,8 +71,9 @@
  // In reduced-motion/static mode, the left and right halves still work as page controls.
  root.addEventListener("click",event=>{
   if(book)return;
-  const x=event.clientX-root.getBoundingClientRect().left;
-  if(x<root.clientWidth/2)prev.click();else next.click();
+  const rect=root.getBoundingClientRect();
+  const x=event.clientX-rect.left;
+  if(x<rect.width/2)prev.click();else next.click();
  });
  root.addEventListener("keydown",event=>{
   if(event.key==="ArrowRight"){event.preventDefault();next.click()}
