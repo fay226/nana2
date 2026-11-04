@@ -23,10 +23,7 @@
 .about-flipbook {
  position:absolute;z-index:2;
  left:var(--about-page-x);top:var(--about-page-y);
- /* Fixed logical viewport; scale the whole renderer with the table. */
- width:730px;height:435px;
- transform:scale(var(--about-book-scale,1));
- transform-origin:top left;
+ width:var(--about-page-w);height:var(--about-page-h);
 }
 .about-page {position:relative;overflow:hidden;background:transparent!important}
 /* StPageFlip creates its own page wrappers: don't paint an opaque rectangle
