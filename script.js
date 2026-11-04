@@ -120,6 +120,8 @@ const soundFiles = {
   ".scene-cup": "assets/sounds/cup.mp3",
   ".scene-painting": "assets/sounds/painting.mp3",
   ".scene-envelope": "assets/sounds/envelope.mp3",
+  ".about-gallery-ticket": "assets/sounds/gallery-ticket.mp3",
+  ".about-contact-card": "assets/sounds/contact-card.mp3",
 };
 
 let activeSound = null;
@@ -136,13 +138,17 @@ function stopSceneSound() {
 
 Object.entries(soundFiles).forEach(([selector, source]) => {
   const object = document.querySelector(selector);
-  const hitArea = object?.querySelector(".object-hit");
+  // The card group receives one enter event across its base and both icons.
+  // Other objects listen only on their visible artwork hit target.
+  const hitArea = selector === ".about-contact-card"
+    ? object
+    : object?.querySelector(".object-hit, .about-art-hit");
 
   if (!object || !hitArea) return;
 
   const audio = new Audio(source);
-  audio.preload = "auto";
-  audio.load();
+  audio.preload = selector.startsWith(".about-") ? "none" : "auto";
+  if (audio.preload === "auto") audio.load();
   audio.volume = 0.2;
 
   function playSound() {
@@ -163,7 +169,7 @@ Object.entries(soundFiles).forEach(([selector, source]) => {
     });
   }
 
-  // Only the object's clickable area triggers the hover sound.
+  // Play once on mouse entry; moving between card icons does not replay it.
   hitArea.addEventListener("pointerenter", (event) => {
     if (event.pointerType === "mouse") playSound();
   });
