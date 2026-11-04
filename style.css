@@ -1007,16 +1007,16 @@ footer {
   text-decoration:none; border-radius:8px;
 }
 .contact-icon-linkedin {
-  /* Source bounds: x=686..792, y=332..439. */
-  --icon-x:45.15625%; --icon-y:-12.8235294118%;
+  /* Source bounds: x=686..792, y=524..631. */
+  --icon-x:45.15625%; --icon-y:32.3529411765%;
   --icon-width:16.5625cqw; --icon-height:16.71875cqw;
-  --art-center-x:115.46875cqw; --art-center-y:60.234375cqw;
+  --art-center-x:115.46875cqw; --art-center-y:90.234375cqw;
 }
 .contact-icon-email {
-  /* Source bounds: x=912..1030, y=344..436. */
-  --icon-x:81.40625%; --icon-y:-11.7647058824%;
+  /* Source bounds: x=912..1030, y=524..616. */
+  --icon-x:81.40625%; --icon-y:30.5882352941%;
   --icon-width:18.4375cqw; --icon-height:14.375cqw;
-  --art-center-x:151.71875cqw; --art-center-y:60.9375cqw;
+  --art-center-x:151.71875cqw; --art-center-y:89.0625cqw;
 }
 /* Subtract the source icon centre from the target centre. This keeps the
    full PNG canvas aligned with the letter even when minimum targets expand. */
