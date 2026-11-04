@@ -996,24 +996,37 @@ footer {
 /* The link is the transparent hit target. Its image uses the same full-scene
    1680x1050 mapping as the envelope art, without overflow cropping.
    The positioned image extends beyond the link, but remains non-interactive. */
+/* Targets follow the measured alpha bounds in the original 1680x1050 PNGs.
+   Centre minimum-size targets on the drawing so they expand equally on mobile. */
 .contact-icon-link {
-  position:absolute; display:block; width:17.2%; aspect-ratio:1;
+  position:absolute; display:block;
+  left:var(--icon-x); top:var(--icon-y);
+  width:var(--icon-width); height:var(--icon-height);
   min-width:44px; min-height:44px; overflow:visible;
+  transform:translate(-50%,-50%);
   text-decoration:none; border-radius:8px;
 }
-.contact-icon-linkedin { left:25.7%; top:-31.8%; }
-.contact-icon-email { left:58.2%; top:-31.8%; }
-/* Size full-canvas artwork against the envelope, never the square hit target.
-   One cqw is 1% of the envelope width. Subtract each link's position to
-   recover the same scene origin used by the letter/front PNGs.
-   This also keeps artwork aligned when the 44px minimum hit size applies. */
+.contact-icon-linkedin {
+  /* Source bounds: x=686..792, y=332..439. */
+  --icon-x:45.15625%; --icon-y:-12.8235294118%;
+  --icon-width:16.5625cqw; --icon-height:16.71875cqw;
+  --art-center-x:115.46875cqw; --art-center-y:60.234375cqw;
+}
+.contact-icon-email {
+  /* Source bounds: x=912..1030, y=344..436. */
+  --icon-x:81.40625%; --icon-y:-11.7647058824%;
+  --icon-width:18.4375cqw; --icon-height:14.375cqw;
+  --art-center-x:151.71875cqw; --art-center-y:60.9375cqw;
+}
+/* Subtract the source icon centre from the target centre. This keeps the
+   full PNG canvas aligned with the letter even when minimum targets expand. */
 .contact-icon-artwork {
   position:absolute; display:block; max-width:none;
   width:262.5cqw; height:auto;
-  left:-96.0125cqw; top:-47.6328125cqw;
+  left:calc(50% - var(--art-center-x));
+  top:calc(50% - var(--art-center-y));
   pointer-events:none;
 }
-.contact-icon-email .contact-icon-artwork { left:-128.5125cqw; }
 .contact-icon-fallback { display:none; width:100%; height:100%; place-items:center; background:#d3a79c; color:white; font:600 22px Arial,sans-serif; }
 .contact-icon-link.image-missing img { display:none; }
 .contact-icon-link.image-missing .contact-icon-fallback { display:grid; }
