@@ -947,7 +947,18 @@ footer {
   margin:65px auto 25px;
   isolation:isolate;
 }
+/* Keep the whole raised letter and the gap to its links in the hover region.
+   This descendant hit area exists only while open; PNG pixels stay non-interactive.
+   Its overlap with the pocket prevents pointerleave at the envelope's top edge. */
+.contact-envelope.is-open::before {
+  content:"";
+  position:absolute;
+  inset:-105% 0 0;
+  z-index:0;
+  pointer-events:auto;
+}
 .contact-envelope-trigger {
+  z-index:1;
   position:absolute; inset:0; width:100%; height:100%;
   display:block; padding:0; border:0; background:none; cursor:pointer;
 }
