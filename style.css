@@ -972,6 +972,8 @@ footer {
    zero offset; move letter and link layers down only in the closed state. */
 .contact-envelope-letter {
   z-index:2; transform:translateY(40%);
+  /* No part of the letter artwork is visible while the envelope is closed. */
+  visibility:hidden;
   transition:transform .7s cubic-bezier(.2,.8,.2,1);
 }
 .contact-envelope-front { z-index:4; }
@@ -1005,7 +1007,7 @@ footer {
 .contact-icon-link.image-missing img { display:none; }
 .contact-icon-link.image-missing .contact-icon-fallback { display:grid; }
 .contact-envelope.is-open .contact-envelope-flap { transform:rotateX(165deg); z-index:1; }
-.contact-envelope.is-open .contact-envelope-letter { transform:translateY(0); }
+.contact-envelope.is-open .contact-envelope-letter { transform:translateY(0); visibility:visible; }
 .contact-envelope.is-open .contact-envelope-links { transform:translateY(0); opacity:1; pointer-events:auto; transition-delay:0s,.32s; }
 .contact-envelope .contact-envelope-links[inert] { pointer-events:none; }
 .contact-envelope-trigger:focus-visible,.contact-icon-link:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
