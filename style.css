@@ -942,6 +942,7 @@ footer {
 .contact-envelope {
   position:relative;
   width:min(320px,85vw);
+  container-type:inline-size;
   aspect-ratio:640 / 425;
   margin:65px auto 25px;
   isolation:isolate;
@@ -989,19 +990,17 @@ footer {
 }
 .contact-icon-linkedin { left:25.7%; top:-31.8%; }
 .contact-icon-email { left:58.2%; top:-31.8%; }
+/* Size full-canvas artwork against the envelope, never the square hit target.
+   One cqw is 1% of the envelope width. Subtract each link's position to
+   recover the same scene origin used by the letter/front PNGs.
+   This also keeps artwork aligned when the 44px minimum hit size applies. */
 .contact-icon-artwork {
   position:absolute; display:block; max-width:none;
-  width:calc(1680px / 640 * 100% / .172);
-  height:calc(1050px / 425 * 100% / .172);
-  left:0; top:0; pointer-events:none;
+  width:262.5cqw; height:auto;
+  left:-96.0125cqw; top:-47.6328125cqw;
+  pointer-events:none;
 }
-/* Keep the image at scene scale, independently of the 44px hit-target minimum.
-   The offsets align a full-canvas image with the envelope coordinate system. */
-.contact-icon-link .contact-icon-artwork {
-  width:1526.1628%; height:1453.4884%;
-  left:-149.4186%; top:-201.1272%;
-}
-.contact-icon-email .contact-icon-artwork { left:-338.3721%; top:-201.1272%; }
+.contact-icon-email .contact-icon-artwork { left:-128.5125cqw; }
 .contact-icon-fallback { display:none; width:100%; height:100%; place-items:center; background:#d3a79c; color:white; font:600 22px Arial,sans-serif; }
 .contact-icon-link.image-missing img { display:none; }
 .contact-icon-link.image-missing .contact-icon-fallback { display:grid; }
