@@ -222,7 +222,7 @@ window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change",
   const fineHover = window.matchMedia("(hover: hover) and (pointer: fine)");
   let pinned = false;
   let hovering = false;
-  const openingSound = new Audio("assets/sounds/envelope.mp3");
+  const openingSound = new Audio("assets/sounds/envelope-open.mp3");
   openingSound.preload = "none";
   openingSound.volume = 0.2;
   function setOpen(open) {
