@@ -126,3 +126,15 @@ a.about-table-object .about-art-hit { cursor:pointer; }
 @media (prefers-reduced-motion:reduce) {
   .about-table-object { transition:none; transform:none !important; }
 }
+
+/* StPageFlip injects .stf__parent { position:relative } after our stylesheet.
+   Keep this viewport anchored to the full-scene book drawing regardless of
+   injection order. With autoSize:false, its wrapper must fill this viewport. */
+.about-table-scene > .about-flipbook.stf__parent {
+ position:absolute;
+}
+.about-flipbook > .stf__wrapper {
+ position:relative;
+ width:100%;
+ height:100%;
+}
