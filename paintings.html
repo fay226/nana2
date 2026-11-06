@@ -40,6 +40,17 @@
       background: #eddae2;
     }
 
+    @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+      .painting-wall img {
+        transition: transform 220ms ease, box-shadow 220ms ease;
+      }
+
+      .painting-wall img:hover {
+        transform: translateY(-3px);
+        box-shadow: 4px 9px 15px #38261945;
+      }
+    }
+
     @media (max-width: 720px) {
       .painting-wall { columns: 2; }
     }
