@@ -18,7 +18,10 @@
     }
 
     .painting-frame {
-      display: block;
+      /* Atomic items prevent frame shadows fragmenting across Safari columns. */
+      display: inline-block;
+      vertical-align: top;
+      -webkit-column-break-inside: avoid;
       box-sizing: border-box;
       width: 100%;
       height: auto;
