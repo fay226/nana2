@@ -17,7 +17,7 @@
       background: #f3efe7;
     }
 
-    .painting-wall img {
+    .painting-frame {
       display: block;
       box-sizing: border-box;
       width: 100%;
@@ -30,22 +30,28 @@
       break-inside: avoid;
     }
 
-    .painting-wall img:nth-child(3n + 2) {
+    .painting-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .painting-frame:nth-child(3n + 2) {
       width: 85%;
       border-color: #5f493b;
       background: #d6e1e8;
     }
 
-    .painting-wall img:nth-child(4n + 3) {
+    .painting-frame:nth-child(4n + 3) {
       background: #eddae2;
     }
 
     @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-      .painting-wall img {
+      .painting-frame {
         transition: transform 220ms ease, box-shadow 220ms ease;
       }
 
-      .painting-wall img:hover {
+      .painting-frame:hover {
         transform: translateY(-3px);
         box-shadow: 4px 9px 15px #38261945;
       }
@@ -68,32 +74,84 @@
     <p class="eyebrow">A PERSONAL COLLECTION</p>
     <h1>My painting gallery</h1>
     <div class="painting-wall">
-      <img src="assets/paintings/w1.png" alt="Potted plants against a tiled wall" width="2845" height="2786" decoding="async" />
-      <img src="assets/paintings/w2.png" alt="Latte art in a blue cup" width="2807" height="2309" decoding="async" />
-      <img src="assets/paintings/w3.png" alt="Palm leaves and a framed botanical study" width="3002" height="1929" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w4.png" alt="A striped glass beside two sliced rolls" width="2990" height="2872" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w5.png" alt="Pink round sweets with green centers" width="2725" height="2500" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w6.png" alt="A pale green cup with a pink flower" width="3024" height="3024" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w7.png" alt="Three colorful ice pops" width="3003" height="2386" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w8.png" alt="A pink dessert topped with a strawberry" width="3024" height="3024" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w9.png" alt="A bowl of noodle soup and side dishes" width="3024" height="2433" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w10.png" alt="Three fried eggs on a plate" width="2985" height="2384" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w11.png" alt="Tomatoes and red ingredients on a cutting board" width="3020" height="2664" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w12.png" alt="A waffle and fruit on a plate" width="2840" height="2919" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w13.png" alt="A breakfast table with illustrated dishes" width="2939" height="2780" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w14.png" alt="A plate of yellow pastries" width="2908" height="2261" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w15.png" alt="Striped pastries with citrus and leaves" width="3001" height="2414" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w16.png" alt="A pink strawberry cake with a slice removed" width="2994" height="2698" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w17.png" alt="Pink flowers beside a blue window" width="2814" height="2998" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w18.png" alt="A pale cat resting with its eyes closed" width="2752" height="2593" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w19.png" alt="A wide-eyed orange and white cat" width="3012" height="2673" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w20.png" alt="A cat wearing a striped garment" width="2621" height="3005" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w21.png" alt="Profile portrait with pink hair" width="3024" height="3024" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w22.png" alt="Portrait with short blonde hair" width="2448" height="2979" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w23.png" alt="Portrait with long auburn hair" width="2732" height="2765" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w24.png" alt="Portrait with a blue bob" width="2679" height="2762" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w25.png" alt="Portrait in a dotted blouse" width="2822" height="2903" loading="lazy" decoding="async" />
-      <img src="assets/paintings/w26.png" alt="Portrait with a short bob and a red heart" width="2486" height="2925" loading="lazy" decoding="async" />
+      <figure class="painting-frame">
+        <img src="assets/paintings/w1.png" alt="Potted plants against a tiled wall" width="2845" height="2786" style="aspect-ratio: 2845 / 2786;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w2.png" alt="Latte art in a blue cup" width="2807" height="2309" style="aspect-ratio: 2807 / 2309;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w3.png" alt="Palm leaves and a framed botanical study" width="3002" height="1929" loading="lazy" style="aspect-ratio: 3002 / 1929;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w4.png" alt="A striped glass beside two sliced rolls" width="2990" height="2872" loading="lazy" style="aspect-ratio: 2990 / 2872;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w5.png" alt="Pink round sweets with green centers" width="2725" height="2500" loading="lazy" style="aspect-ratio: 2725 / 2500;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w6.png" alt="A pale green cup with a pink flower" width="3024" height="3024" loading="lazy" style="aspect-ratio: 3024 / 3024;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w7.png" alt="Three colorful ice pops" width="3003" height="2386" loading="lazy" style="aspect-ratio: 3003 / 2386;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w8.png" alt="A pink dessert topped with a strawberry" width="3024" height="3024" loading="lazy" style="aspect-ratio: 3024 / 3024;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w9.png" alt="A bowl of noodle soup and side dishes" width="3024" height="2433" loading="lazy" style="aspect-ratio: 3024 / 2433;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w10.png" alt="Three fried eggs on a plate" width="2985" height="2384" loading="lazy" style="aspect-ratio: 2985 / 2384;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w11.png" alt="Tomatoes and red ingredients on a cutting board" width="3020" height="2664" loading="lazy" style="aspect-ratio: 3020 / 2664;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w12.png" alt="A waffle and fruit on a plate" width="2840" height="2919" loading="lazy" style="aspect-ratio: 2840 / 2919;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w13.png" alt="A breakfast table with illustrated dishes" width="2939" height="2780" loading="lazy" style="aspect-ratio: 2939 / 2780;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w14.png" alt="A plate of yellow pastries" width="2908" height="2261" loading="lazy" style="aspect-ratio: 2908 / 2261;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w15.png" alt="Striped pastries with citrus and leaves" width="3001" height="2414" loading="lazy" style="aspect-ratio: 3001 / 2414;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w16.png" alt="A pink strawberry cake with a slice removed" width="2994" height="2698" loading="lazy" style="aspect-ratio: 2994 / 2698;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w17.png" alt="Pink flowers beside a blue window" width="2814" height="2998" loading="lazy" style="aspect-ratio: 2814 / 2998;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w18.png" alt="A pale cat resting with its eyes closed" width="2752" height="2593" loading="lazy" style="aspect-ratio: 2752 / 2593;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w19.png" alt="A wide-eyed orange and white cat" width="3012" height="2673" loading="lazy" style="aspect-ratio: 3012 / 2673;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w20.png" alt="A cat wearing a striped garment" width="2621" height="3005" loading="lazy" style="aspect-ratio: 2621 / 3005;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w21.png" alt="Profile portrait with pink hair" width="3024" height="3024" loading="lazy" style="aspect-ratio: 3024 / 3024;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w22.png" alt="Portrait with short blonde hair" width="2448" height="2979" loading="lazy" style="aspect-ratio: 2448 / 2979;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w23.png" alt="Portrait with long auburn hair" width="2732" height="2765" loading="lazy" style="aspect-ratio: 2732 / 2765;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w24.png" alt="Portrait with a blue bob" width="2679" height="2762" loading="lazy" style="aspect-ratio: 2679 / 2762;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w25.png" alt="Portrait in a dotted blouse" width="2822" height="2903" loading="lazy" style="aspect-ratio: 2822 / 2903;" decoding="async" />
+      </figure>
+      <figure class="painting-frame">
+        <img src="assets/paintings/w26.png" alt="Portrait with a short bob and a red heart" width="2486" height="2925" loading="lazy" style="aspect-ratio: 2486 / 2925;" decoding="async" />
+      </figure>
     </div>
     <p><a class="case-study-link" href="index.html#about">Back to my table</a></p>
   </main>
