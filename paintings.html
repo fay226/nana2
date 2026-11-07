@@ -51,12 +51,40 @@
 
     @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
       .painting-frame {
-        transition: transform 220ms ease, box-shadow 220ms ease;
+        transform-origin: 50% 12%;
+        transition: transform 350ms cubic-bezier(.2, .7, .2, 1),
+                    box-shadow 350ms ease;
       }
 
       .painting-frame:hover {
-        transform: translateY(-3px);
+        position: relative;
+        z-index: 1;
         box-shadow: 4px 9px 15px #38261945;
+      }
+
+      /* Different gestures repeat across the wall. */
+      .painting-frame:nth-child(4n + 1):hover {
+        transform: translateY(-3px) rotate(-2deg);
+      }
+
+      .painting-frame:nth-child(4n + 2):hover {
+        transform: translateY(-3px) rotate(2deg);
+      }
+
+      .painting-frame:nth-child(4n + 3):hover {
+        transform: translateY(-5px) scale(1.025);
+        transform-origin: center;
+      }
+
+      .painting-frame:nth-child(4n):hover {
+        animation: painting-sway 700ms ease-in-out;
+      }
+
+      @keyframes painting-sway {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(-2deg); }
+        55% { transform: rotate(1.5deg); }
+        80% { transform: rotate(-.6deg); }
       }
     }
 
