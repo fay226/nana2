@@ -193,5 +193,29 @@
     <p><a class="case-study-link" href="index.html#about">Back to my table</a></p>
   </main>
   <footer><span>Fiona · Made with 🩵</span></footer>
+  <script>
+    const paintingSound = new Audio("assets/sounds/painting.mp3");
+    paintingSound.preload = "none";
+    paintingSound.volume = 0.2;
+    let lastPaintingSoundAt = -Infinity;
+
+    document.querySelectorAll(".painting-frame").forEach((frame) => {
+      frame.addEventListener("pointerenter", (event) => {
+        if (event.pointerType !== "mouse" || document.hidden) return;
+
+        const now = performance.now();
+        if (now - lastPaintingSoundAt < 250) return;
+        lastPaintingSoundAt = now;
+
+        paintingSound.currentTime = 0;
+        // Some browsers block hover audio before the visitor interacts.
+        paintingSound.play().catch(() => {});
+      });
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) paintingSound.pause();
+    });
+  </script>
 </body>
 </html>
