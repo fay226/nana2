@@ -253,7 +253,7 @@
 .chloris-chapters {
   position: sticky;
   z-index: 20;
-  top: 64px;
+  top: 0;
   display: flex;
   justify-content: center;
   background: rgb(255 255 255 / 92%);
@@ -1255,7 +1255,7 @@
   }
 
   .chloris-chapters {
-    top: 62px;
+    top: 0;
     justify-content: flex-start;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
