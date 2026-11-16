@@ -427,8 +427,8 @@ p {
   flex-wrap: wrap;
   align-items: center;
   gap: 16px 28px;
-  margin: 44px 0 24px;
-  padding: 20px 0;
+  margin: 0;
+  padding: 0;
 }
 .project-index > span {
   margin-right: auto;
@@ -680,7 +680,6 @@ footer {
   }
   .project-index {
     gap: 10px 20px;
-    margin-top: 32px;
   }
   .project-index > span {
     flex-basis: 100%;
