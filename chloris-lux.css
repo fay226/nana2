@@ -307,7 +307,7 @@
 .positioning-map {
   position: sticky;
   top: 80px;
-  width: min(100%, 440px);
+  width: min(100%, 400px);
   aspect-ratio: 1;
   margin: 0 auto;
   background:
@@ -391,6 +391,26 @@
   margin-bottom: 22px;
 }
 
+.audit-scroll-hint {
+  display: none;
+}
+
+.competitor-audit li[data-tone="petal"] {
+  border-color: #edcbd2;
+}
+
+.competitor-audit li[data-tone="lilac"] {
+  border-color: #d8cfea;
+}
+
+.competitor-audit li[data-tone="blue"] {
+  border-color: #c7ddeb;
+}
+
+.competitor-audit li[data-tone="sand"] {
+  border-color: #dfd5c1;
+}
+
 .competitor-audit ol {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -405,6 +425,8 @@
   grid-template-columns: 42px 1fr;
   gap: 14px;
   align-items: start;
+  padding-top: 16px;
+  border-top: 2px solid var(--chloris-line);
 }
 
 .competitor-audit li > span {
@@ -1216,13 +1238,51 @@
     max-width: 86px;
   }
 
+  .audit-scroll-hint {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    margin: -4px 0 16px;
+    color: var(--chloris-muted);
+    font-size: var(--type-small);
+    line-height: var(--type-small-line);
+  }
+
+  .audit-scroll-hint span {
+    font-size: var(--type-ui);
+  }
+
   .competitor-audit ol {
-    gap: 30px;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(265px, 86%);
+    gap: 18px;
+    margin-right: -18px;
+    padding: 0 18px 14px 0;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: 0;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: none;
+  }
+
+  .competitor-audit ol::-webkit-scrollbar {
+    display: none;
+  }
+
+  .competitor-audit ol:focus-visible {
+    outline: 2px solid var(--chloris-accent);
+    outline-offset: 5px;
   }
 
   .competitor-audit li {
-    grid-template-columns: 38px 1fr;
+    grid-template-columns: 34px 1fr;
     gap: 10px;
+    min-height: 226px;
+    padding: 20px 18px 22px;
+    border-top-width: 3px;
+    background: #faf9f6;
+    scroll-snap-align: start;
   }
 
   .competitor-audit dl > div {
