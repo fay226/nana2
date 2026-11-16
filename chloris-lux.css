@@ -98,7 +98,6 @@
   overflow: hidden !important;
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
-  border: 0 !important;
 }
 
 .chloris-wrap {
@@ -157,7 +156,6 @@
   display: inline-flex;
   gap: 12px;
   padding-block: 8px;
-  border-bottom: 1px solid var(--chloris-ink);
   font-size: 0.84rem;
   font-weight: 600;
   text-decoration: none;
@@ -171,7 +169,6 @@
 }
 
 .chloris-link-secondary {
-  border-bottom-color: var(--chloris-line);
   color: var(--chloris-muted);
 }
 
@@ -179,7 +176,6 @@
   max-width: 44ch;
   margin: 30px 0 0;
   padding-left: 16px;
-  border-left: 3px solid var(--chloris-petal);
   color: var(--chloris-muted);
   font-size: 0.8rem;
 }
@@ -230,8 +226,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 10px 0 0;
-  border-top: 1px solid var(--chloris-line);
-  border-bottom: 1px solid var(--chloris-line);
 }
 
 .project-snapshot > div {
@@ -240,7 +234,6 @@
 
 .project-snapshot > div + div {
   padding-left: 24px;
-  border-left: 1px solid var(--chloris-line);
 }
 
 .project-snapshot dt {
@@ -263,8 +256,6 @@
   top: 64px;
   display: flex;
   justify-content: center;
-  border-top: 1px solid var(--chloris-line);
-  border-bottom: 1px solid var(--chloris-line);
   background: rgb(255 255 255 / 92%);
   backdrop-filter: blur(12px);
 }
@@ -349,8 +340,6 @@
   width: min(100%, 480px);
   aspect-ratio: 1;
   margin: 0 auto;
-  border-left: 1px solid var(--chloris-line);
-  border-bottom: 1px solid var(--chloris-line);
   background:
     linear-gradient(to right, transparent 49.8%, rgb(200 195 183 / 36%) 50%, transparent 50.2%),
     linear-gradient(to bottom, transparent 49.8%, rgb(200 195 183 / 36%) 50%, transparent 50.2%);
@@ -391,7 +380,6 @@
   position: absolute;
   width: 11px;
   height: 11px;
-  border: 2px solid #fff;
   border-radius: 50%;
   background: var(--chloris-plum);
   box-shadow: 0 0 0 1px var(--chloris-plum);
@@ -453,8 +441,6 @@
   grid-template-columns: 48px 1fr;
   gap: 14px;
   padding: 20px 0 20px 14px;
-  border-top: 1px solid var(--chloris-line);
-  border-left: 4px solid var(--chloris-petal);
 }
 
 .competitor-audit li[data-tone="lilac"] { border-left-color: var(--chloris-lilac); }
@@ -504,8 +490,6 @@
   grid-template-columns: 92px 1fr;
   gap: 2px 18px;
   padding: 24px 0 0 18px;
-  border-top: 1px solid var(--chloris-line);
-  border-left: 4px solid var(--chloris-plum);
 }
 
 .opportunity-card span {
@@ -585,7 +569,6 @@
 .craft-compare {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--chloris-line);
 }
 
 .craft-compare article {
@@ -594,7 +577,6 @@
 
 .craft-compare article + article {
   padding-left: 28px;
-  border-left: 1px solid var(--chloris-line);
 }
 
 .craft-compare article.selected {
@@ -616,7 +598,6 @@
 .craft-compare p {
   margin-bottom: 0;
   padding-block: 10px;
-  border-bottom: 1px solid rgb(200 195 183 / 62%);
   font-size: 0.76rem;
 }
 
@@ -624,7 +605,6 @@
   max-width: 30ch;
   margin: 34px 0 68px;
   padding-left: 28px;
-  border-left: 4px solid var(--chloris-lilac);
   font-size: clamp(2rem, 3.5vw, 3rem);
   line-height: 1.06;
 }
@@ -632,8 +612,6 @@
 .brand-principles {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--chloris-line);
-  border-bottom: 1px solid var(--chloris-line);
 }
 
 .brand-principles article {
@@ -645,7 +623,6 @@
 }
 
 .brand-principles article + article {
-  border-left: 1px solid var(--chloris-line);
 }
 
 .brand-principles article > span,
@@ -672,7 +649,6 @@
 .secondary-route {
   margin-top: 28px;
   padding-top: 16px;
-  border-top: 1px solid var(--chloris-line);
   font-size: 0.76rem;
 }
 
@@ -687,7 +663,6 @@
 .intention-map::before,
 .intention-map::after {
   position: absolute;
-  border: 1px solid rgb(81 69 84 / 20%);
   border-radius: 50%;
   content: "";
 }
@@ -728,12 +703,10 @@
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-top: 1px solid rgb(81 69 84 / 28%);
 }
 
 .intention-map i {
   padding: 16px 16px 12px 0;
-  border-bottom: 1px solid rgb(81 69 84 / 28%);
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.22rem;
   font-style: normal;
@@ -742,13 +715,11 @@
 
 .intention-map i:nth-child(even) {
   padding-left: 16px;
-  border-left: 1px solid rgb(81 69 84 / 28%);
 }
 
 .brand-expression {
   margin-top: 112px;
   padding-top: 54px;
-  border-top: 1px solid var(--chloris-line);
 }
 
 .brand-name {
@@ -771,11 +742,9 @@
 .content-layers article {
   min-height: 290px;
   padding: 28px;
-  border: 1px solid var(--chloris-line);
 }
 
 .content-layers article + article {
-  border-left: 0;
   background: #fff;
 }
 
@@ -798,7 +767,6 @@
   grid-template-columns: 80px 1fr;
   gap: 10px;
   padding-block: 8px;
-  border-top: 1px solid var(--chloris-line);
 }
 
 .content-layers dt,
@@ -824,7 +792,6 @@
 .trust-system ol {
   padding: 0;
   margin: 0;
-  border-top: 1px solid var(--chloris-line);
   list-style: none;
 }
 
@@ -833,7 +800,6 @@
   grid-template-columns: 42px 130px 1fr;
   gap: 12px;
   padding-block: 16px;
-  border-bottom: 1px solid var(--chloris-line);
   align-items: baseline;
 }
 
@@ -862,7 +828,6 @@
 .journey li {
   position: relative;
   padding: 22px 16px 0 0;
-  border-top: 1px solid var(--chloris-line);
 }
 
 .journey li::before {
@@ -914,15 +879,12 @@
 
 .senior-decisions article {
   padding-top: 22px;
-  border-top: 4px solid var(--chloris-petal);
 }
 
 .senior-decisions article:nth-child(2) {
-  border-top-color: var(--chloris-lilac);
 }
 
 .senior-decisions article:nth-child(3) {
-  border-top-color: var(--chloris-blue);
 }
 
 .senior-decisions h3 {
@@ -962,8 +924,6 @@
 
 .campaign-flow span {
   padding: 22px 8px;
-  border-top: 1px solid rgb(81 69 84 / 30%);
-  border-bottom: 1px solid rgb(81 69 84 / 30%);
   font-size: 0.72rem;
   text-align: center;
 }
@@ -990,7 +950,6 @@
   grid-template-columns: 1fr 1fr;
   padding: 0;
   margin: 0;
-  border-top: 1px solid var(--chloris-line);
   list-style: none;
 }
 
@@ -999,7 +958,6 @@
   grid-template-columns: 30px 1fr;
   gap: 8px;
   padding-block: 12px;
-  border-bottom: 1px solid var(--chloris-line);
   font-size: 0.73rem;
 }
 
@@ -1009,7 +967,6 @@
 
 .passport li:nth-child(even) {
   padding-left: 18px;
-  border-left: 1px solid var(--chloris-line);
 }
 
 .passport li span {
@@ -1026,15 +983,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 50px;
-  border-top: 1px solid var(--chloris-line);
-  border-left: 1px solid var(--chloris-line);
 }
 
 .constraints article {
   min-height: 155px;
   padding: 24px;
-  border-right: 1px solid var(--chloris-line);
-  border-bottom: 1px solid var(--chloris-line);
 }
 
 .constraints article strong,
@@ -1058,13 +1011,11 @@
 .international {
   margin-top: 112px;
   padding-top: 56px;
-  border-top: 1px solid var(--chloris-line);
 }
 
 .market-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--chloris-line);
 }
 
 .market-cards article {
@@ -1073,7 +1024,6 @@
 }
 
 .market-cards article + article {
-  border-left: 1px solid var(--chloris-line);
   background: linear-gradient(150deg, rgb(217 241 253 / 45%), transparent);
 }
 
@@ -1101,8 +1051,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 60px 0 112px;
-  border-top: 1px solid var(--chloris-line);
-  border-bottom: 1px solid var(--chloris-line);
 }
 
 .launch-facts article {
@@ -1114,7 +1062,6 @@
 }
 
 .launch-facts article + article {
-  border-left: 1px solid var(--chloris-line);
 }
 
 .launch-facts strong,
@@ -1151,7 +1098,6 @@
   grid-template-columns: 95px 1fr;
   gap: 2px 14px;
   padding-block: 13px;
-  border-top: 1px solid var(--chloris-line);
 }
 
 .measurement li strong {
@@ -1172,7 +1118,6 @@
 .reflection {
   margin-top: 112px;
   padding-top: 56px;
-  border-top: 1px solid var(--chloris-line);
 }
 
 .reflection > p {
@@ -1186,8 +1131,6 @@
 .case-close {
   margin-top: 112px;
   padding: 52px 0;
-  border-top: 1px solid var(--chloris-line);
-  border-bottom: 1px solid var(--chloris-line);
   align-items: end;
 }
 
@@ -1219,12 +1162,9 @@
 
   .project-snapshot > div:nth-child(3) {
     padding-left: 0;
-    border-top: 1px solid var(--chloris-line);
-    border-left: 0;
   }
 
   .project-snapshot > div:nth-child(4) {
-    border-top: 1px solid var(--chloris-line);
   }
 
   .positioning-layout {
@@ -1238,12 +1178,9 @@
 
   .brand-principles article:nth-child(3) {
     padding-left: 0;
-    border-top: 1px solid var(--chloris-line);
-    border-left: 0;
   }
 
   .brand-principles article:nth-child(4) {
-    border-top: 1px solid var(--chloris-line);
   }
 
   .journey {
@@ -1312,12 +1249,9 @@
   .project-snapshot > div + div,
   .project-snapshot > div:nth-child(3) {
     padding: 14px 0;
-    border-top: 1px solid var(--chloris-line);
-    border-left: 0;
   }
 
   .project-snapshot > div:first-child {
-    border-top: 0;
   }
 
   .chloris-chapters {
@@ -1474,8 +1408,6 @@
   .content-layers article + article,
   .market-cards article + article {
     padding-left: 0;
-    border-top: 1px solid var(--chloris-line);
-    border-left: 0;
   }
 
   .craft-compare article + article {
@@ -1490,18 +1422,13 @@
   .brand-principles article:first-child,
   .brand-principles article:nth-child(3) {
     padding: 20px 0;
-    border-top: 1px solid var(--chloris-line);
-    border-left: 0;
   }
 
   .brand-principles article:first-child {
-    border-top: 0;
   }
 
   .brand-principles article + article,
   .brand-principles article:nth-child(4) {
-    border-top: 1px solid var(--chloris-line);
-    border-left: 0;
   }
 
   .brand-principles article > span {
@@ -1583,7 +1510,6 @@
   .passport li:nth-child(even) {
     padding-right: 0;
     padding-left: 0;
-    border-left: 0;
   }
 
   .constraints {
@@ -1623,13 +1549,10 @@
   }
 
   .launch-facts article:nth-child(3) {
-    border-top: 1px solid var(--chloris-line);
-    border-left: 0;
   }
 
   .launch-facts article:nth-child(4) {
     padding-left: 18px;
-    border-top: 1px solid var(--chloris-line);
   }
 
   .launch-facts strong {
@@ -1661,5 +1584,210 @@
     transition-duration: 0.001ms !important;
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+
+/* Borderless refinement: use spacing and soft washes instead of decorative rules. */
+.chloris-chapters a::after,
+.intention-map::before,
+.intention-map::after {
+  display: none;
+}
+
+.chloris-chapters a.active {
+  color: var(--chloris-ink);
+  font-weight: 600;
+}
+
+.positioning-map {
+  /* These two edges are data axes, not decorative dividers. */
+  border-left: 1px solid var(--chloris-line);
+  border-bottom: 1px solid var(--chloris-line);
+}
+
+.plot {
+  /* Keeps each data marker legible against the map. */
+  border: 2px solid #fff;
+}
+
+.project-snapshot {
+  gap: 28px;
+}
+
+.competitor-audit ol {
+  display: grid;
+  gap: 14px;
+}
+
+.competitor-audit li {
+  padding: 18px;
+  background: rgb(249 217 224 / 28%);
+}
+
+.competitor-audit li[data-tone="lilac"] {
+  background: rgb(228 178 254 / 20%);
+}
+
+.competitor-audit li[data-tone="blue"] {
+  background: rgb(217 241 253 / 48%);
+}
+
+.competitor-audit li[data-tone="sand"] {
+  background: rgb(240 217 181 / 28%);
+}
+
+.opportunity-card {
+  padding: 24px;
+  background: rgb(216 237 218 / 58%);
+}
+
+.craft-compare {
+  gap: 24px;
+}
+
+.craft-compare article {
+  padding: 24px;
+  background: rgb(246 246 243 / 72%);
+}
+
+.brand-principles {
+  gap: 20px;
+}
+
+.brand-principles article,
+.brand-principles article:first-child,
+.brand-principles article:nth-child(3) {
+  padding: 24px;
+  background: rgb(255 255 255 / 72%);
+}
+
+.intention-map > div {
+  gap: 10px;
+}
+
+.intention-map i,
+.intention-map i:nth-child(even) {
+  padding: 14px;
+  background: rgb(255 255 255 / 26%);
+}
+
+.content-layers {
+  gap: 18px;
+}
+
+.content-layers article {
+  background: rgb(249 217 224 / 24%);
+}
+
+.content-layers article + article {
+  background: #fff;
+}
+
+.trust-system ol,
+.measurement ol {
+  display: grid;
+  gap: 8px;
+}
+
+.trust-system li,
+.measurement li {
+  padding: 14px;
+  background: var(--chloris-wash);
+}
+
+.journey li::before {
+  top: 8px;
+}
+
+.campaign-flow {
+  gap: 8px;
+}
+
+.campaign-flow span {
+  padding: 16px 8px;
+  background: rgb(255 255 255 / 34%);
+}
+
+.passport ol {
+  gap: 10px 18px;
+}
+
+.passport li,
+.passport li:nth-child(odd),
+.passport li:nth-child(even) {
+  padding: 12px;
+  background: var(--chloris-wash);
+}
+
+.constraints > div {
+  gap: 18px;
+}
+
+.constraints article {
+  background: #fff;
+}
+
+.market-cards {
+  gap: 18px;
+}
+
+.market-cards article {
+  background: #fff;
+}
+
+.launch-facts {
+  gap: 20px;
+}
+
+.chloris-case .launch-facts article,
+.chloris-case .launch-facts article:first-child,
+.chloris-case .launch-facts article:nth-child(2),
+.chloris-case .launch-facts article:nth-child(3),
+.chloris-case .launch-facts article:nth-child(4) {
+  padding: 24px;
+  background: var(--chloris-wash);
+}
+
+.case-close {
+  padding: 44px;
+  background: var(--chloris-wash);
+}
+
+@media (max-width: 760px) {
+  .competitor-audit li {
+    padding: 16px;
+  }
+
+  .brand-principles {
+    gap: 14px;
+  }
+
+  .brand-principles article,
+  .brand-principles article:first-child,
+  .brand-principles article:nth-child(3) {
+    padding: 20px;
+  }
+
+  .content-layers {
+    gap: 14px;
+  }
+
+  .content-layers article,
+  .content-layers article + article {
+    padding: 22px;
+  }
+
+  .market-cards {
+    gap: 14px;
+  }
+
+  .market-cards article,
+  .market-cards article + article {
+    padding: 24px;
+  }
+
+  .case-close {
+    padding: 28px 22px;
   }
 }
