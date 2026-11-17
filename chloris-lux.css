@@ -577,7 +577,6 @@
 .brand-principles article + article {
 }
 
-.brand-principles article > span,
 .trust-system li > span {
   display: block;
   margin-bottom: 36px;
@@ -1342,9 +1341,6 @@
   .brand-principles article:nth-child(4) {
   }
 
-  .brand-principles article > span {
-    margin-bottom: 16px;
-  }
 
   .intention-map {
     min-height: 340px;
