@@ -125,7 +125,8 @@
   font-weight: 400;
 }
 
-.chloris-hero-copy .eyebrow {
+.chloris-hero-copy .eyebrow,
+.problem-copy .eyebrow {
   margin: 1em 0;
   color: inherit;
   font-size: var(--type-small);
@@ -267,6 +268,14 @@
 
 .problem-copy h2 {
   margin-bottom: 0;
+}
+
+.chloris-case .problem-copy h2 {
+  font-family: var(--font-heading);
+  font-size: var(--type-h1);
+  font-weight: 400;
+  line-height: var(--type-h1-line);
+  letter-spacing: -0.02em;
 }
 
 .problem-copy > p:not(.eyebrow) {
