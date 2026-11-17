@@ -1,7 +1,7 @@
 // Each illustrated object is a real link. CSS handles hover and keyboard motion.
 // On touchscreens, labels and reveals remain visible; one tap follows the link.
 // Artwork uses stacked transparent PNG images in the shared 1440 × 900 scene.
-// Preserve classes such as .needle, .heart, .sparkle, and .address on moving layers.
+// Moving layers share the .object-effect class.
 const projectAnimations = new WeakMap();
 
 const projectSelectionRequests = new WeakMap();
