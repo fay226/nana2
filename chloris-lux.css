@@ -175,7 +175,7 @@
 .project-snapshot {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin: 52px 0 0;
+  margin: 52px auto 0;
 }
 
 .project-snapshot > div {
