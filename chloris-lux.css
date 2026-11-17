@@ -283,6 +283,16 @@
   margin-bottom: 18px;
 }
 
+.problem-paragraph-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: var(--type-small);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: var(--type-small-line);
+  text-transform: uppercase;
+}
+
 .problem-copy > p:last-child {
   grid-column: 2;
   margin-bottom: 0;
