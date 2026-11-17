@@ -404,9 +404,11 @@
 .competitor-audit li[data-tone="blue"] { border-left-color: var(--chloris-blue); }
 .competitor-audit li[data-tone="sand"] { border-left-color: var(--chloris-sand); }
 
-.competitor-audit li > span {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.7rem;
+.competitor-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
   line-height: 1;
 }
 
@@ -1255,8 +1257,8 @@
     padding: 12px 0 12px 10px;
   }
 
-  .competitor-audit li > span {
-    font-size: 1.25rem;
+  .competitor-icon {
+    font-size: 1.1rem;
   }
 
   .competitor-audit li h3 {
