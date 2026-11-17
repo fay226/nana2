@@ -38,7 +38,6 @@
 .chloris-case h2,
 .chloris-case h3,
 .chloris-case blockquote,
-.chloris-wordmark,
 .brand-name {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 400;
@@ -116,32 +115,28 @@
 }
 
 .chloris-hero {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 36px 68px;
-  min-height: calc(100vh - 64px);
-  padding-block: 72px 44px;
-  align-items: center;
+  min-height: 0;
+  padding-block: 0 44px;
 }
 
-.chloris-wordmark {
-  margin: 0 0 28px;
-  font-size: clamp(4rem, 8vw, 7.3rem);
-  line-height: 0.76;
-  letter-spacing: -0.055em;
-}
-
-.chloris-wordmark em,
 .brand-name em {
   font-weight: 400;
 }
 
-.chloris-lead {
-  max-width: 27ch;
-  margin-bottom: 30px;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(1.65rem, 2.5vw, 2.25rem);
-  line-height: 1.12 !important;
+.chloris-hero-copy .eyebrow {
+  margin: 1em 0;
+  color: inherit;
+  font-size: var(--type-small);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: var(--type-small-line) !important;
+}
+
+.chloris-hero-copy > p:last-child {
+  max-width: 65ch;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: var(--type-body-line);
 }
 
 .chloris-hero-actions,
@@ -150,6 +145,11 @@
   flex-wrap: wrap;
   gap: 16px 28px;
   align-items: center;
+}
+
+.chloris-hero-actions {
+  justify-content: center;
+  margin-top: 16px;
 }
 
 .chloris-link {
@@ -173,10 +173,9 @@
 }
 
 .project-snapshot {
-  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin: 10px 0 0;
+  margin: 52px 0 0;
 }
 
 .project-snapshot > div {
@@ -1102,11 +1101,6 @@
     width: min(100% - 48px, 860px);
   }
 
-  .chloris-hero {
-    grid-template-columns: 1fr;
-    gap: 28px 40px;
-  }
-
   .project-snapshot {
     grid-template-columns: 1fr 1fr;
   }
@@ -1167,18 +1161,8 @@
   }
 
   .chloris-hero {
-    display: block;
     min-height: 0;
-    padding-block: 54px 32px;
-  }
-
-  .chloris-wordmark {
-    margin-bottom: 24px;
-    font-size: clamp(4rem, 22vw, 5.8rem);
-  }
-
-  .chloris-lead {
-    font-size: 1.65rem;
+    padding-block: 0 32px;
   }
 
   .project-snapshot {
