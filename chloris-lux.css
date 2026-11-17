@@ -286,7 +286,11 @@
 .problem-paragraph-label {
   display: block;
   margin-bottom: 8px;
-  font-weight: 600;
+  font-size: var(--type-small);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: var(--type-small-line);
+  text-transform: uppercase;
 }
 
 .problem-copy > p:last-child {
