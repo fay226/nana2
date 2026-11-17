@@ -388,7 +388,8 @@
   line-height: 1;
 }
 
-.competitor-audit li h3 {
+.competitor-audit li h3,
+.opportunity-card h3 {
   margin-bottom: 10px;
   font-family: "DM Sans", sans-serif;
   font-size: 0.9rem;
@@ -416,7 +417,8 @@
   text-transform: uppercase;
 }
 
-.competitor-audit dd {
+.competitor-audit dd,
+.opportunity-card p {
   margin: 0;
   font-size: 0.74rem;
   line-height: 1.4;
@@ -424,27 +426,27 @@
 
 .opportunity-card {
   display: grid;
-  grid-template-columns: 92px 1fr;
-  gap: 2px 18px;
-  padding: 24px 0 0 18px;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  padding: 20px 0 20px 14px;
 }
 
 .opportunity-card .opportunity-icon {
+  display: inline-flex;
   grid-row: 1 / 3;
+  align-items: center;
+  justify-content: center;
   color: var(--chloris-muted);
   font-size: 1.25rem;
   line-height: 1;
 }
 
-.opportunity-card strong {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.7rem;
-  font-weight: 400;
+.opportunity-card h3 {
+  align-self: end;
 }
 
 .opportunity-card p {
-  margin-bottom: 0;
-  font-size: 0.78rem;
+  align-self: start;
 }
 
 .design-challenge {
@@ -1238,7 +1240,8 @@
     font-size: 1.1rem;
   }
 
-  .competitor-audit li h3 {
+  .competitor-audit li h3,
+  .opportunity-card h3 {
     margin-bottom: 7px;
     font-size: 0.76rem;
   }
@@ -1256,22 +1259,16 @@
     font-size: 0.57rem;
   }
 
-  .competitor-audit dd {
+  .competitor-audit dd,
+  .opportunity-card p {
     font-size: 0.64rem;
     line-height: 1.3;
   }
 
   .opportunity-card {
-    grid-template-columns: 76px 1fr;
-    padding: 18px 0 0 14px;
-  }
-
-  .opportunity-card strong {
-    font-size: 1.45rem;
-  }
-
-  .opportunity-card p {
-    font-size: 0.7rem;
+    grid-template-columns: 34px 1fr;
+    gap: 8px;
+    padding: 12px 0 12px 10px;
   }
 
   .design-challenge {
@@ -1544,8 +1541,8 @@
 }
 
 .opportunity-card {
-  padding: 24px;
-  background: rgb(216 237 218 / 58%);
+  padding: 18px;
+  background: #fcfaf3;
 }
 
 .craft-compare {
@@ -1661,7 +1658,8 @@
 }
 
 @media (max-width: 760px) {
-  .competitor-audit li {
+  .competitor-audit li,
+  .opportunity-card {
     padding: 16px;
   }
 
