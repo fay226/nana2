@@ -116,7 +116,7 @@
 
 .chloris-hero-copy .eyebrow,
 .problem-copy .eyebrow,
-#brand > .chloris-wrap > .eyebrow {
+.brand-intro .eyebrow {
   margin: 1em 0;
   color: inherit;
   font-size: var(--type-small);
@@ -249,24 +249,26 @@
   background: #fcfaf3;
 }
 
-.problem-copy {
+.problem-copy,
+.brand-intro {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   column-gap: 64px;
   margin-bottom: 62px;
 }
 
-.problem-copy .eyebrow {
+.problem-copy .eyebrow,
+.brand-intro .eyebrow {
   grid-column: 1 / -1;
 }
 
 .problem-copy h2,
-#brand > .chloris-wrap > h2 {
+.brand-intro h2 {
   margin-bottom: 0;
 }
 
 .chloris-case .problem-copy h2,
-.chloris-case #brand > .chloris-wrap > h2 {
+.chloris-case .brand-intro h2 {
   font-family: var(--font-heading);
   font-size: var(--type-h1);
   font-weight: 400;
@@ -281,6 +283,7 @@
 }
 
 .context-subsection h3,
+.brand-strategy h3,
 .design-challenge > h3,
 .craft-block > div:first-child > h3,
 .competitor-audit > .competitor-audit-title {
@@ -294,6 +297,7 @@
 }
 
 .context-subsection p,
+.brand-strategy p,
 .craft-description {
   margin: 0;
 }
@@ -556,15 +560,6 @@
   line-height: 1.06;
 }
 
-.chloris-case #brand > .chloris-wrap > blockquote {
-  max-width: 61ch;
-  padding-left: 0;
-  font-family: var(--font-body);
-  font-size: var(--type-body);
-  font-weight: 400;
-  letter-spacing: normal;
-  line-height: 1.65;
-}
 
 .brand-principles {
   display: grid;
@@ -1211,6 +1206,7 @@
   }
 
   .problem-copy,
+  .brand-intro,
   .positioning-layout,
   .design-challenge,
   .craft-block,
@@ -1226,11 +1222,13 @@
     grid-template-columns: 1fr;
   }
 
-  .problem-copy {
+  .problem-copy,
+  .brand-intro {
     margin-bottom: 48px;
   }
 
-  .problem-copy h2 {
+  .problem-copy h2,
+  .brand-intro h2 {
     margin-bottom: 22px;
   }
 
