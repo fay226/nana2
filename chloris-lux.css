@@ -588,7 +588,7 @@
 .brand-principles p {
   margin-bottom: 0;
   color: var(--chloris-muted);
-  font-size: 0.76rem;
+  font-size: 0.84rem;
   line-height: 1.55;
 }
 
@@ -1281,6 +1281,10 @@
   .craft-compare p {
     font-size: 0.72rem;
     line-height: 1.3;
+  }
+
+  .brand-principles p {
+    font-size: 0.72rem;
   }
 
   .opportunity-card {
