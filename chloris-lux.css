@@ -454,25 +454,14 @@
   grid-template-columns: 0.35fr 1.65fr;
   gap: 40px;
   margin-top: 96px;
-  padding: 50px 56px;
-  background: var(--chloris-plum);
-  color: #fff;
+  padding: 0;
+  background: transparent;
+  color: inherit;
 }
 
-.design-challenge span {
-  padding-top: 7px;
-  color: rgb(255 255 255 / 64%);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.design-challenge p {
-  max-width: 25ch;
-  margin: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(2rem, 3.5vw, 3.15rem);
-  line-height: 1.02;
+.design-challenge .eyebrow,
+.design-challenge h2 {
+  margin-bottom: 0;
 }
 
 .craft-block,
@@ -1274,11 +1263,7 @@
   .design-challenge {
     gap: 24px;
     margin-top: 64px;
-    padding: 36px 28px;
-  }
-
-  .design-challenge p {
-    font-size: 2rem;
+    padding: 0;
   }
 
   .craft-block,
