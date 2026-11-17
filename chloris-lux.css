@@ -412,7 +412,8 @@
   align-items: baseline;
 }
 
-.competitor-audit dt {
+.competitor-audit dt,
+.craft-compare span {
   color: var(--chloris-muted);
   font-size: 0.74rem;
   line-height: 1.4;
@@ -421,7 +422,8 @@
 }
 
 .competitor-audit dd,
-.opportunity-card p {
+.opportunity-card p,
+.craft-compare p {
   margin: 0;
   font-size: 0.84rem;
   line-height: 1.4;
@@ -519,7 +521,6 @@
   background: linear-gradient(to bottom, rgb(228 178 254 / 20%), transparent);
 }
 
-.craft-compare span,
 .senior-decisions article > span,
 .content-layers article > span,
 .market-cards article > span {
@@ -531,10 +532,13 @@
   text-transform: uppercase;
 }
 
+.craft-compare span {
+  display: block;
+  margin-bottom: 18px;
+}
+
 .craft-compare p {
-  margin-bottom: 0;
   padding-block: 10px;
-  font-size: 0.76rem;
 }
 
 .chloris-section blockquote {
@@ -1253,12 +1257,14 @@
     gap: 5px;
   }
 
-  .competitor-audit dt {
+  .competitor-audit dt,
+  .craft-compare span {
     font-size: 0.64rem;
   }
 
   .competitor-audit dd,
-  .opportunity-card p {
+  .opportunity-card p,
+  .craft-compare p {
     font-size: 0.72rem;
     line-height: 1.3;
   }
