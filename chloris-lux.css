@@ -115,7 +115,8 @@
 }
 
 .chloris-hero-copy .eyebrow,
-.problem-copy .eyebrow {
+.problem-copy .eyebrow,
+#brand > .chloris-wrap > .eyebrow {
   margin: 1em 0;
   color: inherit;
   font-size: var(--type-small);
@@ -259,11 +260,13 @@
   grid-column: 1 / -1;
 }
 
-.problem-copy h2 {
+.problem-copy h2,
+#brand > .chloris-wrap > h2 {
   margin-bottom: 0;
 }
 
-.chloris-case .problem-copy h2 {
+.chloris-case .problem-copy h2,
+.chloris-case #brand > .chloris-wrap > h2 {
   font-family: var(--font-heading);
   font-size: var(--type-h1);
   font-weight: 400;
@@ -551,6 +554,16 @@
   padding-left: 28px;
   font-size: clamp(2rem, 3.5vw, 3rem);
   line-height: 1.06;
+}
+
+.chloris-case #brand > .chloris-wrap > blockquote {
+  max-width: 61ch;
+  padding-left: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.65;
 }
 
 .brand-principles {
