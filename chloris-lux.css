@@ -283,6 +283,12 @@
   margin-bottom: 18px;
 }
 
+.problem-paragraph-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
 .problem-copy > p:last-child {
   grid-column: 2;
   margin-bottom: 0;
