@@ -1532,7 +1532,7 @@
 
 .competitor-audit ol {
   display: grid;
-  gap: 14px;
+  gap: 0;
 }
 
 .competitor-audit li {
