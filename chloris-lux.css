@@ -275,6 +275,7 @@
 
 .context-subsection h3,
 .design-challenge > h3,
+.craft-block > div:first-child > h3,
 .competitor-audit > .competitor-audit-title {
   margin: 0 0 8px;
   font-family: var(--font-body);
@@ -285,7 +286,8 @@
   text-transform: uppercase;
 }
 
-.context-subsection p {
+.context-subsection p,
+.craft-description {
   margin: 0;
 }
 
@@ -460,12 +462,16 @@
   color: inherit;
 }
 
-.design-challenge-question {
+.section-emphasis {
   max-width: 52ch;
   margin: 0;
   font-size: clamp(1.15rem, 1.8vw, 1.4rem);
   font-weight: 400;
   line-height: 1.55;
+}
+
+.craft-block .section-emphasis {
+  margin-bottom: 24px;
 }
 
 .craft-block,
@@ -488,7 +494,6 @@
   margin-top: 112px;
 }
 
-.craft-block > div:first-child > p:not(.eyebrow),
 .intention-decision > div:first-child > p:not(.eyebrow),
 .trust-system > div:first-child > p:not(.eyebrow),
 .passport > div:first-child > p:not(.eyebrow),
