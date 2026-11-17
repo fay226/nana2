@@ -1551,7 +1551,11 @@
 
 .craft-compare article {
   padding: 24px;
-  background: rgb(246 246 243 / 72%);
+  background: transparent;
+}
+
+.craft-compare article.selected {
+  background: #fcfaf3;
 }
 
 .brand-principles {
