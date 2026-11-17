@@ -406,12 +406,12 @@
   display: grid;
   grid-template-columns: 68px 1fr;
   gap: 8px;
-  align-items: start;
+  align-items: baseline;
 }
 
 .competitor-audit dt {
   color: var(--chloris-muted);
-  font-size: 0.65rem;
+  font-size: 0.74rem;
   line-height: 1.4;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -420,7 +420,7 @@
 .competitor-audit dd,
 .opportunity-card p {
   margin: 0;
-  font-size: 0.74rem;
+  font-size: 0.84rem;
   line-height: 1.4;
 }
 
@@ -1245,12 +1245,12 @@
   }
 
   .competitor-audit dt {
-    font-size: 0.57rem;
+    font-size: 0.64rem;
   }
 
   .competitor-audit dd,
   .opportunity-card p {
-    font-size: 0.64rem;
+    font-size: 0.72rem;
     line-height: 1.3;
   }
 
