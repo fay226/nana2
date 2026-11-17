@@ -69,9 +69,6 @@
  white-space:nowrap;
  pointer-events:none;
 }
-.about-transcript {text-align:left;max-width:700px;margin:10px auto;color:var(--muted)}
-.about-transcript summary {cursor:pointer;text-decoration:underline;text-underline-offset:4px}
-.about-transcript p {line-height:1.65}
 .about-flipbook.is-fallback {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));cursor:pointer}
 .about-flipbook.is-fallback .about-page {display:none}
 .about-flipbook.is-fallback .about-page.is-visible {display:block}
