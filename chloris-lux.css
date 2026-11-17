@@ -349,10 +349,10 @@
 
 .plot::before {
   position: absolute;
-  top: -22px;
+  top: -25px;
   left: -4px;
   color: var(--chloris-muted);
-  font-size: 0.57rem;
+  font-size: 0.9rem;
   font-style: normal;
   content: attr(data-index);
 }
@@ -451,12 +451,11 @@
   padding: 24px 0 0 18px;
 }
 
-.opportunity-card span {
+.opportunity-card .opportunity-icon {
   grid-row: 1 / 3;
   color: var(--chloris-muted);
-  font-size: 0.66rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 1.25rem;
+  line-height: 1;
 }
 
 .opportunity-card strong {
