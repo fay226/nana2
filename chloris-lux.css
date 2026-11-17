@@ -301,20 +301,7 @@
   width: min(100%, 480px);
   aspect-ratio: 1;
   margin: 0 auto;
-  background:
-    linear-gradient(to right, transparent 49.8%, rgb(200 195 183 / 36%) 50%, transparent 50.2%),
-    linear-gradient(to bottom, transparent 49.8%, rgb(200 195 183 / 36%) 50%, transparent 50.2%);
-}
-
-.positioning-map::before {
-  position: absolute;
-  top: 18%;
-  right: 12%;
-  width: 32%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: rgb(228 178 254 / 24%);
-  content: "";
+  background: transparent;
 }
 
 .axis {
@@ -339,11 +326,8 @@
 
 .plot {
   position: absolute;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--chloris-plum);
-  box-shadow: 0 0 0 1px var(--chloris-plum);
+  width: 0;
+  height: 0;
   font-style: normal;
 }
 
@@ -377,10 +361,6 @@
 .plot-chloris {
   top: 20%;
   left: 76%;
-  width: 17px;
-  height: 17px;
-  background: var(--chloris-lilac);
-  box-shadow: 0 0 0 1px var(--chloris-plum), 0 0 0 8px rgb(228 178 254 / 28%);
 }
 .plot-chloris::before {
   color: var(--chloris-plum);
@@ -399,10 +379,6 @@
   gap: 14px;
   padding: 20px 0 20px 14px;
 }
-
-.competitor-audit li[data-tone="lilac"] { border-left-color: var(--chloris-lilac); }
-.competitor-audit li[data-tone="blue"] { border-left-color: var(--chloris-blue); }
-.competitor-audit li[data-tone="sand"] { border-left-color: var(--chloris-sand); }
 
 .competitor-icon {
   display: inline-flex;
@@ -429,11 +405,13 @@
   display: grid;
   grid-template-columns: 68px 1fr;
   gap: 8px;
+  align-items: start;
 }
 
 .competitor-audit dt {
   color: var(--chloris-muted);
   font-size: 0.65rem;
+  line-height: 1.4;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -1527,11 +1505,6 @@
   border-bottom: 1px solid var(--chloris-line);
 }
 
-.plot {
-  /* Keeps each data marker legible against the map. */
-  border: 2px solid #fff;
-}
-
 .project-snapshot {
   gap: 28px;
 }
@@ -1543,19 +1516,7 @@
 
 .competitor-audit li {
   padding: 18px;
-  background: rgb(249 217 224 / 28%);
-}
-
-.competitor-audit li[data-tone="lilac"] {
-  background: rgb(228 178 254 / 20%);
-}
-
-.competitor-audit li[data-tone="blue"] {
-  background: rgb(217 241 253 / 48%);
-}
-
-.competitor-audit li[data-tone="sand"] {
-  background: rgb(240 217 181 / 28%);
+  background: transparent;
 }
 
 .opportunity-card {
