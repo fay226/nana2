@@ -115,7 +115,8 @@
 }
 
 .chloris-hero-copy .eyebrow,
-.problem-copy .eyebrow {
+.problem-copy .eyebrow,
+#brand > .chloris-wrap > .eyebrow {
   margin: 1em 0;
   color: inherit;
   font-size: var(--type-small);
@@ -259,11 +260,13 @@
   grid-column: 1 / -1;
 }
 
-.problem-copy h2 {
+.problem-copy h2,
+#brand > .chloris-wrap > h2 {
   margin-bottom: 0;
 }
 
-.chloris-case .problem-copy h2 {
+.chloris-case .problem-copy h2,
+.chloris-case #brand > .chloris-wrap > h2 {
   font-family: var(--font-heading);
   font-size: var(--type-h1);
   font-weight: 400;
