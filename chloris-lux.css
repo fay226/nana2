@@ -244,6 +244,10 @@
   background: var(--chloris-wash);
 }
 
+.chloris-case #brand {
+  background: #fcfaf3;
+}
+
 .problem-copy {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
