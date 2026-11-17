@@ -406,7 +406,7 @@
   display: grid;
   grid-template-columns: 68px 1fr;
   gap: 8px;
-  align-items: start;
+  align-items: baseline;
 }
 
 .competitor-audit dt {
