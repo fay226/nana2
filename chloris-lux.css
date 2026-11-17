@@ -486,6 +486,10 @@
   text-wrap: balance;
 }
 
+.design-challenge .section-emphasis {
+  max-width: none;
+}
+
 .craft-block .section-emphasis {
   margin-bottom: 24px;
 }
