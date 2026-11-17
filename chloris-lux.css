@@ -556,6 +556,16 @@
   line-height: 1.06;
 }
 
+.chloris-case #brand > .chloris-wrap > blockquote {
+  max-width: 61ch;
+  padding-left: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.65;
+}
+
 .brand-principles {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
