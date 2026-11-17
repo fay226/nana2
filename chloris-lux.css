@@ -411,7 +411,7 @@
 
 .competitor-audit dt {
   color: var(--chloris-muted);
-  font-size: 0.65rem;
+  font-size: 0.74rem;
   line-height: 1.4;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -1245,7 +1245,7 @@
   }
 
   .competitor-audit dt {
-    font-size: 0.57rem;
+    font-size: 0.64rem;
   }
 
   .competitor-audit dd,
