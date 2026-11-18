@@ -474,13 +474,7 @@
   max-width: none;
 }
 
-.craft-block .section-heading {
-  margin-bottom: 24px;
-}
-
-.craft-block,
-.intention-decision,
-.brand-expression,
+.decision-section,
 .trust-system,
 .campaign,
 .passport,
@@ -494,8 +488,7 @@
   align-items: start;
 }
 
-.craft-block,
-.brand-expression {
+.decision-section {
   margin-top: 112px;
   padding-top: 54px;
 }
@@ -576,11 +569,6 @@
   color: var(--chloris-muted);
   font-size: 0.84rem;
   line-height: 1.55;
-}
-
-.intention-decision {
-  margin-top: 112px;
-  align-items: center;
 }
 
 .secondary-route {
@@ -1071,9 +1059,7 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .craft-block,
-  .intention-decision,
-  .brand-expression,
+  .decision-section,
   .trust-system,
   .campaign,
   .passport,
@@ -1142,9 +1128,7 @@
   .brand-intro,
   .positioning-layout,
   .design-challenge,
-  .craft-block,
-  .intention-decision,
-  .brand-expression,
+  .decision-section,
   .trust-system,
   .campaign,
   .passport,
@@ -1233,9 +1217,7 @@
     padding: 0;
   }
 
-  .craft-block,
-  .intention-decision,
-  .brand-expression,
+  .decision-section,
   .trust-system,
   .campaign,
   .passport,
@@ -1281,8 +1263,7 @@
     margin-bottom: 42px;
   }
 
-  .craft-block,
-  .brand-expression {
+  .decision-section {
     padding-top: 40px;
   }
 
