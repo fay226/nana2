@@ -298,9 +298,19 @@
 }
 
 .context-subsection p,
-.brand-strategy p,
 .craft-description {
   margin: 0;
+}
+
+.brand-strategy p,
+.decision-description {
+  margin: 0;
+  color: inherit;
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.65;
 }
 
 .positioning-layout {
@@ -519,7 +529,7 @@
   margin-top: 112px;
 }
 
-.intention-decision > div:first-child > p:not(.eyebrow),
+.intention-decision > div:first-child > p:not(.eyebrow):not(.decision-description),
 .trust-system > div:first-child > p:not(.eyebrow),
 .passport > div:first-child > p:not(.eyebrow),
 .international > div:first-child > p:not(.eyebrow) {
