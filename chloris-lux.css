@@ -1763,7 +1763,18 @@
 
 .intention-slides {
   position: absolute;
+  width: 100%;
+  height: 100%;
   inset: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.intention-slides:focus-visible {
+  outline: 2px solid var(--chloris-ink);
+  outline-offset: -4px;
 }
 
 .intention-slide {
@@ -1773,7 +1784,8 @@
   inset: 0;
   object-fit: contain;
   opacity: 0;
-  transition: opacity 350ms ease;
+  pointer-events: none;
+  transition: opacity 350ms ease, transform 250ms ease;
 }
 
 .intention-slide.is-active {
@@ -1823,6 +1835,95 @@
 @media (prefers-reduced-motion: reduce) {
   .intention-slide {
     transition: none;
+  }
+}
+
+.intention-slides:hover .intention-slide.is-active {
+  transform: scale(1.018);
+}
+
+.intention-lightbox {
+  width: min(92vw, 1200px);
+  max-width: none;
+  max-height: 92vh;
+  padding: 0;
+  border: 0;
+  background: #fcfaf3;
+  color: var(--chloris-ink);
+  overflow: visible;
+}
+
+.intention-lightbox::backdrop {
+  background: rgb(36 36 31 / 74%);
+  backdrop-filter: blur(3px);
+}
+
+.intention-lightbox-frame {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: 12px;
+  min-height: min(78vh, 820px);
+  padding: 52px 22px 22px;
+}
+
+.intention-lightbox img {
+  width: 100%;
+  max-height: calc(92vh - 84px);
+  object-fit: contain;
+}
+
+.intention-lightbox button {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: rgb(255 255 255 / 62%);
+  color: var(--chloris-ink);
+  font: 400 1.35rem/1 "DM Sans", sans-serif;
+  cursor: pointer;
+  place-items: center;
+}
+
+.intention-lightbox button:hover {
+  background: rgb(255 255 255 / 90%);
+}
+
+.intention-lightbox button:focus-visible {
+  outline: 2px solid var(--chloris-ink);
+  outline-offset: 3px;
+}
+
+.intention-lightbox-close {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  right: 10px;
+}
+
+@media (max-width: 640px) {
+  .intention-lightbox {
+    width: 96vw;
+  }
+
+  .intention-lightbox-frame {
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+    gap: 4px;
+    min-height: 70vh;
+    padding: 50px 8px 14px;
+  }
+
+  .intention-lightbox button {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intention-slides:hover .intention-slide.is-active {
+    transform: none;
   }
 }
 
