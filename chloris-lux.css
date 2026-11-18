@@ -1736,3 +1736,77 @@
     padding: 28px 22px;
   }
 }
+
+/* Intention drawings: activates only after all three PNG files load. */
+.intention-map.has-slideshow {
+  padding: 0;
+  background: #fcfaf3;
+}
+
+.intention-map.has-slideshow > span,
+.intention-map.has-slideshow > strong,
+.intention-map.has-slideshow > div:not(.intention-slideshow) {
+  display: none;
+}
+
+.intention-map > .intention-slideshow {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: block;
+  min-height: inherit;
+}
+
+.intention-slideshow[hidden] {
+  display: none;
+}
+
+.intention-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.intention-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+
+.intention-slide.is-active {
+  opacity: 1;
+}
+
+.intention-slideshow-toggle {
+  position: absolute;
+  z-index: 1;
+  right: 18px;
+  bottom: 16px;
+  padding: 8px 11px;
+  border: 0;
+  background: rgb(252 250 243 / 88%);
+  color: var(--chloris-muted);
+  font: 500 0.68rem/1 "DM Sans", sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.intention-slideshow-toggle:focus-visible {
+  outline: 2px solid var(--chloris-ink);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intention-slide {
+    transition: none;
+  }
+
+  .intention-slideshow-toggle {
+    display: none;
+  }
+}
+
