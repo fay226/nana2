@@ -32,8 +32,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 const intentionSlideshow = document.querySelector('[data-intention-slideshow]');
+const intentionLightbox = document.querySelector('.intention-lightbox');
 
-if (intentionSlideshow) {
+if (intentionSlideshow && intentionLightbox) {
   const imageSources = intentionSlideshow.dataset.images
     .split('|')
     .map(source => source.trim())
@@ -41,6 +42,10 @@ if (intentionSlideshow) {
   const slides = intentionSlideshow.querySelector('.intention-slides');
   const previous = intentionSlideshow.querySelector('.intention-slideshow-previous');
   const next = intentionSlideshow.querySelector('.intention-slideshow-next');
+  const lightboxImage = intentionLightbox.querySelector('img');
+  const lightboxClose = intentionLightbox.querySelector('.intention-lightbox-close');
+  const lightboxPrevious = intentionLightbox.querySelector('.intention-lightbox-previous');
+  const lightboxNext = intentionLightbox.querySelector('.intention-lightbox-next');
   const map = intentionSlideshow.closest('.intention-map');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -66,11 +71,17 @@ if (intentionSlideshow) {
 
       let activeIndex = 0;
       let intervalId;
+      let lightboxOpen = false;
+
+      const updateLightbox = () => {
+        lightboxImage.src = images[activeIndex].src;
+      };
 
       const showSlide = index => {
         images[activeIndex].classList.remove('is-active');
         activeIndex = (index + images.length) % images.length;
         images[activeIndex].classList.add('is-active');
+        if (lightboxOpen) updateLightbox();
       };
 
       const showNext = () => showSlide(activeIndex + 1);
@@ -82,15 +93,38 @@ if (intentionSlideshow) {
       };
 
       const start = () => {
-        if (!intervalId) {
+        if (!reduceMotion && !lightboxOpen && !intervalId) {
           intervalId = window.setInterval(showNext, 3000);
         }
       };
 
+      const openLightbox = () => {
+        stop();
+        lightboxOpen = true;
+        updateLightbox();
+        intentionLightbox.showModal();
+      };
+
       previous.addEventListener('click', showPrevious);
       next.addEventListener('click', showNext);
+      slides.addEventListener('click', openLightbox);
+      lightboxPrevious.addEventListener('click', showPrevious);
+      lightboxNext.addEventListener('click', showNext);
+      lightboxClose.addEventListener('click', () => intentionLightbox.close());
 
-      if (reduceMotion) return;
+      intentionLightbox.addEventListener('click', event => {
+        if (event.target === intentionLightbox) intentionLightbox.close();
+      });
+
+      intentionLightbox.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft') showPrevious();
+        if (event.key === 'ArrowRight') showNext();
+      });
+
+      intentionLightbox.addEventListener('close', () => {
+        lightboxOpen = false;
+        slides.focus();
+      });
 
       intentionSlideshow.addEventListener('pointerenter', stop);
       intentionSlideshow.addEventListener('pointerleave', start);
@@ -103,4 +137,3 @@ if (intentionSlideshow) {
       // Keep the existing intention graphic visible until all drawings are available.
     });
 }
-
