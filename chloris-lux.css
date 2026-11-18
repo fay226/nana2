@@ -525,8 +525,10 @@
   align-items: start;
 }
 
-.craft-block {
+.craft-block,
+.brand-expression {
   margin-top: 112px;
+  padding-top: 54px;
 }
 
 .intention-decision > div:first-child > p:not(.eyebrow):not(.decision-description),
@@ -688,11 +690,6 @@
 
 .intention-map i:nth-child(even) {
   padding-left: 16px;
-}
-
-.brand-expression {
-  margin-top: 112px;
-  padding-top: 54px;
 }
 
 .brand-name {
@@ -1374,6 +1371,7 @@
     margin-bottom: 42px;
   }
 
+  .craft-block,
   .brand-expression {
     padding-top: 40px;
   }
