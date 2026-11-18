@@ -696,10 +696,7 @@
 }
 
 .brand-name {
-  margin: 12px 0 24px;
-  font-size: clamp(3.3rem, 5.5vw, 5.2rem);
-  line-height: 0.78 !important;
-  letter-spacing: -0.045em;
+  margin: 0 0 24px;
 }
 
 .brand-expression > div:first-child > p:last-child {
