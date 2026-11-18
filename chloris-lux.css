@@ -476,15 +476,19 @@
   color: inherit;
 }
 
-.section-emphasis {
-  max-width: 52ch;
-  margin: 0;
+.section-emphasis,
+.chloris-case .decision-heading {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(1.45rem, 2vw, 1.85rem);
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.05;
   text-wrap: balance;
+}
+
+.section-emphasis {
+  max-width: 52ch;
+  margin: 0;
 }
 
 .design-challenge .section-emphasis {
