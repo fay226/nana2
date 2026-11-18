@@ -282,12 +282,7 @@
   max-width: 61ch;
 }
 
-.context-subsection h3,
-.brand-strategy h3,
-.chloris-case .decision-title,
-.design-challenge > h3,
-.craft-block > div:first-child > h3,
-.competitor-audit > .competitor-audit-title {
+.chloris-case .section-title {
   margin: 0 0 8px;
   font-family: var(--font-body);
   font-size: var(--type-small);
@@ -297,13 +292,12 @@
   text-transform: uppercase;
 }
 
-.context-subsection p,
-.craft-description {
+.context-subsection p {
   margin: 0;
 }
 
 .brand-strategy p,
-.decision-description {
+.chloris-case .section-description {
   margin: 0;
   color: inherit;
   font-family: var(--font-body);
@@ -486,8 +480,7 @@
   color: inherit;
 }
 
-.chloris-case .section-emphasis,
-.chloris-case .decision-heading {
+.chloris-case .section-heading {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(1.45rem, 2vw, 1.85rem);
   font-weight: 400;
@@ -496,16 +489,16 @@
   text-wrap: balance;
 }
 
-.section-emphasis {
+.chloris-case p.section-heading {
   max-width: 52ch;
   margin: 0;
 }
 
-.design-challenge .section-emphasis {
+.design-challenge .section-heading {
   max-width: none;
 }
 
-.craft-block .section-emphasis {
+.craft-block .section-heading {
   margin-bottom: 24px;
 }
 
@@ -531,7 +524,7 @@
   padding-top: 54px;
 }
 
-.intention-decision > div:first-child > p:not(.eyebrow):not(.decision-description),
+.intention-decision > div:first-child > p:not(.eyebrow):not(.section-description),
 .trust-system > div:first-child > p:not(.eyebrow),
 .passport > div:first-child > p:not(.eyebrow),
 .international > div:first-child > p:not(.eyebrow) {
