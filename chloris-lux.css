@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap");
-
 .chloris-case {
   --chloris-petal: #f9d9e0;
   --chloris-lilac: #e4b2fe;
@@ -37,8 +35,7 @@
 
 .chloris-case h2,
 .chloris-case h3,
-.chloris-case blockquote,
-.brand-name {
+.chloris-case blockquote {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 400;
 }
@@ -108,10 +105,6 @@
 .chloris-hero {
   min-height: 0;
   padding-block: 0 44px;
-}
-
-.brand-name em {
-  font-weight: 400;
 }
 
 .chloris-hero-copy .eyebrow,
@@ -212,27 +205,10 @@
   transition: color 180ms ease;
 }
 
-.chloris-chapters a::after {
-  position: absolute;
-  right: 20px;
-  bottom: -1px;
-  left: 20px;
-  height: 2px;
-  transform: scaleX(0);
-  transform-origin: left;
-  background: var(--chloris-plum);
-  content: "";
-  transition: transform 180ms ease;
-}
-
 .chloris-chapters a:hover,
 .chloris-chapters a:focus-visible,
 .chloris-chapters a.active {
   color: var(--chloris-ink);
-}
-
-.chloris-chapters a.active::after {
-  transform: scaleX(1);
 }
 
 .chloris-section {
@@ -545,10 +521,6 @@
   padding-left: 28px;
 }
 
-.craft-compare article.selected {
-  background: linear-gradient(to bottom, rgb(228 178 254 / 20%), transparent);
-}
-
 .senior-decisions article > span,
 .content-layers article > span,
 .market-cards article > span {
@@ -591,9 +563,6 @@
   padding-left: 0;
 }
 
-.brand-principles article + article {
-}
-
 .trust-system li > span {
   display: block;
   margin-bottom: 36px;
@@ -626,27 +595,6 @@
   padding: 50px;
   overflow: hidden;
   background: linear-gradient(135deg, var(--chloris-petal), rgb(228 178 254 / 58%));
-}
-
-.intention-map::before,
-.intention-map::after {
-  position: absolute;
-  border-radius: 50%;
-  content: "";
-}
-
-.intention-map::before {
-  width: 280px;
-  height: 280px;
-  top: -80px;
-  right: -80px;
-}
-
-.intention-map::after {
-  width: 220px;
-  height: 220px;
-  bottom: -100px;
-  left: -70px;
 }
 
 .intention-map > span {
@@ -841,12 +789,6 @@
   padding-top: 22px;
 }
 
-.senior-decisions article:nth-child(2) {
-}
-
-.senior-decisions article:nth-child(3) {
-}
-
 .senior-decisions h3 {
   min-height: 2.2em;
 }
@@ -1021,9 +963,6 @@
   padding-left: 0;
 }
 
-.launch-facts article + article {
-}
-
 .launch-facts strong,
 .launch-facts span {
   display: block;
@@ -1115,18 +1054,12 @@
     padding-left: 0;
   }
 
-  .project-snapshot > div:nth-child(4) {
-  }
-
   .brand-principles {
     grid-template-columns: 1fr 1fr;
   }
 
   .brand-principles article:nth-child(3) {
     padding-left: 0;
-  }
-
-  .brand-principles article:nth-child(4) {
   }
 
   .journey {
@@ -1178,9 +1111,6 @@
     padding: 14px 0;
   }
 
-  .project-snapshot > div:first-child {
-  }
-
   .chloris-chapters {
     top: 0;
     justify-content: flex-start;
@@ -1201,11 +1131,6 @@
 
   .chloris-chapters a:first-child {
     padding-left: 18px;
-  }
-
-  .chloris-chapters a::after {
-    right: 12px;
-    left: 12px;
   }
 
   .chloris-section {
@@ -1347,14 +1272,6 @@
     padding: 20px 0;
   }
 
-  .brand-principles article:first-child {
-  }
-
-  .brand-principles article + article,
-  .brand-principles article:nth-child(4) {
-  }
-
-
   .intention-map {
     min-height: 340px;
     padding: 34px 28px;
@@ -1469,9 +1386,6 @@
     padding-left: 18px;
   }
 
-  .launch-facts article:nth-child(3) {
-  }
-
   .launch-facts article:nth-child(4) {
     padding-left: 18px;
   }
@@ -1508,13 +1422,6 @@
   }
 }
 
-
-/* Borderless refinement: use spacing and soft washes instead of decorative rules. */
-.chloris-chapters a::after,
-.intention-map::before,
-.intention-map::after {
-  display: none;
-}
 
 .chloris-chapters a.active {
   color: var(--chloris-ink);
