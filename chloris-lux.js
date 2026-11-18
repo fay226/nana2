@@ -40,6 +40,8 @@ if (intentionSlideshow) {
     .filter(Boolean);
   const slides = intentionSlideshow.querySelector('.intention-slides');
   const toggle = intentionSlideshow.querySelector('.intention-slideshow-toggle');
+  const previous = intentionSlideshow.querySelector('.intention-slideshow-previous');
+  const next = intentionSlideshow.querySelector('.intention-slideshow-next');
   const map = intentionSlideshow.closest('.intention-map');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -69,11 +71,14 @@ if (intentionSlideshow) {
       let intervalId;
       let pausedByUser = false;
 
-      const showNext = () => {
+      const showSlide = index => {
         images[activeIndex].classList.remove('is-active');
-        activeIndex = (activeIndex + 1) % images.length;
+        activeIndex = (index + images.length) % images.length;
         images[activeIndex].classList.add('is-active');
       };
+
+      const showNext = () => showSlide(activeIndex + 1);
+      const showPrevious = () => showSlide(activeIndex - 1);
 
       const stop = () => {
         window.clearInterval(intervalId);
@@ -82,7 +87,7 @@ if (intentionSlideshow) {
 
       const start = () => {
         if (!intervalId && !pausedByUser) {
-          intervalId = window.setInterval(showNext, 1500);
+          intervalId = window.setInterval(showNext, 3000);
         }
       };
 
@@ -93,6 +98,9 @@ if (intentionSlideshow) {
         if (pausedByUser) stop();
         else start();
       });
+
+      previous.addEventListener('click', showPrevious);
+      next.addEventListener('click', showNext);
 
       intentionSlideshow.addEventListener('pointerenter', stop);
       intentionSlideshow.addEventListener('pointerleave', start);
