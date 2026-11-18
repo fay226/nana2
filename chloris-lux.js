@@ -39,7 +39,6 @@ if (intentionSlideshow) {
     .map(source => source.trim())
     .filter(Boolean);
   const slides = intentionSlideshow.querySelector('.intention-slides');
-  const toggle = intentionSlideshow.querySelector('.intention-slideshow-toggle');
   const previous = intentionSlideshow.querySelector('.intention-slideshow-previous');
   const next = intentionSlideshow.querySelector('.intention-slideshow-next');
   const map = intentionSlideshow.closest('.intention-map');
@@ -65,11 +64,8 @@ if (intentionSlideshow) {
       intentionSlideshow.hidden = false;
       map.classList.add('has-slideshow');
 
-      if (reduceMotion) return;
-
       let activeIndex = 0;
       let intervalId;
-      let pausedByUser = false;
 
       const showSlide = index => {
         images[activeIndex].classList.remove('is-active');
@@ -86,21 +82,15 @@ if (intentionSlideshow) {
       };
 
       const start = () => {
-        if (!intervalId && !pausedByUser) {
+        if (!intervalId) {
           intervalId = window.setInterval(showNext, 3000);
         }
       };
 
-      toggle.addEventListener('click', () => {
-        pausedByUser = !pausedByUser;
-        toggle.setAttribute('aria-pressed', String(pausedByUser));
-        toggle.textContent = pausedByUser ? 'Play drawings' : 'Pause drawings';
-        if (pausedByUser) stop();
-        else start();
-      });
-
       previous.addEventListener('click', showPrevious);
       next.addEventListener('click', showNext);
+
+      if (reduceMotion) return;
 
       intentionSlideshow.addEventListener('pointerenter', stop);
       intentionSlideshow.addEventListener('pointerleave', start);
