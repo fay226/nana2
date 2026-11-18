@@ -255,7 +255,11 @@
                 data-images="assets/chloris-intention-01.png|assets/chloris-intention-02.png|assets/chloris-intention-03.png"
                 hidden
               >
-                <div class="intention-slides" aria-hidden="true"></div>
+                <button
+                  class="intention-slides"
+                  type="button"
+                  aria-label="Enlarge current intention drawing"
+                ></button>
                 <div class="intention-slideshow-controls">
                   <button
                     class="intention-slideshow-previous"
@@ -505,6 +509,33 @@
     <footer>
       <span>Fiona · Made with 🩵</span>
     </footer>
+
+    <dialog class="intention-lightbox" aria-label="Expanded intention drawing">
+      <div class="intention-lightbox-frame">
+        <button
+          class="intention-lightbox-close"
+          type="button"
+          aria-label="Close enlarged drawing"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+        <button
+          class="intention-lightbox-previous"
+          type="button"
+          aria-label="Show previous drawing"
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+        <img src="" alt="Expanded Shop by intention drawing" />
+        <button
+          class="intention-lightbox-next"
+          type="button"
+          aria-label="Show next drawing"
+        >
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </dialog>
 
     <script src="chloris-lux.js" defer></script>
   </body>
