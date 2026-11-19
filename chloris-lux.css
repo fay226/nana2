@@ -326,14 +326,14 @@
   font-style: normal;
 }
 
-.plot::before {
+.plot img {
   position: absolute;
-  top: -25px;
-  left: -4px;
-  color: var(--chloris-muted);
-  font-size: 0.9rem;
-  font-style: normal;
-  content: attr(data-index);
+  top: -30px;
+  left: -14px;
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 
 .plot::after {
@@ -357,11 +357,6 @@
   top: 20%;
   left: 76%;
 }
-.plot-chloris::before {
-  color: var(--chloris-plum);
-  font-weight: 600;
-}
-
 .competitor-audit ol {
   padding: 0;
   margin: 0;
@@ -1164,6 +1159,13 @@
     position: relative;
     top: auto;
     width: min(86vw, 330px);
+  }
+
+  .plot img {
+    top: -26px;
+    left: -12px;
+    width: 24px;
+    height: 24px;
   }
 
   .plot::after {
