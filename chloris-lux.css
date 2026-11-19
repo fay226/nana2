@@ -332,6 +332,7 @@
   left: -14px;
   display: block;
   width: 28px;
+  max-width: none;
   height: 28px;
   object-fit: contain;
 }
