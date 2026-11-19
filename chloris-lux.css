@@ -438,6 +438,13 @@
   line-height: 1;
 }
 
+.competitor-icon img,
+.opportunity-icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .opportunity-card h3 {
   align-self: end;
 }
