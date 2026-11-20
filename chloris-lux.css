@@ -1833,26 +1833,30 @@
 .intention-slideshow-controls {
   position: absolute;
   z-index: 1;
-  right: 18px;
-  bottom: 16px;
+  inset: 0;
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px;
-  background: rgb(252 250 243 / 88%);
+  justify-content: space-between;
+  padding: 0 16px;
+  pointer-events: none;
 }
 
 .intention-slideshow-controls button {
-  min-width: 34px;
-  min-height: 32px;
-  padding: 8px 10px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   border: 0;
-  background: transparent;
+  border-radius: 50%;
+  background: rgb(252 250 243 / 88%);
+  box-shadow: 0 2px 12px rgb(36 36 31 / 10%);
   color: var(--chloris-muted);
   font: 500 0.68rem/1 "DM Sans", sans-serif;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
+  pointer-events: auto;
+  place-items: center;
 }
 
 .intention-slideshow-previous span,
@@ -1942,6 +1946,15 @@
 }
 
 @media (max-width: 640px) {
+  .intention-slideshow-controls {
+    padding: 0 8px;
+  }
+
+  .intention-slideshow-controls button {
+    width: 38px;
+    height: 38px;
+  }
+
   .intention-lightbox {
     width: 96vw;
   }
