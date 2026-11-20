@@ -1852,7 +1852,7 @@
   border-radius: 50%;
   background: rgb(252 250 243 / 88%);
   box-shadow: 0 2px 12px rgb(36 36 31 / 10%);
-  color: var(--chloris-muted);
+  color: var(--chloris-ink);
   font: 500 0.68rem/1 "DM Sans", sans-serif;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1932,7 +1932,8 @@
 }
 
 .intention-lightbox-previous,
-.intention-lightbox-next {
+.intention-lightbox-next,
+.intention-lightbox-close {
   border-radius: 50%;
   box-shadow: 0 2px 12px rgb(36 36 31 / 10%);
 }
