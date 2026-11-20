@@ -1929,6 +1929,12 @@
   place-items: center;
 }
 
+.intention-lightbox-previous,
+.intention-lightbox-next {
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgb(36 36 31 / 10%);
+}
+
 .intention-lightbox button:hover {
   background: rgb(255 255 255 / 90%);
 }
