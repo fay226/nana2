@@ -1850,7 +1850,7 @@
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: rgb(252 250 243 / 88%);
+  background: rgb(255 255 255 / 62%);
   box-shadow: 0 2px 12px rgb(36 36 31 / 10%);
   color: var(--chloris-muted);
   font: 500 0.68rem/1 "DM Sans", sans-serif;
