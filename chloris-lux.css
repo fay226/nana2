@@ -1777,6 +1777,8 @@
 
 /* Intention drawings: activates only after all three PNG files load. */
 .intention-map.has-slideshow {
+  min-height: 0;
+  aspect-ratio: 3 / 2;
   padding: 0;
   background: #fcfaf3;
 }
