@@ -147,8 +147,8 @@ Object.entries(soundFiles).forEach(([selector, source]) => {
   if (!object || !hitArea) return;
 
   const audio = new Audio(source);
-  audio.preload = selector.startsWith(".about-") ? "none" : "auto";
-  if (audio.preload === "auto") audio.load();
+  audio.preload = "auto";
+  audio.load();
   audio.volume = 0.2;
 
   function playSound() {
