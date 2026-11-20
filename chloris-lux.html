@@ -99,22 +99,22 @@
           <div class="positioning-layout">
             <div
               class="positioning-map"
-              role="img"
+              role="group"
               aria-label="Positioning map comparing marketplace crystal sellers, spiritual wellness brands, fashion jewelry brands, luxury jewelry brands and Chloris Lux by personal meaning and visual refinement."
             >
               <span class="axis axis-y">More personal meaning</span>
               <span class="axis axis-x">More visual refinement</span>
-              <i class="plot plot-market" data-label="Marketplace sellers"><img src="assets/chloris-competitor-marketplace.png" alt="" width="256" height="256" /></i>
-              <i class="plot plot-spiritual" data-label="Spiritual wellness"><img src="assets/chloris-competitor-spiritual.png" alt="" width="256" height="256" /></i>
-              <i class="plot plot-fashion" data-label="Fashion jewelry"><img src="assets/chloris-competitor-fashion.png" alt="" width="256" height="256" /></i>
-              <i class="plot plot-luxury" data-label="Luxury jewelry"><img src="assets/chloris-competitor-luxury.png" alt="" width="256" height="256" /></i>
-              <i class="plot plot-chloris" data-label="Chloris Lux"><img src="assets/chloris-competitor-opportunity.png" alt="" width="256" height="256" /></i>
+              <button type="button" class="plot plot-market" data-competitor="marketplace" data-label="Marketplace sellers" aria-label="Highlight Marketplace crystal sellers"><img src="assets/chloris-competitor-marketplace.png" alt="" width="256" height="256" /></button>
+              <button type="button" class="plot plot-spiritual" data-competitor="spiritual" data-label="Spiritual wellness" aria-label="Highlight Spiritual wellness brands"><img src="assets/chloris-competitor-spiritual.png" alt="" width="256" height="256" /></button>
+              <button type="button" class="plot plot-fashion" data-competitor="fashion" data-label="Fashion jewelry" aria-label="Highlight Fashion jewelry brands"><img src="assets/chloris-competitor-fashion.png" alt="" width="256" height="256" /></button>
+              <button type="button" class="plot plot-luxury" data-competitor="luxury" data-label="Luxury jewelry" aria-label="Highlight Luxury jewelry brands"><img src="assets/chloris-competitor-luxury.png" alt="" width="256" height="256" /></button>
+              <button type="button" class="plot plot-chloris" data-competitor="chloris" data-label="Chloris Lux" aria-label="Highlight Chloris Lux opportunity"><img src="assets/chloris-competitor-opportunity.png" alt="" width="256" height="256" /></button>
             </div>
 
             <div class="competitor-audit" aria-label="Competitor strengths and weaknesses">
               <h3 class="section-title">Competitor audit</h3>
               <ol>
-                <li>
+                <li data-competitor="marketplace">
                   <span class="competitor-icon" aria-hidden="true"><img src="assets/chloris-competitor-marketplace.png" alt="" width="256" height="256" /></span>
                   <div>
                     <h3>Marketplace crystal sellers</h3>
@@ -124,7 +124,7 @@
                     </dl>
                   </div>
                 </li>
-                <li>
+                <li data-competitor="spiritual">
                   <span class="competitor-icon" aria-hidden="true"><img src="assets/chloris-competitor-spiritual.png" alt="" width="256" height="256" /></span>
                   <div>
                     <h3>Spiritual wellness brands</h3>
@@ -134,7 +134,7 @@
                     </dl>
                   </div>
                 </li>
-                <li>
+                <li data-competitor="fashion">
                   <span class="competitor-icon" aria-hidden="true"><img src="assets/chloris-competitor-fashion.png" alt="" width="256" height="256" /></span>
                   <div>
                     <h3>Fashion jewelry brands</h3>
@@ -144,7 +144,7 @@
                     </dl>
                   </div>
                 </li>
-                <li>
+                <li data-competitor="luxury">
                   <span class="competitor-icon" aria-hidden="true"><img src="assets/chloris-competitor-luxury.png" alt="" width="256" height="256" /></span>
                   <div>
                     <h3>Luxury jewelry brands</h3>
@@ -155,7 +155,7 @@
                   </div>
                 </li>
               </ol>
-              <div class="opportunity-card" aria-label="Chloris Lux opportunity">
+              <div class="opportunity-card" data-competitor="chloris" aria-label="Chloris Lux opportunity">
                 <span class="opportunity-icon" aria-hidden="true"><img src="assets/chloris-competitor-opportunity.png" alt="" width="256" height="256" /></span>
                 <h3>Chloris Lux opportunity</h3>
                 <p>Pair contemporary design with personal meaning and practical clarity.</p>
