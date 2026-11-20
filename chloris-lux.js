@@ -60,6 +60,11 @@ if (positioningMap && competitorAudit) {
     plot.addEventListener('focus', () => showCompetitor(plot.dataset.competitor));
     plot.addEventListener('blur', clearCompetitor);
   });
+
+  cards.forEach(card => {
+    card.addEventListener('pointerenter', () => showCompetitor(card.dataset.competitor));
+    card.addEventListener('pointerleave', clearCompetitor);
+  });
 }
 
 const intentionSlideshow = document.querySelector('[data-intention-slideshow]');
