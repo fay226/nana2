@@ -591,8 +591,18 @@
   width: 28px;
   max-width: none;
   height: 28px;
-  margin-bottom: 8px;
   object-fit: contain;
+}
+
+.craft-model-heading {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.craft-model-heading span {
+  margin-bottom: 0;
 }
 
 .senior-decisions article > span,
