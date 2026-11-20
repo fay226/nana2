@@ -1583,6 +1583,56 @@
   background: #fcfaf3;
 }
 
+.craft-compare article {
+  outline: none;
+  transform: translateY(0);
+  transition: background-color 180ms ease, box-shadow 180ms ease,
+    opacity 180ms ease, transform 180ms ease;
+}
+
+.craft-compare article:hover,
+.craft-compare article:focus {
+  z-index: 1;
+  opacity: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgb(36 36 31 / 7%);
+}
+
+.craft-compare article:first-child:hover,
+.craft-compare article:first-child:focus {
+  background: var(--chloris-wash);
+}
+
+.craft-compare article.selected:hover,
+.craft-compare article.selected:focus {
+  background: #f7f0f4;
+}
+
+.craft-compare:has(article:hover) article:not(:hover),
+.craft-compare:has(article:focus) article:not(:focus) {
+  opacity: 0.65;
+}
+
+.craft-model-icon {
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.craft-model-heading span {
+  transition: color 180ms ease, font-weight 180ms ease;
+}
+
+.craft-compare article:hover .craft-model-icon,
+.craft-compare article:focus .craft-model-icon {
+  transform: scale(1.1);
+}
+
+.craft-compare article:hover .craft-model-heading span,
+.craft-compare article:focus .craft-model-heading span {
+  color: var(--chloris-ink);
+  font-weight: 600;
+}
+
 .brand-principles {
   gap: 20px;
 }
