@@ -139,6 +139,7 @@ if (intentionSlideshow && intentionLightbox) {
         lightboxOpen = true;
         updateLightbox();
         intentionLightbox.showModal();
+        document.body.classList.add('intention-lightbox-open');
       };
 
       previous.addEventListener('click', showPrevious);
@@ -159,6 +160,7 @@ if (intentionSlideshow && intentionLightbox) {
 
       intentionLightbox.addEventListener('close', () => {
         lightboxOpen = false;
+        document.body.classList.remove('intention-lightbox-open');
         slides.focus();
       });
 
