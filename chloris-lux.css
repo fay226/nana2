@@ -323,6 +323,13 @@
   position: absolute;
   width: 0;
   height: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
   font-style: normal;
 }
 
@@ -335,6 +342,8 @@
   max-width: none;
   height: 28px;
   object-fit: contain;
+  transform-origin: center;
+  transition: transform 180ms ease;
 }
 
 .plot::after {
@@ -348,6 +357,22 @@
   font-style: normal;
   line-height: 1.2;
   content: attr(data-label);
+  transition: color 180ms ease, font-weight 180ms ease;
+}
+
+.plot:focus-visible img {
+  border-radius: 50%;
+  outline: 2px solid var(--chloris-plum);
+  outline-offset: 4px;
+}
+
+.plot.is-active img {
+  transform: scale(1.1);
+}
+
+.plot.is-active::after {
+  color: var(--chloris-ink);
+  font-weight: 600;
 }
 
 .plot-market { top: 70%; left: 22%; }
@@ -357,6 +382,37 @@
 .plot-chloris {
   top: 20%;
   left: 76%;
+}
+
+.plot-chloris::before {
+  position: absolute;
+  top: -36px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(81 69 84 / 14%);
+  box-shadow: 0 0 18px rgb(81 69 84 / 18%);
+  content: "";
+  pointer-events: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.plot-chloris img {
+  top: -32px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+}
+
+.plot-chloris::after {
+  color: var(--chloris-plum);
+  font-weight: 600;
+}
+
+.plot-chloris.is-active::before {
+  transform: scale(1.12);
+  box-shadow: 0 0 22px rgb(81 69 84 / 24%);
 }
 .competitor-audit ol {
   padding: 0;
@@ -439,6 +495,25 @@
   display: block;
   width: 74%;
   height: auto;
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.competitor-audit [data-competitor] {
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.competitor-audit.has-active-competitor [data-competitor]:not(.is-active) {
+  opacity: 0.58;
+}
+
+.competitor-audit [data-competitor].is-active {
+  transform: translateX(4px);
+}
+
+.competitor-audit [data-competitor].is-active .competitor-icon img,
+.competitor-audit [data-competitor].is-active .opportunity-icon img {
+  transform: scale(1.08);
 }
 
 .opportunity-card h3 {
@@ -1167,6 +1242,20 @@
     left: -12px;
     width: 24px;
     height: 24px;
+  }
+
+  .plot-chloris img {
+    top: -29px;
+    left: -14px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .plot-chloris::before {
+    top: -33px;
+    left: -18px;
+    width: 36px;
+    height: 36px;
   }
 
   .plot::after {

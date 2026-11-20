@@ -31,6 +31,37 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+const positioningMap = document.querySelector('.positioning-map');
+const competitorAudit = document.querySelector('.competitor-audit');
+
+if (positioningMap && competitorAudit) {
+  const plots = [...positioningMap.querySelectorAll('.plot[data-competitor]')];
+  const cards = [...competitorAudit.querySelectorAll('[data-competitor]')];
+
+  const showCompetitor = competitor => {
+    competitorAudit.classList.add('has-active-competitor');
+    plots.forEach(plot => {
+      plot.classList.toggle('is-active', plot.dataset.competitor === competitor);
+    });
+    cards.forEach(card => {
+      card.classList.toggle('is-active', card.dataset.competitor === competitor);
+    });
+  };
+
+  const clearCompetitor = () => {
+    competitorAudit.classList.remove('has-active-competitor');
+    plots.forEach(plot => plot.classList.remove('is-active'));
+    cards.forEach(card => card.classList.remove('is-active'));
+  };
+
+  plots.forEach(plot => {
+    plot.addEventListener('pointerenter', () => showCompetitor(plot.dataset.competitor));
+    plot.addEventListener('pointerleave', clearCompetitor);
+    plot.addEventListener('focus', () => showCompetitor(plot.dataset.competitor));
+    plot.addEventListener('blur', clearCompetitor);
+  });
+}
+
 const intentionSlideshow = document.querySelector('[data-intention-slideshow]');
 const intentionLightbox = document.querySelector('.intention-lightbox');
 
