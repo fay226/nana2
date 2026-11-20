@@ -588,10 +588,10 @@
 }
 
 .craft-model-icon {
-  width: 52px;
+  width: 36px;
   max-width: none;
-  height: 52px;
-  margin-bottom: 14px;
+  height: 36px;
+  margin-bottom: 10px;
   object-fit: contain;
 }
 
