@@ -1892,7 +1892,7 @@
   max-height: 92vh;
   padding: 0;
   border: 0;
-  background: #fcfaf3;
+  background: transparent;
   color: var(--chloris-ink);
   overflow: visible;
 }
