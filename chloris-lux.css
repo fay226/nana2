@@ -1886,6 +1886,10 @@
   transform: scale(1.018);
 }
 
+body.intention-lightbox-open {
+  overflow: hidden;
+}
+
 .intention-lightbox {
   width: min(92vw, 1200px);
   max-width: none;
