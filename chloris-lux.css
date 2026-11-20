@@ -587,6 +587,14 @@
   padding-left: 28px;
 }
 
+.craft-model-icon {
+  width: 52px;
+  max-width: none;
+  height: 52px;
+  margin-bottom: 14px;
+  object-fit: contain;
+}
+
 .senior-decisions article > span,
 .content-layers article > span,
 .market-cards article > span {
