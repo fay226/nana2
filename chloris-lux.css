@@ -1951,3 +1951,38 @@ body.intention-lightbox-open {
   }
 }
 
+.design-decision-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: zoom-in;
+}
+
+.design-decision-trigger:focus-visible {
+  outline: 2px solid var(--chloris-ink);
+  outline-offset: 4px;
+}
+
+.design-decision-lightbox-frame {
+  display: block;
+  min-height: 0;
+  padding: 52px 22px 22px;
+}
+
+.design-decision-lightbox img {
+  display: block;
+  width: 100%;
+  max-height: calc(92vh - 84px);
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .design-decision-lightbox-frame {
+    display: block;
+    min-height: 0;
+    padding: 50px 8px 14px;
+  }
+}

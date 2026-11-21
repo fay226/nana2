@@ -175,3 +175,26 @@ if (intentionSlideshow && intentionLightbox) {
       // Keep the existing intention graphic visible until all drawings are available.
     });
 }
+
+const designDecisionTrigger = document.querySelector('.design-decision-trigger');
+const designDecisionLightbox = document.querySelector('.design-decision-lightbox');
+
+if (designDecisionTrigger && designDecisionLightbox) {
+  const closeButton = designDecisionLightbox.querySelector('.design-decision-lightbox-close');
+
+  designDecisionTrigger.addEventListener('click', () => {
+    designDecisionLightbox.showModal();
+    document.body.classList.add('intention-lightbox-open');
+  });
+
+  closeButton?.addEventListener('click', () => designDecisionLightbox.close());
+
+  designDecisionLightbox.addEventListener('click', event => {
+    if (event.target === designDecisionLightbox) designDecisionLightbox.close();
+  });
+
+  designDecisionLightbox.addEventListener('close', () => {
+    document.body.classList.remove('intention-lightbox-open');
+    designDecisionTrigger.focus();
+  });
+}
