@@ -676,6 +676,11 @@
   vertical-align: 0.08rem;
 }
 
+.product-layer-label {
+  color: var(--chloris-muted);
+  font-weight: 400;
+}
+
 .product-page-layers > div:first-child .circle-number {
   color: #1da870;
 }
