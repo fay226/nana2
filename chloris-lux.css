@@ -663,6 +663,21 @@
   line-height: 1.55;
 }
 
+.circle-number {
+  display: inline-grid;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-inline: 0.12rem 0.18rem;
+  place-items: center;
+  border: 1px solid #fd81d3;
+  border-radius: 50%;
+  color: #fd81d3;
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1;
+  vertical-align: 0.08rem;
+}
+
 .secondary-route {
   margin-top: 28px;
   padding-top: 16px;
