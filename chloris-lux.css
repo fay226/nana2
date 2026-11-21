@@ -407,7 +407,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgb(81 69 84 / 14%);
+  background: #fcfaf3;
   box-shadow: 0 0 18px rgb(81 69 84 / 18%);
   content: "";
   pointer-events: none;
