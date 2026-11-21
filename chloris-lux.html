@@ -307,14 +307,22 @@
               </div>
             </div>
             <figure class="design-decision-visual">
-              <img
-                src="assets/design-decision-02.png"
-                alt="Annotated Chloris Lux product page showing emotional invitation and purchase confidence."
-                width="2200"
-                height="2200"
-                loading="lazy"
-                decoding="async"
-              />
+              <button
+                class="design-decision-trigger"
+                type="button"
+                aria-label="Enlarge the design decision drawing"
+                aria-haspopup="dialog"
+                aria-controls="design-decision-lightbox"
+              >
+                <img
+                  src="assets/design-decision-02.png"
+                  alt=""
+                  width="2200"
+                  height="2200"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </figure>
           </div>
 
@@ -544,6 +552,29 @@
         >
           <span aria-hidden="true">→</span>
         </button>
+      </div>
+    </dialog>
+
+    <dialog
+      id="design-decision-lightbox"
+      class="intention-lightbox design-decision-lightbox"
+      aria-label="Expanded design decision drawing"
+    >
+      <div class="intention-lightbox-frame design-decision-lightbox-frame">
+        <button
+          class="intention-lightbox-close design-decision-lightbox-close"
+          type="button"
+          aria-label="Close enlarged drawing"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+        <img
+          src="assets/design-decision-02.png"
+          alt="Annotated Chloris Lux product page showing emotional invitation and purchase confidence."
+          width="2200"
+          height="2200"
+          decoding="async"
+        />
       </div>
     </dialog>
 
