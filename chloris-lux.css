@@ -668,13 +668,20 @@
   height: 1.25rem;
   margin-inline: 0.12rem 0.18rem;
   place-items: center;
-  border: 1px solid #fd81d3;
+  border: 1px solid currentColor;
   border-radius: 50%;
-  color: #fd81d3;
   font-size: 0.68rem;
   font-weight: 600;
   line-height: 1;
   vertical-align: 0.08rem;
+}
+
+.product-page-layers > div:first-child .circle-number {
+  color: #1da870;
+}
+
+.product-page-layers > div:nth-child(2) .circle-number {
+  color: #7e24da;
 }
 
 .secondary-route {
