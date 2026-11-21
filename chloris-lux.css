@@ -478,7 +478,8 @@
 
 .competitor-audit dd,
 .opportunity-card p,
-.craft-compare p {
+.craft-compare p,
+.product-layer-outcome {
   margin: 0;
   font-size: 0.84rem;
   line-height: 1.4;
@@ -1339,7 +1340,8 @@
 
   .competitor-audit dd,
   .opportunity-card p,
-  .craft-compare p {
+  .craft-compare p,
+  .product-layer-outcome {
     font-size: 0.72rem;
     line-height: 1.3;
   }
