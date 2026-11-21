@@ -744,13 +744,14 @@
 .design-decision-visual img {
   display: block;
   width: 100%;
-  height: auto;
-  transition: transform 220ms ease;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 250ms ease;
   transform-origin: center;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .design-decision-visual:hover img {
+  .design-decision-trigger:hover img {
     transform: scale(1.018);
   }
 }
@@ -760,7 +761,7 @@
     transition: none;
   }
 
-  .design-decision-visual:hover img {
+  .design-decision-trigger:hover img {
     transform: none;
   }
 }
@@ -1958,6 +1959,7 @@ body.intention-lightbox-open {
 .design-decision-trigger {
   display: block;
   width: 100%;
+  aspect-ratio: 49 / 39;
   padding: 0;
   overflow: hidden;
   border: 0;
