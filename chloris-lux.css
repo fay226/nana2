@@ -606,7 +606,6 @@
 }
 
 .senior-decisions article > span,
-.content-layers article > span,
 .market-cards article > span {
   display: block;
   margin-bottom: 18px;
@@ -737,53 +736,15 @@
   color: var(--chloris-muted);
 }
 
-.content-layers {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-}
-
-.content-layers article {
-  min-height: 290px;
-  padding: 28px;
-}
-
-.content-layers article + article {
-  background: #fff;
-}
-
-.content-layers h3 {
-  margin-top: 64px;
-  font-size: 2.4rem;
-}
-
-.content-layers p {
-  color: var(--chloris-muted);
-  font-size: 0.78rem;
-}
-
-.content-layers dl {
-  margin-bottom: 0;
-}
-
-.content-layers dl > div {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 10px;
-  padding-block: 8px;
-}
-
-.content-layers dt,
-.content-layers dd {
-  font-size: 0.7rem;
-  line-height: 1.35;
-}
-
-.content-layers dt {
-  color: var(--chloris-muted);
-}
-
-.content-layers dd {
+.design-decision-visual {
+  align-self: start;
   margin: 0;
+}
+
+.design-decision-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .trust-system {
@@ -1358,13 +1319,11 @@
   }
 
   .craft-compare,
-  .content-layers,
   .market-cards {
     grid-template-columns: 1fr;
   }
 
   .craft-compare article + article,
-  .content-layers article + article,
   .market-cards article + article {
     padding-left: 0;
   }
@@ -1394,15 +1353,6 @@
 
   .decision-section {
     padding-top: 40px;
-  }
-
-  .content-layers article {
-    min-height: 0;
-    padding: 24px 0;
-  }
-
-  .content-layers h3 {
-    margin-top: 36px;
   }
 
   .trust-system,
@@ -1671,18 +1621,6 @@
   background: rgb(255 255 255 / 26%);
 }
 
-.content-layers {
-  gap: 18px;
-}
-
-.content-layers article {
-  background: rgb(249 217 224 / 24%);
-}
-
-.content-layers article + article {
-  background: #fff;
-}
-
 .trust-system ol,
 .measurement ol {
   display: grid;
@@ -1767,15 +1705,6 @@
   .brand-principles article:first-child,
   .brand-principles article:nth-child(3) {
     padding: 20px;
-  }
-
-  .content-layers {
-    gap: 14px;
-  }
-
-  .content-layers article,
-  .content-layers article + article {
-    padding: 22px;
   }
 
   .market-cards {
