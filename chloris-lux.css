@@ -745,6 +745,20 @@
   display: block;
   width: 100%;
   height: auto;
+  transition: transform 220ms ease;
+  transform-origin: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .design-decision-visual:hover img {
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .design-decision-visual img {
+    transition: none;
+  }
 }
 
 .trust-system {
