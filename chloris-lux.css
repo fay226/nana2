@@ -245,7 +245,8 @@
 }
 
 .chloris-case .problem-copy h2,
-.chloris-case .brand-intro h2 {
+.chloris-case .brand-intro h2,
+.chloris-case #experience > h2 {
   font-family: var(--font-heading);
   font-size: var(--type-h1);
   font-weight: 400;
