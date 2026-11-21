@@ -751,13 +751,17 @@
 
 @media (hover: hover) and (pointer: fine) {
   .design-decision-visual:hover img {
-    transform: scale(1.04);
+    transform: scale(1.018);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .design-decision-visual img {
     transition: none;
+  }
+
+  .design-decision-visual:hover img {
+    transform: none;
   }
 }
 
@@ -1955,6 +1959,7 @@ body.intention-lightbox-open {
   display: block;
   width: 100%;
   padding: 0;
+  overflow: hidden;
   border: 0;
   background: transparent;
   color: inherit;
