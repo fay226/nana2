@@ -110,7 +110,7 @@
 .chloris-hero-copy .eyebrow,
 .problem-copy .eyebrow,
 .brand-intro .eyebrow,
-#experience > .eyebrow {
+.experience-intro .eyebrow {
   margin: 1em 0;
   color: inherit;
   font-size: var(--type-small);
@@ -227,7 +227,8 @@
 }
 
 .problem-copy,
-.brand-intro {
+.brand-intro,
+.experience-intro {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   column-gap: 64px;
@@ -235,18 +236,20 @@
 }
 
 .problem-copy .eyebrow,
-.brand-intro .eyebrow {
+.brand-intro .eyebrow,
+.experience-intro .eyebrow {
   grid-column: 1 / -1;
 }
 
 .problem-copy h2,
-.brand-intro h2 {
+.brand-intro h2,
+.experience-intro h2 {
   margin-bottom: 0;
 }
 
 .chloris-case .problem-copy h2,
 .chloris-case .brand-intro h2,
-.chloris-case #experience > h2 {
+.chloris-case .experience-intro h2 {
   font-family: var(--font-heading);
   font-size: var(--type-h1);
   font-weight: 400;
@@ -1227,6 +1230,7 @@
 
   .problem-copy,
   .brand-intro,
+  .experience-intro,
   .positioning-layout,
   .design-challenge,
   .decision-section,
@@ -1241,12 +1245,14 @@
   }
 
   .problem-copy,
-  .brand-intro {
+  .brand-intro,
+  .experience-intro {
     margin-bottom: 48px;
   }
 
   .problem-copy h2,
-  .brand-intro h2 {
+  .brand-intro h2,
+  .experience-intro h2 {
     margin-bottom: 22px;
   }
 
