@@ -198,3 +198,17 @@ if (designDecisionTrigger && designDecisionLightbox) {
     designDecisionTrigger.focus();
   });
 }
+
+const journeyFlipCards = [...document.querySelectorAll('.journey-flip')];
+
+journeyFlipCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const isFlipped = card.getAttribute('aria-pressed') === 'true';
+    const stage = card.closest('.journey-step')?.querySelector('.journey-name')?.textContent.trim() || 'Journey stage';
+    card.setAttribute('aria-pressed', String(!isFlipped));
+    card.setAttribute(
+      'aria-label',
+      `${stage}: ${isFlipped ? 'reveal brand response' : 'show customer question'}`
+    );
+  });
+});
