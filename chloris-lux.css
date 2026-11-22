@@ -288,6 +288,7 @@
 
 .brand-strategy p,
 .experience-intro .context-subsection p,
+.system-intro .context-subsection p,
 .chloris-case .section-description {
   margin: 0;
   color: inherit;
@@ -1028,15 +1029,6 @@
   .journey-flip:focus-visible .journey-flip-inner {
     transform: rotateY(180deg);
   }
-}
-
-.system-intro .section-lead {
-  margin: 0;
-}
-
-.section-lead {
-  max-width: 60ch;
-  color: var(--chloris-muted);
 }
 
 .constraints {
