@@ -236,20 +236,13 @@
 }
 
 .problem-copy .eyebrow,
-.brand-intro .eyebrow {
+.brand-intro .eyebrow,
+.experience-intro .eyebrow {
   grid-column: 1 / -1;
 }
 
 .experience-intro {
   align-items: start;
-}
-
-.experience-intro-copy {
-  min-width: 0;
-}
-
-.experience-intro > .context-details {
-  padding-top: 1em;
 }
 
 .problem-copy h2,
@@ -1380,10 +1373,6 @@
   .brand-intro,
   .experience-intro {
     margin-bottom: 48px;
-  }
-
-  .experience-intro > .context-details {
-    padding-top: 0;
   }
 
   .problem-copy h2,
