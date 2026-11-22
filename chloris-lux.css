@@ -830,6 +830,7 @@
 }
 
 .experience-journey {
+  --journey-card-width: clamp(170px, 18vw, 220px);
   display: grid;
   width: 100%;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -893,7 +894,7 @@
 }
 
 .journey-flip {
-  width: clamp(170px, 18vw, 220px);
+  width: var(--journey-card-width);
   max-width: none;
   height: auto;
   padding: 0;
@@ -920,7 +921,9 @@
 }
 
 .journey-step:last-child .journey-flip {
-  justify-self: end;
+  position: relative;
+  left: calc(100% - var(--journey-card-width));
+  justify-self: start;
 }
 
 .journey-flip-inner {
@@ -1531,6 +1534,7 @@
   }
 
   .experience-journey {
+    --journey-card-width: 100%;
     grid-template-columns: 1fr;
     gap: 28px;
     padding: 0;
