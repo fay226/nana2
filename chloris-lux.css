@@ -836,8 +836,9 @@
   grid-row: 2;
   align-self: center;
   display: flex;
+  width: 170px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
   padding-inline: 4px;
   background: #fff;
@@ -1546,6 +1547,7 @@
   .journey-marker {
     grid-row: 1;
     grid-column: 1;
+    width: auto;
     justify-self: start;
   }
 
