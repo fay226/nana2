@@ -922,9 +922,7 @@
 }
 
 .journey-step:last-child .journey-flip {
-  position: relative;
-  left: calc(100% - var(--journey-card-width));
-  justify-self: start;
+  justify-self: unsafe end;
 }
 
 .journey-flip-inner {
