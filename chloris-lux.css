@@ -977,32 +977,32 @@
 /* Each brand-response face echoes the gemstone drawing for its journey stage. */
 .journey-step:nth-child(1) .journey-card-back {
   border-color: #8ed6e8;
-  background: #e8f8fc;
+  background: #f2fbfd;
 }
 
 .journey-step:nth-child(2) .journey-card-back {
   border-color: #acd5b6;
-  background: #eef8f0;
+  background: #f5fbf6;
 }
 
 .journey-step:nth-child(3) .journey-card-back {
   border-color: #e49abb;
-  background: #fceaf2;
+  background: #fdf3f7;
 }
 
 .journey-step:nth-child(4) .journey-card-back {
   border-color: #d6cc69;
-  background: #fbf8dd;
+  background: #fdfbea;
 }
 
 .journey-step:nth-child(5) .journey-card-back {
   border-color: #c7c8dc;
-  background: #f3f3f9;
+  background: #f8f8fb;
 }
 
 .journey-step:nth-child(6) .journey-card-back {
   border-color: #e7adc4;
-  background: #fcecf3;
+  background: #fdf4f7;
 }
 
 .journey-card-label {
