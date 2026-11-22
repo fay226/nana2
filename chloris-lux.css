@@ -613,7 +613,6 @@
   margin-bottom: 0;
 }
 
-.senior-decisions article > span,
 .market-cards article > span {
   display: block;
   margin-bottom: 18px;
@@ -1028,32 +1027,6 @@
   }
 }
 
-.senior-decisions {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.senior-decisions article {
-  padding-top: 22px;
-}
-
-.senior-decisions h3 {
-  min-height: 2.2em;
-}
-
-.senior-decisions p {
-  margin-bottom: 10px;
-  color: var(--chloris-muted);
-  font-size: 0.74rem;
-}
-
-.senior-decisions p strong {
-  color: var(--chloris-ink);
-  font-size: 0.66rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
 .section-lead {
   max-width: 60ch;
   color: var(--chloris-muted);
@@ -1576,14 +1549,6 @@
     justify-self: stretch;
   }
 
-  .senior-decisions {
-    grid-template-columns: 1fr;
-    gap: 46px;
-  }
-
-  .senior-decisions h3 {
-    min-height: 0;
-  }
   .passport ol {
     grid-template-columns: 1fr;
   }
