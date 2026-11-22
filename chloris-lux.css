@@ -565,7 +565,6 @@
 }
 
 .decision-section,
-.campaign,
 .passport,
 .international,
 .measurement,
@@ -1020,37 +1019,6 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-
-.campaign {
-  margin-top: 112px;
-  padding: 56px;
-  background: var(--chloris-petal);
-  align-items: center;
-}
-
-.campaign > div:first-child > p:last-child {
-  max-width: 50ch;
-  margin-bottom: 0;
-}
-
-.campaign-flow {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-  align-items: center;
-}
-
-.campaign-flow span {
-  padding: 22px 8px;
-  font-size: 0.72rem;
-  text-align: center;
-}
-
-.campaign-flow b {
-  padding-inline: 8px;
-  color: var(--chloris-muted);
-  font-weight: 400;
-}
-
 .section-lead {
   max-width: 60ch;
   color: var(--chloris-muted);
@@ -1287,7 +1255,6 @@
   }
 
   .decision-section,
-  .campaign,
   .passport,
   .international,
   .measurement,
@@ -1356,7 +1323,6 @@
   .positioning-layout,
   .design-challenge,
   .decision-section,
-  .campaign,
   .passport,
   .international,
   .measurement,
@@ -1473,7 +1439,6 @@
   }
 
   .decision-section,
-  .campaign,
   .passport,
   .international,
   .reflection,
@@ -1519,7 +1484,6 @@
     padding-top: 40px;
   }
 
-  .campaign,
   .passport,
   .measurement {
     padding: 34px 24px;
@@ -1575,21 +1539,6 @@
   .senior-decisions h3 {
     min-height: 0;
   }
-
-  .campaign-flow {
-    grid-template-columns: 1fr;
-  }
-
-  .campaign-flow span {
-    padding-block: 13px;
-  }
-
-  .campaign-flow b {
-    padding-block: 4px;
-    transform: rotate(90deg);
-    text-align: center;
-  }
-
   .passport ol {
     grid-template-columns: 1fr;
   }
@@ -1824,16 +1773,6 @@
 .journey li::before {
   top: 8px;
 }
-
-.campaign-flow {
-  gap: 8px;
-}
-
-.campaign-flow span {
-  padding: 16px 8px;
-  background: rgb(255 255 255 / 34%);
-}
-
 .passport ol {
   gap: 10px 18px;
 }
