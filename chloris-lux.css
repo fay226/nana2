@@ -855,6 +855,14 @@
   object-fit: contain;
 }
 
+/* Compensate for the different transparent padding inside each PNG.
+   e2.png is the visual spacing reference. */
+.journey-step:nth-child(1) .journey-drawing { margin-right: -6px; }
+.journey-step:nth-child(3) .journey-drawing { margin-right: -4px; }
+.journey-step:nth-child(4) .journey-drawing { margin-right: -2px; }
+.journey-step:nth-child(5) .journey-drawing { margin-right: -5px; }
+.journey-step:nth-child(6) .journey-drawing { margin-right: -4px; }
+
 .journey-marker-label {
   position: relative;
   z-index: 1;
