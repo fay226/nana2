@@ -841,21 +841,28 @@
   justify-content: flex-start;
   gap: 10px;
   padding-inline: 4px;
-  background: #fff;
+  background: transparent;
   text-align: left;
 }
 
 .journey-drawing {
+  position: relative;
+  z-index: 1;
   width: 40px;
   height: 40px;
   flex: 0 0 auto;
+  background: #fff;
   object-fit: contain;
 }
 
 .journey-marker-label {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: baseline;
   gap: 6px;
+  padding-inline: 2px;
+  background: #fff;
   white-space: nowrap;
 }
 
