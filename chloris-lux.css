@@ -868,8 +868,8 @@
 }
 
 .journey-drawing {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   flex: 0 0 auto;
   object-fit: contain;
 }
@@ -1558,8 +1558,8 @@
   }
 
   .journey-drawing {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .journey-step:nth-child(odd) .journey-flip,
