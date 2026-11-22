@@ -889,7 +889,8 @@
 
 .journey-name {
   color: var(--chloris-ink);
-  font-size: 0.77rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
