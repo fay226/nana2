@@ -839,7 +839,7 @@
   width: 170px;
   align-items: center;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 4px;
   padding-inline: 4px;
   background: transparent;
   text-align: left;
@@ -858,6 +858,7 @@
 /* Compensate for the different transparent padding inside each PNG.
    e2.png is the visual spacing reference. */
 .journey-step:nth-child(1) .journey-drawing { margin-right: -6px; }
+.journey-step:nth-child(2) .journey-drawing { margin-right: -4px; }
 .journey-step:nth-child(3) .journey-drawing { margin-right: -4px; }
 .journey-step:nth-child(4) .journey-drawing { margin-right: -2px; }
 .journey-step:nth-child(5) .journey-drawing { margin-right: -5px; }
