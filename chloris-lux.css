@@ -922,7 +922,9 @@
 }
 
 .journey-step:last-child .journey-flip {
-  justify-self: unsafe end;
+  position: absolute;
+  right: 0;
+  bottom: calc(100% - 140px);
 }
 
 .journey-flip-inner {
@@ -1564,6 +1566,9 @@
   .journey-step:nth-child(even) .journey-flip,
   .journey-step:first-child .journey-flip,
   .journey-step:last-child .journey-flip {
+    position: static;
+    right: auto;
+    bottom: auto;
     grid-row: 2;
     grid-column: 1;
     width: 100%;
