@@ -831,9 +831,10 @@
 
 .experience-journey {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 6px;
-  padding: 0 6px;
+  padding: 0;
   margin: 68px 0 92px;
   overflow: visible;
   list-style: none;
@@ -892,7 +893,7 @@
 }
 
 .journey-flip {
-  width: 220px;
+  width: clamp(170px, 18vw, 220px);
   max-width: none;
   height: auto;
   padding: 0;
