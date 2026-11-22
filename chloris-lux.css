@@ -1,9 +1,5 @@
 .chloris-case {
   --chloris-petal: #f9d9e0;
-  --chloris-lilac: #e4b2fe;
-  --chloris-sage: #d8edda;
-  --chloris-blue: #d9f1fd;
-  --chloris-sand: #f0d9b5;
   --chloris-wash: #f6f6f3;
   --chloris-plum: #514554;
   --chloris-ink: var(--ink, #24241f);
@@ -1220,11 +1216,6 @@
     padding-left: 0;
   }
 
-  .journey {
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 38px;
-  }
-
   .constraints > div {
     grid-template-columns: 1fr 1fr;
   }
@@ -1732,9 +1723,6 @@
   background: var(--chloris-wash);
 }
 
-.journey li::before {
-  top: 8px;
-}
 .constraints > div {
   gap: 18px;
 }
