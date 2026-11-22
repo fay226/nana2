@@ -565,7 +565,6 @@
 }
 
 .decision-section,
-.trust-system,
 .campaign,
 .passport,
 .international,
@@ -584,7 +583,6 @@
 }
 
 .intention-decision > div:first-child > p:not(.eyebrow):not(.section-description),
-.trust-system > div:first-child > p:not(.eyebrow),
 .passport > div:first-child > p:not(.eyebrow),
 .international > div:first-child > p:not(.eyebrow) {
   max-width: 52ch;
@@ -661,14 +659,6 @@
 
 .brand-principles article:first-child {
   padding-left: 0;
-}
-
-.trust-system li > span {
-  display: block;
-  margin-bottom: 36px;
-  color: var(--chloris-muted);
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.25rem;
 }
 
 .brand-principles p,
@@ -794,41 +784,6 @@
     transform: none;
   }
 }
-
-.trust-system {
-  margin-top: 112px;
-  padding: 62px 56px;
-  background: #fff;
-}
-
-.trust-system ol {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.trust-system li {
-  display: grid;
-  grid-template-columns: 42px 130px 1fr;
-  gap: 12px;
-  padding-block: 16px;
-  align-items: baseline;
-}
-
-.trust-system li > span {
-  margin: 0;
-}
-
-.trust-system li strong {
-  font-size: 0.78rem;
-}
-
-.trust-system li small {
-  color: var(--chloris-muted);
-  font-size: 0.7rem;
-  line-height: 1.45;
-}
-
 .experience-journey {
   --journey-card-width: clamp(170px, 18vw, 220px);
   display: grid;
@@ -1332,7 +1287,6 @@
   }
 
   .decision-section,
-  .trust-system,
   .campaign,
   .passport,
   .international,
@@ -1402,7 +1356,6 @@
   .positioning-layout,
   .design-challenge,
   .decision-section,
-  .trust-system,
   .campaign,
   .passport,
   .international,
@@ -1520,7 +1473,6 @@
   }
 
   .decision-section,
-  .trust-system,
   .campaign,
   .passport,
   .international,
@@ -1567,16 +1519,10 @@
     padding-top: 40px;
   }
 
-  .trust-system,
   .campaign,
   .passport,
   .measurement {
     padding: 34px 24px;
-  }
-
-  .trust-system li {
-    grid-template-columns: 34px 96px 1fr;
-    gap: 8px;
   }
 
   .experience-journey {
@@ -1865,13 +1811,11 @@
   background: rgb(255 255 255 / 26%);
 }
 
-.trust-system ol,
 .measurement ol {
   display: grid;
   gap: 8px;
 }
 
-.trust-system li,
 .measurement li {
   padding: 14px;
   background: var(--chloris-wash);
