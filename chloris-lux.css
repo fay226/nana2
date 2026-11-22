@@ -788,7 +788,7 @@
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 6px;
   padding: 0;
-  margin: 68px 0 92px;
+  margin: 0 0 92px;
   overflow: visible;
   list-style: none;
 }
@@ -1514,7 +1514,7 @@
     grid-template-columns: 1fr;
     gap: 28px;
     padding: 0;
-    margin-block: 52px 70px;
+    margin-block: 0 70px;
   }
 
   .journey-step,
