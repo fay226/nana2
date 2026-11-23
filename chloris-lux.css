@@ -588,7 +588,8 @@
 }
 
 #brand .decision-section {
-  padding-block: var(--section-content-padding);
+  padding-top: var(--section-content-padding);
+  padding-bottom: 0;
 }
 
 .intention-decision > div:first-child > p:not(.eyebrow):not(.section-description),
