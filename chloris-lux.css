@@ -262,6 +262,10 @@
   letter-spacing: -0.02em;
 }
 
+#opportunity {
+  --context-subsection-gap: 62px;
+}
+
 .context-details {
   display: grid;
   gap: 24px;
@@ -269,7 +273,7 @@
 }
 
 #opportunity .context-details {
-  gap: 62px;
+  gap: var(--context-subsection-gap);
 }
 
 .chloris-case .section-title {
@@ -547,7 +551,7 @@
 }
 
 #opportunity .design-challenge {
-  margin-top: 62px;
+  margin-top: var(--context-subsection-gap);
 }
 
 .chloris-case .section-heading {
@@ -585,7 +589,7 @@
 }
 
 #opportunity > .decision-section {
-  margin-top: 62px;
+  margin-top: var(--context-subsection-gap);
   padding-top: 0;
 }
 
