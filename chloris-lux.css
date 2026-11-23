@@ -568,6 +568,10 @@
   margin: 0;
 }
 
+.system-intro .context-subsection .section-heading {
+  max-width: none;
+}
+
 .design-challenge .section-heading {
   max-width: none;
 }
