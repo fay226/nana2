@@ -5,6 +5,7 @@
   --chloris-ink: var(--ink, #24241f);
   --chloris-muted: var(--muted, #6c6a62);
   --chloris-line: var(--line, #c8c3b7);
+  --section-block-gap: 62px;
   color: var(--chloris-ink);
   background: #fff;
   font-family: "DM Sans", sans-serif;
@@ -230,7 +231,7 @@
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   column-gap: 64px;
-  margin-bottom: 62px;
+  margin-bottom: var(--section-block-gap);
 }
 
 .problem-copy .eyebrow,
@@ -262,10 +263,6 @@
   letter-spacing: -0.02em;
 }
 
-#opportunity {
-  --context-subsection-gap: 62px;
-}
-
 .context-details {
   display: grid;
   gap: 24px;
@@ -273,7 +270,7 @@
 }
 
 #opportunity .context-details {
-  gap: var(--context-subsection-gap);
+  gap: var(--section-block-gap);
 }
 
 .chloris-case .section-title {
@@ -551,7 +548,7 @@
 }
 
 #opportunity .design-challenge {
-  margin-top: var(--context-subsection-gap);
+  margin-top: var(--section-block-gap);
 }
 
 .chloris-case .section-heading {
@@ -589,7 +586,7 @@
 }
 
 #opportunity > .decision-section {
-  margin-top: var(--context-subsection-gap);
+  margin-top: var(--section-block-gap);
   padding-top: 0;
 }
 
