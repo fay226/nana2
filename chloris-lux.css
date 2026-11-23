@@ -5,6 +5,7 @@
   --chloris-ink: var(--ink, #24241f);
   --chloris-muted: var(--muted, #6c6a62);
   --chloris-line: var(--line, #c8c3b7);
+  --section-block-gap: 62px;
   color: var(--chloris-ink);
   background: #fff;
   font-family: "DM Sans", sans-serif;
@@ -230,7 +231,7 @@
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   column-gap: 64px;
-  margin-bottom: 62px;
+  margin-bottom: var(--section-block-gap);
 }
 
 .problem-copy .eyebrow,
@@ -266,6 +267,10 @@
   display: grid;
   gap: 24px;
   max-width: 61ch;
+}
+
+#opportunity .context-details {
+  gap: var(--section-block-gap);
 }
 
 .chloris-case .section-title {
@@ -542,6 +547,10 @@
   color: inherit;
 }
 
+#opportunity .design-challenge {
+  margin-top: var(--section-block-gap);
+}
+
 .chloris-case .section-heading {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(1.45rem, 2vw, 1.85rem);
@@ -574,6 +583,11 @@
 .decision-section {
   margin-top: 112px;
   padding-top: 54px;
+}
+
+#opportunity > .decision-section {
+  margin-top: var(--section-block-gap);
+  padding-top: 0;
 }
 
 .intention-decision > div:first-child > p:not(.eyebrow):not(.section-description),
