@@ -326,7 +326,7 @@
 
 .axis-y {
   top: 0;
-  left: 24px;
+  left: 0;
   transform: rotate(-90deg) translate(-100%, -125%);
   transform-origin: left top;
 }
