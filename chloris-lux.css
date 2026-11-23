@@ -221,7 +221,8 @@
   background: var(--chloris-wash);
 }
 
-.chloris-case #brand {
+.chloris-case #brand,
+.chloris-case #system {
   background: #fcfaf3;
 }
 
