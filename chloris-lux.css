@@ -542,7 +542,7 @@
   grid-template-columns: 0.35fr 1.65fr;
   gap: 40px;
   margin-top: 96px;
-  padding-block: 32px;
+  padding-block: 48px;
   background: transparent;
   color: inherit;
 }
