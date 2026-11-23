@@ -804,7 +804,7 @@
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 6px;
   padding: 0;
-  margin: 0;
+  margin: 0 0 var(--section-block-gap);
   overflow: visible;
   list-style: none;
 }
