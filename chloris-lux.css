@@ -1085,6 +1085,27 @@
   line-height: 1.45;
 }
 
+.constraints > .section-heading {
+  max-width: 32ch;
+  margin-bottom: 0;
+}
+
+.constraints .constraint-copy {
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.constraint-source {
+  margin: 18px 0 0;
+  color: var(--chloris-muted);
+  font-size: 0.64rem;
+  line-height: 1.45;
+}
+
+.constraint-source a {
+  text-underline-offset: 0.16em;
+}
+
 .international {
   margin-top: 112px;
   padding-top: 56px;
