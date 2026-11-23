@@ -308,6 +308,7 @@
 }
 
 .positioning-map {
+  --axis-label-offset: 27px;
   position: sticky;
   top: 150px;
   width: min(100%, 480px);
@@ -326,14 +327,14 @@
 
 .axis-y {
   top: 0;
-  left: 0;
-  transform: rotate(-90deg) translate(-100%, -125%);
+  left: calc(var(--axis-label-offset) * -1);
+  transform: rotate(-90deg) translateX(-100%);
   transform-origin: left top;
 }
 
 .axis-x {
   right: 0;
-  bottom: -27px;
+  bottom: calc(var(--axis-label-offset) * -1);
 }
 
 .plot {
