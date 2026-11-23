@@ -5,7 +5,7 @@
   --chloris-ink: var(--ink, #24241f);
   --chloris-muted: var(--muted, #6c6a62);
   --chloris-line: var(--line, #c8c3b7);
-  --section-block-gap: 62px;
+  --section-block-gap: 64px;
   color: var(--chloris-ink);
   background: #fff;
   font-family: "DM Sans", sans-serif;
