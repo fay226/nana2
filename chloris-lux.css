@@ -580,12 +580,7 @@
   align-items: start;
 }
 
-.decision-section {
-  margin-top: 112px;
-  padding-top: 54px;
-}
-
-#opportunity > .decision-section {
+.chloris-section .decision-section {
   margin-top: var(--section-block-gap);
   padding-top: 0;
 }
