@@ -6,6 +6,7 @@
   --chloris-muted: var(--muted, #6c6a62);
   --chloris-line: var(--line, #c8c3b7);
   --section-block-gap: 72px;
+  --section-content-padding: 48px;
   color: var(--chloris-ink);
   background: #fff;
   font-family: "DM Sans", sans-serif;
@@ -543,7 +544,7 @@
   grid-template-columns: 0.35fr 1.65fr;
   gap: 40px;
   margin-top: 96px;
-  padding-block: 48px;
+  padding-block: var(--section-content-padding);
   background: transparent;
   color: inherit;
 }
@@ -584,6 +585,10 @@
 .chloris-section .decision-section {
   margin-top: var(--section-block-gap);
   padding-top: 0;
+}
+
+#brand .decision-section {
+  padding-block: var(--section-content-padding);
 }
 
 .intention-decision > div:first-child > p:not(.eyebrow):not(.section-description),
