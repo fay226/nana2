@@ -175,28 +175,28 @@ if (intentionSlideshow && intentionLightbox) {
     });
 }
 
-const designDecisionTrigger = document.querySelector('.design-decision-trigger');
-const designDecisionLightbox = document.querySelector('.design-decision-lightbox');
+document.querySelectorAll('.design-decision-trigger[aria-controls]').forEach(trigger => {
+  const lightbox = document.getElementById(trigger.getAttribute('aria-controls'));
+  if (!(lightbox instanceof HTMLDialogElement)) return;
 
-if (designDecisionTrigger && designDecisionLightbox) {
-  const closeButton = designDecisionLightbox.querySelector('.design-decision-lightbox-close');
+  const closeButton = lightbox.querySelector('.design-decision-lightbox-close');
 
-  designDecisionTrigger.addEventListener('click', () => {
-    designDecisionLightbox.showModal();
+  trigger.addEventListener('click', () => {
+    lightbox.showModal();
     document.body.classList.add('intention-lightbox-open');
   });
 
-  closeButton?.addEventListener('click', () => designDecisionLightbox.close());
+  closeButton?.addEventListener('click', () => lightbox.close());
 
-  designDecisionLightbox.addEventListener('click', event => {
-    if (event.target === designDecisionLightbox) designDecisionLightbox.close();
+  lightbox.addEventListener('click', event => {
+    if (event.target === lightbox) lightbox.close();
   });
 
-  designDecisionLightbox.addEventListener('close', () => {
+  lightbox.addEventListener('close', () => {
     document.body.classList.remove('intention-lightbox-open');
-    designDecisionTrigger.focus();
+    trigger.focus();
   });
-}
+});
 
 const journeyFlipCards = [...document.querySelectorAll('.journey-flip')];
 
