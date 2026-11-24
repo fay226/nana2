@@ -221,7 +221,10 @@
   background: var(--chloris-wash);
 }
 
-.chloris-case #brand,
+.chloris-case #brand {
+  background: #efefef;
+}
+
 .chloris-case #system {
   background: #fcfaf3;
 }
