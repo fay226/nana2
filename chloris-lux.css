@@ -1092,7 +1092,7 @@
   line-height: 1.12;
 }
 
-.constraint-item p {
+.constraint-item p:not(.product-layer-outcome) {
   color: var(--chloris-muted);
   font-size: 0.78rem;
   line-height: 1.55;
