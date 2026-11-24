@@ -1082,9 +1082,24 @@
   margin: 0;
 }
 
-.product-page-layers > div > p:first-child,
-.constraint-item .constraint-label {
+.product-page-layers > div > p:first-child {
   margin-bottom: 1em;
+}
+
+/* Keep all constraint labels and their first body paragraph equally spaced. */
+.chloris-case .constraint-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.chloris-case .constraint-item > .constraint-label {
+  margin: 0 0 0.78rem;
+}
+
+.chloris-case .constraint-item > .product-layer-outcome {
+  margin: 0;
 }
 
 .content-heading {
