@@ -1062,16 +1062,10 @@
 }
 
 .constraint-details {
-  margin-top: 50px;
-  border-top: 1px solid var(--chloris-line);
-}
-
-.constraint-item {
   display: grid;
-  grid-template-columns: minmax(150px, 0.65fr) minmax(0, 1.6fr);
-  gap: 32px;
-  padding: 26px 0;
-  border-bottom: 1px solid var(--chloris-line);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 44px;
+  margin-top: 50px;
 }
 
 .constraint-item h3,
@@ -1080,6 +1074,7 @@
 }
 
 .constraint-item h3 {
+  margin-bottom: 16px;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.35rem;
   font-weight: 400;
@@ -1087,7 +1082,6 @@
 }
 
 .constraint-item p {
-  max-width: 70ch;
   color: var(--chloris-muted);
   font-size: 0.78rem;
   line-height: 1.55;
@@ -1548,13 +1542,9 @@
   }
 
   .constraint-details {
-    margin-top: 34px;
-  }
-
-  .constraint-item {
     grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 22px 0;
+    gap: 30px;
+    margin-top: 34px;
   }
 
   .market-cards article {
