@@ -1074,7 +1074,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 44px;
-  margin-top: 50px;
+  margin-top: 24px;
 }
 
 .constraint-item h3,
