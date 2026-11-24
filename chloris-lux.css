@@ -1096,10 +1096,39 @@
 
 .chloris-case .constraint-item > .constraint-label {
   margin: 0 0 0.78rem;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.65;
+  color: var(--chloris-ink);
+  text-wrap: wrap;
+}
+
+.chloris-case .constraint-item > .constraint-label > .content-heading {
+  display: block;
+  font: inherit;
+  color: inherit;
 }
 
 .chloris-case .constraint-item > .product-layer-outcome {
   margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--chloris-ink);
+}
+
+.chloris-case .constraint-item > .product-layer-outcome + .product-layer-outcome {
+  margin-top: 0.78rem;
+}
+
+@media (max-width: 760px) {
+  .chloris-case .constraint-item > .product-layer-outcome {
+    font-size: 0.72rem;
+  }
 }
 
 .content-heading {
