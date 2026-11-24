@@ -526,23 +526,32 @@
           <div class="constraints">
             <h3 class="section-title">Core constraint #2</h3>
             <h2 class="section-heading">Balancing limited shipping coverage with international customer demand.</h2>
-            <div class="constraint-details">
-              <section class="constraint-item" aria-labelledby="constraint-two-challenge">
-                <p id="constraint-two-challenge" class="constraint-label"><strong class="content-heading">Challenge</strong></p>
-                <p class="product-layer-outcome">Carrier coverage and varying shipping costs limited the destinations Chloris Lux could serve at launch. Shipping outside the EU introduced additional customs requirements, potential duties and operational complexity.</p>
-              </section>
-              <section class="constraint-item" aria-labelledby="constraint-two-solution">
-                <p id="constraint-two-solution" class="constraint-label"><strong class="content-heading">Scalable MVP solution</strong></p>
-                <p class="product-layer-outcome"><strong>Pricing transparency:</strong> Clearly communicate available shipping destinations and country-specific rates.</p>
-                <p class="product-layer-outcome"><strong>Free shipping incentive:</strong> Offer free shipping on eligible orders over €100 to reduce purchase friction and encourage higher order values.</p>
-                <p class="product-layer-outcome"><strong>Customs and duties transparency:</strong> Clearly communicate customers’ responsibility for applicable import duties, taxes and customs clearance fees for orders shipped outside the EU.</p>
-                <p class="product-layer-outcome"><strong>Customer relationship:</strong> Communicate shipping limitations empathetically and reassure customers that expanding coverage is part of the brand’s roadmap.</p>
-                <p class="product-layer-outcome"><strong>Proactive communication:</strong> Surface shipping restrictions before checkout and provide contextual error messages for unsupported destinations.</p>
-              </section>
-              <section class="constraint-item" aria-labelledby="constraint-two-tradeoff">
-                <p id="constraint-two-tradeoff" class="constraint-label"><strong class="content-heading">Trade-off and mitigation</strong></p>
-                <p class="product-layer-outcome">Limiting shipping coverage reduces operational complexity at launch but risks losing potential international customers. A proposed interest-registration option for unsupported countries would help maintain engagement and capture region-specific demand to prioritize future shipping expansion.</p>
-              </section>
+            <div class="positioning-layout constraint-two-layout">
+              <figure class="design-decision-visual constraint-two-visual">
+                <button class="design-decision-trigger constraint-two-trigger" type="button"
+                  aria-label="Enlarge the shipping constraint drawing"
+                  aria-haspopup="dialog" aria-controls="constraint-two-lightbox">
+                  <img src="assets/constraint2.png" alt="" width="2075" height="3150" loading="lazy" decoding="async" />
+                </button>
+              </figure>
+              <div class="constraint-details constraint-two-details">
+                <section class="constraint-item" aria-labelledby="constraint-two-challenge">
+                  <p id="constraint-two-challenge" class="constraint-label"><strong class="content-heading">Challenge</strong></p>
+                  <p class="product-layer-outcome">Carrier coverage and varying shipping costs limited the destinations Chloris Lux could serve at launch. Shipping outside the EU introduced additional customs requirements, potential duties and operational complexity.</p>
+                </section>
+                <section class="constraint-item" aria-labelledby="constraint-two-solution">
+                  <p id="constraint-two-solution" class="constraint-label"><strong class="content-heading">Scalable MVP solution</strong></p>
+                  <p class="product-layer-outcome"><strong>Pricing transparency:</strong> Clearly communicate available shipping destinations and country-specific rates.</p>
+                  <p class="product-layer-outcome"><strong>Free shipping incentive:</strong> Offer free shipping on eligible orders over €100 to reduce purchase friction and encourage higher order values.</p>
+                  <p class="product-layer-outcome"><strong>Customs and duties transparency:</strong> Clearly communicate customers’ responsibility for applicable import duties, taxes and customs clearance fees for orders shipped outside the EU.</p>
+                  <p class="product-layer-outcome"><strong>Customer relationship:</strong> Communicate shipping limitations empathetically and reassure customers that expanding coverage is part of the brand’s roadmap.</p>
+                  <p class="product-layer-outcome"><strong>Proactive communication:</strong> Surface shipping restrictions before checkout and provide contextual error messages for unsupported destinations.</p>
+                </section>
+                <section class="constraint-item" aria-labelledby="constraint-two-tradeoff">
+                  <p id="constraint-two-tradeoff" class="constraint-label"><strong class="content-heading">Trade-off and mitigation</strong></p>
+                  <p class="product-layer-outcome">Limiting shipping coverage reduces operational complexity at launch but risks losing potential international customers. A proposed interest-registration option for unsupported countries would help maintain engagement and capture region-specific demand to prioritize future shipping expansion.</p>
+                </section>
+              </div>
             </div>
           </div>
 
@@ -683,6 +692,16 @@
           height="2100"
           decoding="async"
         />
+      </div>
+    </dialog>
+
+    <dialog id="constraint-two-lightbox" class="intention-lightbox design-decision-lightbox"
+      aria-label="Expanded shipping constraint drawing">
+      <div class="intention-lightbox-frame design-decision-lightbox-frame">
+        <button class="intention-lightbox-close design-decision-lightbox-close" type="button"
+          aria-label="Close enlarged drawing"><span aria-hidden="true">×</span></button>
+        <img src="assets/constraint2.png" alt="Chloris Lux shipping constraint illustration"
+          width="2075" height="3150" decoding="async" loading="lazy" />
       </div>
     </dialog>
 
