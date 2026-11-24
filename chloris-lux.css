@@ -2265,7 +2265,7 @@ body.intention-lightbox-open {
   }
 }
 
-/* Match the numbered shipping annotations to the green drawing markers. */
+/* Match the purple numbered annotation style used in Core design decision #2. */
 .constraint-two-details .circle-number {
-  color: #1dca63;
+  color: #7828c7;
 }
