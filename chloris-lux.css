@@ -696,6 +696,11 @@
   vertical-align: 0.08rem;
 }
 
+.product-page-layers {
+  display: grid;
+  gap: 32px;
+}
+
 .product-layer-label {
   color: var(--chloris-muted);
   font-weight: 400;
@@ -1077,8 +1082,9 @@
   margin: 0;
 }
 
+.product-page-layers > div > p:first-child,
 .constraint-item .constraint-label {
-  margin-bottom: 0;
+  margin-bottom: 1em;
 }
 
 .content-heading {
