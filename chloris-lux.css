@@ -2264,3 +2264,8 @@ body.intention-lightbox-open {
     padding: 0 8px 14px;
   }
 }
+
+/* Match the numbered shipping annotations to the green drawing markers. */
+.constraint-two-details .circle-number {
+  color: #1dca63;
+}
