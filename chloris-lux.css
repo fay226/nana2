@@ -1075,7 +1075,11 @@
 
 .constraint-item .constraint-label {
   margin-bottom: 0;
+}
+
+.content-heading {
   color: var(--chloris-ink);
+  font-family: "DM Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.65;
 }
