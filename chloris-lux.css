@@ -2125,3 +2125,39 @@ body.intention-lightbox-open {
     padding: 50px 8px 14px;
   }
 }
+
+/* Shipping constraint: reuse the competitor audit's column proportions. */
+.constraint-two-layout {
+  margin-top: 24px;
+}
+
+.constraint-two-visual {
+  width: min(100%, 480px);
+  margin-inline: auto;
+}
+
+.constraint-two-trigger {
+  aspect-ratio: auto;
+}
+
+.constraint-two-visual img {
+  height: auto;
+}
+
+.constraint-two-layout > .constraint-two-details {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 30px;
+  margin-top: 0;
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .constraint-two-layout {
+    margin-top: 34px;
+    gap: 30px;
+  }
+
+  .constraint-two-visual {
+    width: min(100%, 86vw, 330px);
+  }
+}
