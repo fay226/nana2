@@ -1063,6 +1063,8 @@
 
 .constraints {
   margin-top: var(--section-block-gap);
+  padding-top: var(--section-content-padding);
+  padding-bottom: 0;
 }
 
 .constraints > .section-heading {
