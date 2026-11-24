@@ -1052,8 +1052,12 @@
   }
 }
 
+#system .system-intro {
+  margin-bottom: 0;
+}
+
 .constraints {
-  margin-top: 112px;
+  margin-top: var(--section-block-gap);
 }
 
 .constraints > .section-heading {
@@ -1549,7 +1553,7 @@
   }
 
   .constraints {
-    margin-top: 78px;
+    margin-top: var(--section-block-gap);
   }
 
   .constraint-details {
