@@ -2200,3 +2200,67 @@ body.intention-lightbox-open {
     padding: 0 8px 14px;
   }
 }
+
+/* Enlarge the opened core design decision drawings, not their inline previews. */
+.intention-lightbox:not(.design-decision-lightbox),
+#design-decision-lightbox {
+  width: min(96vw, 1440px);
+  max-height: 94vh;
+  max-height: 94dvh;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.intention-lightbox:not(.design-decision-lightbox) .intention-lightbox-frame {
+  min-height: 0;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  align-items: start;
+  padding: 0 16px 16px;
+}
+
+.intention-lightbox:not(.design-decision-lightbox) .intention-lightbox-close {
+  position: sticky;
+  top: 10px;
+  right: auto;
+  grid-column: 1 / -1;
+  justify-self: end;
+  margin-top: 10px;
+}
+
+.intention-lightbox:not(.design-decision-lightbox) .intention-lightbox-previous,
+.intention-lightbox:not(.design-decision-lightbox) .intention-lightbox-next {
+  position: sticky;
+  top: 42vh;
+  align-self: start;
+}
+
+.intention-lightbox:not(.design-decision-lightbox) img,
+#design-decision-lightbox img {
+  width: min(100%, 1280px);
+  height: auto;
+  max-height: none;
+  margin-inline: auto;
+}
+
+#design-decision-lightbox .design-decision-lightbox-frame {
+  padding: 0 22px 22px;
+}
+
+#design-decision-lightbox .design-decision-lightbox-close {
+  position: sticky;
+  top: 10px;
+  right: auto;
+  margin: 10px 0 8px auto;
+}
+
+@media (max-width: 640px) {
+  .intention-lightbox:not(.design-decision-lightbox) .intention-lightbox-frame {
+    grid-template-columns: 38px minmax(0, 1fr) 38px;
+    gap: 4px;
+    padding: 0 4px 12px;
+  }
+
+  #design-decision-lightbox .design-decision-lightbox-frame {
+    padding: 0 8px 14px;
+  }
+}
