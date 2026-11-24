@@ -696,6 +696,11 @@
   vertical-align: 0.08rem;
 }
 
+.product-page-layers {
+  display: grid;
+  gap: 32px;
+}
+
 .product-layer-label {
   color: var(--chloris-muted);
   font-weight: 400;
