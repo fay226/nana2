@@ -1082,8 +1082,9 @@
   margin: 0;
 }
 
+.product-page-layers > div > p:first-child,
 .constraint-item .constraint-label {
-  margin-bottom: 0;
+  margin-bottom: 1em;
 }
 
 .content-heading {
