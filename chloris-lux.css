@@ -297,6 +297,7 @@
 .brand-strategy p,
 .experience-intro .context-subsection p,
 .system-intro .context-subsection p,
+.measurement-intro.context-subsection p,
 .chloris-case .section-description {
   margin: 0;
   color: inherit;
@@ -573,7 +574,8 @@
   margin: 0;
 }
 
-.system-intro .context-subsection .section-heading {
+.system-intro .context-subsection .section-heading,
+.measurement-intro.context-subsection .section-heading {
   max-width: none;
 }
 
@@ -1416,7 +1418,8 @@
   .brand-intro h2,
   .experience-intro h2,
   .system-intro h2,
-  .impact-intro h2 {
+  .impact-intro h2,
+  .measurement-intro h2 {
     margin-bottom: 22px;
   }
 
