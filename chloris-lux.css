@@ -1244,11 +1244,6 @@
   font-size: 0.72rem;
 }
 
-.measurement {
-  padding: 56px;
-  background: var(--chloris-wash);
-}
-
 .measurement ol {
   padding: 0;
   margin: 0;
@@ -1557,10 +1552,6 @@
 
   .decision-section {
     padding-top: 40px;
-  }
-
-  .measurement {
-    padding: 34px 24px;
   }
 
   .experience-journey {
