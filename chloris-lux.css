@@ -2165,7 +2165,8 @@ body.intention-lightbox-open {
 }
 
 /* Allow the portrait shipping illustration to be read at a larger size. */
-#constraint-two-lightbox {
+#constraint-two-lightbox,
+#constraint-three-lightbox {
   width: min(92vw, 1000px);
   max-height: 92vh;
   max-height: 92dvh;
@@ -2173,18 +2174,21 @@ body.intention-lightbox-open {
   overscroll-behavior: contain;
 }
 
-#constraint-two-lightbox .design-decision-lightbox-frame {
+#constraint-two-lightbox .design-decision-lightbox-frame,
+#constraint-three-lightbox .design-decision-lightbox-frame {
   padding: 0 22px 22px;
 }
 
-#constraint-two-lightbox .design-decision-lightbox-close {
+#constraint-two-lightbox .design-decision-lightbox-close,
+#constraint-three-lightbox .design-decision-lightbox-close {
   position: sticky;
   top: 10px;
   right: auto;
   margin: 10px 0 8px auto;
 }
 
-#constraint-two-lightbox img {
+#constraint-two-lightbox img,
+#constraint-three-lightbox img {
   width: min(100%, 880px);
   height: auto;
   max-height: none;
@@ -2192,11 +2196,13 @@ body.intention-lightbox-open {
 }
 
 @media (max-width: 640px) {
-  #constraint-two-lightbox {
+  #constraint-two-lightbox,
+#constraint-three-lightbox {
     width: 96vw;
   }
 
-  #constraint-two-lightbox .design-decision-lightbox-frame {
+  #constraint-two-lightbox .design-decision-lightbox-frame,
+#constraint-three-lightbox .design-decision-lightbox-frame {
     padding: 0 8px 14px;
   }
 }
@@ -2268,4 +2274,9 @@ body.intention-lightbox-open {
 /* Match the purple numbered annotation style used in Core design decision #2. */
 .constraint-two-details .circle-number {
   color: #7828c7;
+}
+
+/* Blue annotations match the regional market structure drawing. */
+.constraint-three-layout .circle-number {
+  color: #2445d6;
 }
