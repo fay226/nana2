@@ -109,7 +109,8 @@
 .problem-copy .eyebrow,
 .brand-intro .eyebrow,
 .experience-intro .eyebrow,
-.system-intro .eyebrow {
+.system-intro .eyebrow,
+.impact-intro .eyebrow {
   margin: 1em 0;
   color: inherit;
   font-size: var(--type-small);
@@ -229,7 +230,8 @@
 .problem-copy,
 .brand-intro,
 .experience-intro,
-.system-intro {
+.system-intro,
+.impact-intro {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   column-gap: 64px;
@@ -239,7 +241,8 @@
 .problem-copy .eyebrow,
 .brand-intro .eyebrow,
 .experience-intro .eyebrow,
-.system-intro .eyebrow {
+.system-intro .eyebrow,
+.impact-intro .eyebrow {
   grid-column: 1 / -1;
 }
 
@@ -250,14 +253,16 @@
 .problem-copy > h2,
 .brand-intro > h2,
 .experience-intro > h2,
-.system-intro > h2 {
+.system-intro > h2,
+.impact-intro > h2 {
   margin-bottom: 0;
 }
 
 .chloris-case .problem-copy > h2,
 .chloris-case .brand-intro > h2,
 .chloris-case .experience-intro > h2,
-.chloris-case .system-intro > h2 {
+.chloris-case .system-intro > h2,
+.chloris-case .impact-intro > h2 {
   font-family: var(--font-heading);
   font-size: var(--type-h1);
   font-weight: 400;
@@ -1057,7 +1062,8 @@
   }
 }
 
-#system .system-intro {
+#system .system-intro,
+#impact .impact-intro {
   margin-bottom: 0;
 }
 
@@ -1388,6 +1394,7 @@
   .brand-intro,
   .experience-intro,
   .system-intro,
+  .impact-intro,
   .positioning-layout,
   .design-challenge,
   .decision-section,
@@ -1408,7 +1415,8 @@
   .problem-copy h2,
   .brand-intro h2,
   .experience-intro h2,
-  .system-intro h2 {
+  .system-intro h2,
+  .impact-intro h2 {
     margin-bottom: 22px;
   }
 
