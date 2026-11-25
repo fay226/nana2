@@ -2291,8 +2291,14 @@ body.intention-lightbox-open {
 
 /* Achievement cards: the journey cards' flip motion without colored faces. */
 .launch-facts {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   align-items: stretch;
+}
+
+@media (min-width: 761px) and (max-width: 1000px) {
+  .launch-facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .achievement-flip {
