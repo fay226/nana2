@@ -2280,3 +2280,8 @@ body.intention-lightbox-open {
 .constraint-three-layout .circle-number {
   color: #2445d6;
 }
+
+/* Shipping zone and pricing annotations in Core constraint #3. */
+.constraint-three-layout .circle-number.circle-number-shipping {
+  color: #ff74a5;
+}
