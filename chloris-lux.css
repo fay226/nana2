@@ -262,7 +262,8 @@
 .chloris-case .brand-intro > h2,
 .chloris-case .experience-intro > h2,
 .chloris-case .system-intro > h2,
-.chloris-case .impact-intro > h2 {
+.chloris-case .impact-intro > h2,
+.chloris-case .launch-facts .achievement-front > strong {
   font-family: var(--font-heading);
   font-size: var(--type-h1);
   font-weight: 400;
@@ -566,8 +567,7 @@
   margin-top: var(--section-block-gap);
 }
 
-.chloris-case .section-heading,
-.chloris-case .launch-facts .achievement-front > strong {
+.chloris-case .section-heading {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(1.45rem, 2vw, 1.85rem);
   font-weight: 400;
@@ -2340,6 +2340,11 @@ body.intention-lightbox-open {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   overflow-wrap: anywhere;
+}
+
+.launch-facts .achievement-front {
+  align-items: center;
+  text-align: center;
 }
 
 .launch-facts .achievement-back {
