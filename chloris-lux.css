@@ -566,7 +566,8 @@
   margin-top: var(--section-block-gap);
 }
 
-.chloris-case .section-heading {
+.chloris-case .section-heading,
+.chloris-case .launch-facts .achievement-front > strong {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(1.45rem, 2vw, 1.85rem);
   font-weight: 400;
@@ -689,7 +690,8 @@
 
 .brand-principles p,
 .product-layer-detail,
-.measurement li small {
+.measurement li small,
+.launch-facts .achievement-front > span {
   margin-bottom: 0;
   color: var(--chloris-muted);
   font-size: 0.84rem;
@@ -1240,10 +1242,6 @@
 
 .launch-facts strong {
   margin-bottom: 20px;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(3.4rem, 6vw, 5.4rem);
-  font-weight: 400;
-  line-height: 0.8;
 }
 
 .launch-facts span {
@@ -1496,7 +1494,8 @@
 
   .brand-principles p,
   .product-layer-detail,
-  .measurement li small {
+  .measurement li small,
+  .launch-facts .achievement-front > span {
     font-size: 0.72rem;
   }
 
@@ -1640,10 +1639,6 @@
 
   .launch-facts article:nth-child(4) {
     padding-left: 18px;
-  }
-
-  .launch-facts strong {
-    font-size: 3.6rem;
   }
 
   .measurement {
