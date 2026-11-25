@@ -2338,7 +2338,8 @@ body.intention-lightbox-open {
   align-items: flex-start;
   min-width: 0;
   min-height: 180px;
-  padding: 20px 12px 34px;
+  padding: 20px 12px;
+  border: 1px solid var(--chloris-line);
   color: var(--chloris-ink);
   background: transparent;
   backface-visibility: hidden;
@@ -2362,14 +2363,6 @@ body.intention-lightbox-open {
   line-height: 1.55;
 }
 
-.launch-facts .achievement-flip-hint {
-  position: absolute;
-  bottom: 10px;
-  right: 12px;
-  font-size: 1.1rem;
-  line-height: 1;
-}
-
 .achievement-flip:focus-visible {
   outline: 2px solid var(--chloris-ink);
   outline-offset: 3px;
@@ -2382,7 +2375,7 @@ body.intention-lightbox-open {
 
   .launch-facts .achievement-face {
     min-height: 155px;
-    padding: 14px 8px 30px;
+    padding: 14px 8px;
   }
 
   .launch-facts .achievement-back-title {
