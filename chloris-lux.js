@@ -211,3 +211,27 @@ journeyFlipCards.forEach(card => {
     );
   });
 });
+
+
+// Hover previews the reverse; click pins or toggles it (including touch and keyboard).
+document.querySelectorAll('.achievement-flip').forEach(card => {
+  card.addEventListener('pointerenter', event => {
+    if (event.pointerType === 'mouse' && card.getAttribute('aria-pressed') === 'false') {
+      card.classList.add('is-previewing');
+    }
+  });
+
+  card.addEventListener('pointerleave', () => {
+    card.classList.remove('is-previewing');
+  });
+
+  card.addEventListener('pointercancel', () => {
+    card.classList.remove('is-previewing');
+  });
+
+  card.addEventListener('click', () => {
+    const pinned = card.getAttribute('aria-pressed') === 'true';
+    card.classList.remove('is-previewing');
+    card.setAttribute('aria-pressed', String(!pinned));
+  });
+});
