@@ -2401,3 +2401,20 @@ body.intention-lightbox-open {
   line-height: 1.55;
   overflow-wrap: normal;
 }
+
+/* Commerce channel marks on the achievement card reverse. */
+.launch-facts .achievement-commerce-icons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.launch-facts .achievement-commerce-icons img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex: 0 1 40px;
+  min-width: 0;
+}
