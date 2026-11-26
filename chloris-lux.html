@@ -21,7 +21,7 @@
   <body class="chloris-case">
     <a class="skip-link" href="#case-study">Skip to case study</a>
 
-    <nav class="main-nav" aria-label="Main">
+    <nav id="top" class="main-nav" aria-label="Main" tabindex="-1">
       <a href="index.html#home">Home</a>
       <a href="index.html#work" aria-current="location">Selected work</a>
       <a href="index.html#about">About me</a>
@@ -697,22 +697,17 @@
         </div>
 
         <div class="case-close">
-          <div>
-            <p class="eyebrow">Next case-study chapter</p>
-            <h2>Validate the promise. Then refine the system.</h2>
-          </div>
-          <div class="case-close-actions">
-            <a class="chloris-link" href="index.html#work"
-              >Back to selected work <span aria-hidden="true">↑</span></a
-            >
-            <a
-              class="chloris-link chloris-link-secondary"
-              href="https://chlorislux.com/en-eu"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Visit Chloris Lux <span aria-hidden="true">→</span></a
-            >
-          </div>
+          <nav class="case-close-actions" aria-label="Case study navigation">
+            <a class="chloris-link" href="custom-cafe.html" aria-label="Previous project: Custom Café">
+              <span aria-hidden="true">←</span> Previous project
+            </a>
+            <a class="chloris-link" href="#top">
+              Back to top <span aria-hidden="true">↑</span>
+            </a>
+            <a class="chloris-link" href="career-compass.html" aria-label="Next project: Career Compass">
+              Next project <span aria-hidden="true">→</span>
+            </a>
+          </nav>
         </div>
       </section>
     </main>
