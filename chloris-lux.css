@@ -2433,8 +2433,8 @@ body.intention-lightbox-open {
   position: relative;
   display: block;
   align-self: center;
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -2443,8 +2443,8 @@ body.intention-lightbox-open {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 1152px;
-  height: 720px;
+  width: 768px;
+  height: 480px;
   max-width: none;
   transform: translate(-74.45%, -53%);
 }
