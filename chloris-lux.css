@@ -1,5 +1,7 @@
 .chloris-case {
   --chloris-petal: #f9d9e0;
+  --chloris-marketplace-bg: #f5fbf6;
+  --chloris-opportunity-bg: #f7f0f4;
   --chloris-wash: #f6f6f3;
   --chloris-plum: #514554;
   --chloris-ink: var(--ink, #24241f);
@@ -419,7 +421,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #fcfaf3;
+  background: var(--chloris-opportunity-bg);
   box-shadow: 0 0 18px rgb(81 69 84 / 18%);
   content: "";
   pointer-events: none;
@@ -1730,7 +1732,7 @@
 
 .opportunity-card {
   padding: 18px;
-  background: #fcfaf3;
+  background: var(--chloris-opportunity-bg);
 }
 
 .craft-compare {
@@ -1739,11 +1741,11 @@
 
 .craft-compare article {
   padding: 24px;
-  background: transparent;
+  background: var(--chloris-marketplace-bg);
 }
 
 .craft-compare article.selected {
-  background: #fcfaf3;
+  background: var(--chloris-opportunity-bg);
 }
 
 .craft-compare article {
@@ -1763,12 +1765,12 @@
 
 .craft-compare article:first-child:hover,
 .craft-compare article:first-child:focus {
-  background: var(--chloris-wash);
+  background: var(--chloris-marketplace-bg);
 }
 
 .craft-compare article.selected:hover,
 .craft-compare article.selected:focus {
-  background: #f7f0f4;
+  background: var(--chloris-opportunity-bg);
 }
 
 .craft-compare:has(article:hover) article:not(:hover),
