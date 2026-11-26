@@ -1009,28 +1009,33 @@
   transform: rotateY(180deg);
 }
 
-/* Each brand-response face echoes the gemstone drawing for its journey stage. */
-.journey-step:nth-child(1) .journey-card-back {
+/* Shared gemstone-inspired reverse-face colors for journey and achievement cards. */
+.journey-step:nth-child(1) .journey-card-back,
+.launch-facts > article:nth-child(1) .achievement-back {
   border-color: #8ed6e8;
   background: #f2fbfd;
 }
 
-.journey-step:nth-child(2) .journey-card-back {
+.journey-step:nth-child(2) .journey-card-back,
+.launch-facts > article:nth-child(2) .achievement-back {
   border-color: #acd5b6;
   background: #f5fbf6;
 }
 
-.journey-step:nth-child(3) .journey-card-back {
+.journey-step:nth-child(3) .journey-card-back,
+.launch-facts > article:nth-child(3) .achievement-back {
   border-color: #e49abb;
   background: #fdf3f7;
 }
 
-.journey-step:nth-child(4) .journey-card-back {
+.journey-step:nth-child(4) .journey-card-back,
+.launch-facts > article:nth-child(4) .achievement-back {
   border-color: #d6cc69;
   background: #fdfbea;
 }
 
-.journey-step:nth-child(5) .journey-card-back {
+.journey-step:nth-child(5) .journey-card-back,
+.launch-facts > article:nth-child(5) .achievement-back {
   border-color: #c7c8dc;
   background: #f8f8fb;
 }
@@ -2285,7 +2290,7 @@ body.intention-lightbox-open {
   color: #ff74a5;
 }
 
-/* Achievement cards: the journey cards' flip motion without colored faces. */
+/* Achievement cards: shared journey flip motion and pastel reverse faces. */
 .launch-facts {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   align-items: stretch;
