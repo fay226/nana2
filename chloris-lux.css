@@ -989,8 +989,7 @@
   text-align: center;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transition: background-color 180ms ease, border-color 180ms ease,
-    box-shadow 180ms ease;
+
 }
 
 .journey-flip:hover .journey-card-front,
@@ -999,8 +998,16 @@
   background: #faf9f6;
 }
 
+.journey-card-face,
+.launch-facts .achievement-face {
+  transition: background-color 180ms ease, border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
 .journey-flip:hover .journey-card-face,
-.journey-flip:focus-visible .journey-card-face {
+.journey-flip:focus-visible .journey-card-face,
+.achievement-flip:hover .achievement-face,
+.achievement-flip:focus-visible .achievement-face {
   box-shadow: 0 8px 20px rgb(36 36 31 / 6%);
 }
 
