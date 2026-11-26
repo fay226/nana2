@@ -725,6 +725,11 @@
   font-weight: 400;
 }
 
+/* Match the product-layer detail text color without changing solution typography. */
+.constraint-solution-copy {
+  color: var(--chloris-muted);
+}
+
 .product-page-layers > div:first-child .circle-number {
   color: #7828c7;
 }
