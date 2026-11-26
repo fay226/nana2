@@ -2426,3 +2426,25 @@ body.intention-lightbox-open {
   margin: 0;
   text-align: center;
 }
+
+/* The homepage bracelet PNG is a transparent desk-sized canvas.
+   Frame only the bracelet artwork without modifying the shared asset. */
+.launch-facts .achievement-bracelet-art {
+  position: relative;
+  display: block;
+  align-self: center;
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.launch-facts .achievement-bracelet-art img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1152px;
+  height: 720px;
+  max-width: none;
+  transform: translate(-74.45%, -53%);
+}
