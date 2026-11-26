@@ -2392,3 +2392,12 @@ body.intention-lightbox-open {
     transition: none;
   }
 }
+
+/* Flag-only reverse face for shipping coverage. */
+.launch-facts .achievement-country-flags {
+  width: 100%;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  overflow-wrap: normal;
+}
