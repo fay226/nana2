@@ -1018,7 +1018,7 @@
 
 /* Shared gemstone-inspired reverse-face colors for journey and achievement cards. */
 .journey-step:nth-child(1) .journey-card-back,
-.launch-facts > article:nth-child(1) .achievement-back {
+.launch-facts > article:nth-child(4) .achievement-back {
   border-color: #8ed6e8;
   background: #f2fbfd;
 }
@@ -1030,19 +1030,19 @@
 }
 
 .journey-step:nth-child(3) .journey-card-back,
-.launch-facts > article:nth-child(3) .achievement-back {
+.launch-facts > article:nth-child(5) .achievement-back {
   border-color: #e49abb;
   background: #fdf3f7;
 }
 
 .journey-step:nth-child(4) .journey-card-back,
-.launch-facts > article:nth-child(4) .achievement-back {
+.launch-facts > article:nth-child(1) .achievement-back {
   border-color: #d6cc69;
   background: #fdfbea;
 }
 
 .journey-step:nth-child(5) .journey-card-back,
-.launch-facts > article:nth-child(5) .achievement-back {
+.launch-facts > article:nth-child(3) .achievement-back {
   border-color: #c7c8dc;
   background: #f8f8fb;
 }
