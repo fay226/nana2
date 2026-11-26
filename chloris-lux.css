@@ -263,7 +263,8 @@
 .chloris-case .experience-intro > h2,
 .chloris-case .system-intro > h2,
 .chloris-case .impact-intro > h2,
-.chloris-case .launch-facts .achievement-front > strong {
+.chloris-case .launch-facts .achievement-front > strong,
+.chloris-case .launch-facts .achievement-owner-name {
   font-family: var(--font-heading);
   font-size: var(--type-h1);
   font-weight: 400;
@@ -2417,4 +2418,11 @@ body.intention-lightbox-open {
   object-fit: contain;
   flex: 0 1 28px;
   min-width: 0;
+}
+
+/* Center the owner card's personal sign-off. */
+.launch-facts .achievement-owner-name {
+  align-self: center;
+  margin: 0;
+  text-align: center;
 }
