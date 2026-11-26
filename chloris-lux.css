@@ -2421,9 +2421,10 @@ body.intention-lightbox-open {
 }
 
 /* Center the owner card's personal sign-off. */
-.launch-facts .achievement-owner-name {
+.chloris-case .launch-facts .achievement-owner-name {
   align-self: center;
   margin: 0;
+  font-size: 1.5rem;
   text-align: center;
 }
 
